@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppNumeroDaSorte", "AppNumeroDaSorte\AppNumeroDaSorte.csproj", "{2D886A65-FCE3-43D5-9906-691CF23A35BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App 01", "App 01", "{EB48A486-09BE-4FBA-A7F7-5AE551138D3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D886A65-FCE3-43D5-9906-691CF23A35BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D886A65-FCE3-43D5-9906-691CF23A35BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D886A65-FCE3-43D5-9906-691CF23A35BF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2D886A65-FCE3-43D5-9906-691CF23A35BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D886A65-FCE3-43D5-9906-691CF23A35BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D886A65-FCE3-43D5-9906-691CF23A35BF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D886A65-FCE3-43D5-9906-691CF23A35BF} = {EB48A486-09BE-4FBA-A7F7-5AE551138D3C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

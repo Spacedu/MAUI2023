@@ -12,14 +12,14 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>AppNumeroDaSorte</ApplicationTitle>
+		<ApplicationTitle>Número da Sorte</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.appnumerodasorte</ApplicationId>
+		<ApplicationId>br.com.spacedu.appnumerodasorte</ApplicationId>
 		<ApplicationIdGuid>A237440B-F8E2-420A-95BE-3A58C627BE41</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>

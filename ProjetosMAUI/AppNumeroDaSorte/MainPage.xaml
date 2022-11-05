@@ -14,13 +14,25 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
             <Label Text="O número da sorte é:" HorizontalOptions="Center" Margin="0, 20, 0, 0" />
-            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" Margin="0, 70">
-                <Label FontSize="24" Text="01" TextColor="#00AB37" />
-                <Label FontSize="24" Text="01" TextColor="#00AB37" />
-                <Label FontSize="24" Text="01" TextColor="#00AB37" />
-                <Label FontSize="24" Text="01" TextColor="#00AB37" />
-                <Label FontSize="24" Text="01" TextColor="#00AB37" />
-                <Label FontSize="24" Text="01" TextColor="#00AB37" />
+            <HorizontalStackLayout Spacing="5" HorizontalOptions="Center" Margin="0, 70">
+                <Border Stroke="#00AB37" Padding="10, 5" StrokeShape="RoundRectangle 8">
+                    <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                </Border>
+                <Border Stroke="#00AB37" Padding="10, 5" StrokeShape="RoundRectangle 8">
+                    <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                </Border>
+                <Border Stroke="#00AB37" Padding="10, 5" StrokeShape="RoundRectangle 8">
+                    <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                </Border>
+                <Border Stroke="#00AB37" Padding="10, 5" StrokeShape="RoundRectangle 8">
+                    <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                </Border>
+                <Border Stroke="#00AB37" Padding="10, 5" StrokeShape="RoundRectangle 8">
+                    <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                </Border>
+                <Border Stroke="#00AB37" Padding="10, 5" StrokeShape="RoundRectangle 8">
+                    <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                </Border>
             </HorizontalStackLayout>
             <Label Text="Boa sorte!" HorizontalOptions="Center" Margin="0, 0, 0, 50"/>
             <Button Text="Gerar número da sorte" HorizontalOptions="Center" />

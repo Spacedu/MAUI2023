@@ -3,14 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppNumeroDaSorte.MainPage"
              >
-    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Image Source="logo_green.png" WidthRequest="74" HeightRequest="115" />
-        <Label 
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Image Source="logo_green.png" WidthRequest="74" HeightRequest="115" />
+            <Label 
+            IsVisible="false"
             Margin="0, 20, 0, 120"
             Text="Número da sorte"
             TextColor="#00AB37"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button Text="Gerar número da sorte" HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            <Label Text="O número da sorte é:" HorizontalOptions="Center" Margin="0, 20, 0, 0" />
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" Margin="0, 70">
+                <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                <Label FontSize="24" Text="01" TextColor="#00AB37" />
+                <Label FontSize="24" Text="01" TextColor="#00AB37" />
+            </HorizontalStackLayout>
+            <Label Text="Boa sorte!" HorizontalOptions="Center" Margin="0, 0, 0, 50"/>
+            <Button Text="Gerar número da sorte" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

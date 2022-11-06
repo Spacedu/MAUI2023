@@ -4,7 +4,7 @@
              x:Class="AppNumeroDaSorte.MainPage"
              >
     <ScrollView>
-        <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <VerticalStackLayout VerticalOptions="CenterAndExpand">
             <Image Source="logo_green.png" WidthRequest="74" HeightRequest="115" />
             <Label
                 x:Name="NameApp"

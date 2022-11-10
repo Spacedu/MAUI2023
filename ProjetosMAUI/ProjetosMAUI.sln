@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App 02", "App 02", "{3AEB0A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppContentPage", "AppContentPage\AppContentPage.csproj", "{71A670A2-AAF5-4682-84EC-A36A018762B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppNavigationPage", "AppNavigationPage\AppNavigationPage.csproj", "{93306268-B67C-44CA-8E3B-4248CFBEEAB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,12 @@ Global
 		{71A670A2-AAF5-4682-84EC-A36A018762B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71A670A2-AAF5-4682-84EC-A36A018762B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71A670A2-AAF5-4682-84EC-A36A018762B5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{93306268-B67C-44CA-8E3B-4248CFBEEAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93306268-B67C-44CA-8E3B-4248CFBEEAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93306268-B67C-44CA-8E3B-4248CFBEEAB5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{93306268-B67C-44CA-8E3B-4248CFBEEAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93306268-B67C-44CA-8E3B-4248CFBEEAB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93306268-B67C-44CA-8E3B-4248CFBEEAB5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2D886A65-FCE3-43D5-9906-691CF23A35BF} = {EB48A486-09BE-4FBA-A7F7-5AE551138D3C}
 		{71A670A2-AAF5-4682-84EC-A36A018762B5} = {3AEB0A89-3075-4ACC-8706-88EC0FE04D8C}
+		{93306268-B67C-44CA-8E3B-4248CFBEEAB5} = {3AEB0A89-3075-4ACC-8706-88EC0FE04D8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

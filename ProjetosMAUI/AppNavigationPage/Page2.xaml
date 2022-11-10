@@ -9,5 +9,7 @@
             FontSize="48"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button Text="Prosseguir" HorizontalOptions="Center" Clicked="OnButtonNextClicked" />
+        <Button Text="Voltar" HorizontalOptions="Center" Clicked="OnButtonPreviousClicked" />
     </VerticalStackLayout>
 </ContentPage>

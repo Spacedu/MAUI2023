@@ -10,5 +10,9 @@
             FontSize="48"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Button Text="Página 1" BackgroundColor="Transparent" TextColor="Black" Clicked="OnButtonClickedPage1" />
+        <Button Text="Página 2" BackgroundColor="Transparent" TextColor="Black" Clicked="OnButtonClickedPage2"/>
+        <Button Text="Página 3" BackgroundColor="Transparent" TextColor="Black" Clicked="OnButtonClickedPage3"/>
     </VerticalStackLayout>
 </ContentPage>

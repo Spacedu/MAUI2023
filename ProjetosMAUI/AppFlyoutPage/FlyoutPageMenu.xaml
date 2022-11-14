@@ -10,6 +10,12 @@
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
         <!-- Página de conteúdo central-->
-        <pages:Page1 />
+
+        <NavigationPage>
+            <x:Arguments>
+                <pages:Page1 />
+            </x:Arguments>
+        </NavigationPage>
+        
     </FlyoutPage.Detail>
 </FlyoutPage>

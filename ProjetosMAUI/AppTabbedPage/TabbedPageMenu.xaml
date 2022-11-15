@@ -3,7 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:AppTabbedPage"
              x:Class="AppTabbedPage.TabbedPageMenu"
-             Title="TabbedPageMenu">
+             Title="TabbedPageMenu"
+             BarBackgroundColor="Yellow"
+             SelectedTabColor="Green"
+            UnselectedTabColor="LightGray"
+            BarTextColor="White"
+>
     <pages:Page1 />
     <pages:Page2 />
     <pages:Page3 />

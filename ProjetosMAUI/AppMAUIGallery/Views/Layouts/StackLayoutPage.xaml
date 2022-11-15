@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppMAUIGallery.Views.Menu"
-             Title="Menu">
+             x:Class="AppMAUIGallery.Views.Layouts.StackLayoutPage"
+             Title="StackLayoutPage">
     <VerticalStackLayout>
         <Label 
-            Text="NET MAUI - Gallery"
+            Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Label Text="Início" />
-        <Label Text="Extra" />
-        <Label Text="Créditos" />
-
-        <Label Text="Layout" />
-        <Label Text="StackLayout" />
-        <Label Text="bla bla bla bla...." />
     </VerticalStackLayout>
 </ContentPage>

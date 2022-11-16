@@ -28,9 +28,15 @@ namespace AppMAUIGallery.Repositories
                         Title = "Grid",
                         Description = "Organiza os elementos dentro de uma tabela.",
                         Page = typeof(GridLayoutPage)
+                    },
+                    new Component
+                    {
+                        Title = "AbsoluteLayout",
+                        Description = "Oferece liberdade total de posicionamento e tamanho dos elementos.",
+                        Page = typeof(AbsoluteLayoutPage)
                     }
                 }
-            });
+            }) ;
 
             return categories;
         }

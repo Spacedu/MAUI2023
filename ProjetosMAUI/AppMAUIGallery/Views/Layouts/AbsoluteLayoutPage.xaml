@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMAUIGallery.Views.Layouts.AbsoluteLayoutPage"
+             Title="AbsoluteLayoutPage">
+    <AbsoluteLayout>
+        <BoxView AbsoluteLayout.LayoutBounds="100,100,50,50" Color="Red" />
+        <BoxView AbsoluteLayout.LayoutBounds="125,125,50,50" Color="Green"/>
+        <BoxView AbsoluteLayout.LayoutBounds="0.1,0.1,0.1,0.1" AbsoluteLayout.LayoutFlags="All" Color="Purple"/>
+        <Button AbsoluteLayout.LayoutBounds="0.97, 0.97, 45, 45" AbsoluteLayout.LayoutFlags="PositionProportional" Text="+" />
+    </AbsoluteLayout>
+</ContentPage>

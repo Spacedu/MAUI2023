@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMAUIGallery.Views.Layouts.StackLayoutPage"
              Title="StackLayoutPage">
-    <VerticalStackLayout>
-        <Label 
-            Margin="20"
-            Text="Página do StackLayout"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout Orientation="Vertical">
+        <Label Text="Olá Mundo!" />
+        <Button Text="Olá mundo!" WidthRequest="200" HeightRequest="100" HorizontalOptions="Center" />
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Olá mundo!" HorizontalOptions="Start" />
+            <Button Text="Olá mundo!" HorizontalOptions="Start"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

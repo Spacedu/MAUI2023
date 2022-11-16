@@ -17,12 +17,18 @@ namespace AppMAUIGallery.Repositories
             categories.Add(new Category
             {
                 Name = "Layout",
-                Components = new List<Component> { 
-                    new Component { 
-                        Title = "StackLayout", 
-                        Description = "Organização sequencial dos elementos.", 
+                Components = new List<Component> {
+                    new Component {
+                        Title = "StackLayout",
+                        Description = "Organização sequencial dos elementos.",
                         Page = typeof(StackLayoutPage)
-                    } 
+                    },
+                    new Component
+                    {
+                        Title = "Grid",
+                        Description = "Organiza os elementos dentro de uma tabela.",
+                        Page = typeof(GridLayoutPage)
+                    }
                 }
             });
 

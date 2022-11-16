@@ -3,7 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMAUIGallery.Views.Layouts.GridLayoutPage"
              Title="GridLayoutPage">
-    <Grid BackgroundColor="AliceBlue" Margin="20">
+    <Grid BackgroundColor="Black" Padding="1" Margin="20" 
+          ColumnDefinitions="6*, Auto, 2*, 2*" 
+          RowDefinitions="50, 100, 10"
+          RowSpacing="1"          
+          ColumnSpacing="1">
+        <!--
+        Definindo de maneira verbosa.
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*" />
             <ColumnDefinition Width="Auto" />
@@ -15,6 +21,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
+        -->
 
         <BoxView Color="MediumAquamarine" />
         <Label Text="Olá Mundo!" HorizontalOptions="Center" VerticalOptions="Center" />
@@ -27,6 +34,6 @@
         <BoxView Color="Orange" Grid.Row="1" />
         <BoxView Color="Red" Grid.Row="1" Grid.Column="1" />
 
-        <BoxView Color="Black" Grid.Row="2" Grid.ColumnSpan="4"/>
+        <BoxView Color="White" Grid.Row="2" Grid.ColumnSpan="4"/>
     </Grid>
 </ContentPage>

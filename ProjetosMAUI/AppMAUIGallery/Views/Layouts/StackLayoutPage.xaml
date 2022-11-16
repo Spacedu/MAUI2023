@@ -3,13 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMAUIGallery.Views.Layouts.StackLayoutPage"
              Title="StackLayoutPage">
-    <StackLayout Orientation="Vertical">
-        <Label Text="Olá Mundo!" />
-        <Button Text="Olá mundo!" WidthRequest="200" HeightRequest="100" HorizontalOptions="Center" />
+    <StackLayout Orientation="Vertical" Margin="20" Padding="20" BackgroundColor="AliceBlue" Spacing="10">
+        <Label Text="Olá Mundo!"/>
+        
 
-        <StackLayout Orientation="Horizontal">
-            <Button Text="Olá mundo!" HorizontalOptions="Start" />
-            <Button Text="Olá mundo!" HorizontalOptions="Start"/>
+        <StackLayout Spacing="10" Orientation="Horizontal">
+            <Button Text="Olá mundo 1!" HorizontalOptions="Start" />
+            <Button Text="Olá mundo 2!" HorizontalOptions="Start"/>
         </StackLayout>
+
+        <VerticalStackLayout Spacing="10" Padding="10"  BackgroundColor="Aquamarine">
+            <Label Text="Olá Mundo 1!" />
+            <Label Text="Olá Mundo 2!" />
+        </VerticalStackLayout>
+        <HorizontalStackLayout Spacing="20" Padding="10"  BackgroundColor="Aquamarine">
+            <Label Text="Olá Mundo 1!" />
+            <Label Text="Olá Mundo 2!" />
+        </HorizontalStackLayout>
+        <Button Text="Olá mundo!" WidthRequest="200" HeightRequest="100" HorizontalOptions="Center" />
     </StackLayout>
 </ContentPage>

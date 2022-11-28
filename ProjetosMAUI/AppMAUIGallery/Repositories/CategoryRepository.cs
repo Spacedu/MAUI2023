@@ -1,4 +1,5 @@
 ﻿using AppMAUIGallery.Models;
+using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Layouts;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,19 @@ namespace AppMAUIGallery.Repositories
                         Title = "FlexLayout",
                         Description = "Organiza os elementos de forma sequencial com muitas opções de personalização.",
                         Page = typeof(FlexLayoutPage)
+                    }
+                }
+            });
+            categories.Add(new Category()
+            {
+                Name = "Componentes (Views)",
+                Components = new List<Component>
+                {
+                    new Component
+                    {
+                        Title = "BoxView",
+                        Description = "Um componente que cria um caixa para ser apresentada.",
+                        Page = typeof(BoxViewPage)
                     }
                 }
             });

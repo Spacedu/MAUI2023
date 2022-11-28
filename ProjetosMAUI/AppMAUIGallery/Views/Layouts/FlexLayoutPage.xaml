@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMAUIGallery.Views.Layouts.FlexLayoutPage"
              Title="FlexLayoutPage">
-    <FlexLayout Direction="Column" AlignItems="Start">
+    <FlexLayout Direction="Column" AlignItems="Start" JustifyContent="Start">
         <Label Text="Linha 1" Padding="10" BackgroundColor="RosyBrown" />
         <Label Text="Linha 2" FlexLayout.AlignSelf="Center" Padding="10" BackgroundColor="SandyBrown" />
         <Label Text="Linha 3" FlexLayout.AlignSelf="End"  Padding="10" BackgroundColor="SaddleBrown" TextColor="White" />

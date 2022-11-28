@@ -34,12 +34,6 @@ namespace AppMAUIGallery.Repositories
                         Title = "AbsoluteLayout",
                         Description = "Liberdade total para posicionar e dimensionar os elementos na tela.",
                         Page = typeof(AbsoluteLayoutPage)
-                    },
-                    new Component
-                    {
-                        Title = "FlexLayout",
-                        Description = "Organiza os elementos de forma sequencial e flexível. Este componente é inspirado no Flexbox do CSS.",
-                        Page = typeof(FlexLayoutPage)
                     }
                 }
             });

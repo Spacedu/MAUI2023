@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMAUIGallery.Views.Layouts.FlexLayoutPage"
              Title="FlexLayoutPage">
-    <FlexLayout Direction="Column">
+    <FlexLayout Direction="Column" AlignItems="Start">
         <Label Text="Linha 1" Padding="10" BackgroundColor="RosyBrown" />
-        <Label Text="Linha 2" Padding="10" BackgroundColor="SandyBrown" />
-        <Label Text="Linha 3" Padding="10" BackgroundColor="SaddleBrown" />
+        <Label Text="Linha 2" FlexLayout.AlignSelf="Center" Padding="10" BackgroundColor="SandyBrown" />
+        <Label Text="Linha 3" FlexLayout.AlignSelf="End"  Padding="10" BackgroundColor="SaddleBrown" TextColor="White" />
+        <Label Text="Linha 4" FlexLayout.AlignSelf="Stretch"  Padding="10" BackgroundColor="Black" TextColor="White" />
     </FlexLayout>
 </ContentPage>

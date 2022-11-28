@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMAUIGallery.Views.Layouts.FlexLayoutPage"
+             Title="FlexLayoutPage">
+    <FlexLayout Direction="Column">
+        <Label Text="Linha 1" Padding="10" BackgroundColor="RosyBrown" />
+        <Label Text="Linha 2" Padding="10" BackgroundColor="SandyBrown" />
+        <Label Text="Linha 3" Padding="10" BackgroundColor="SaddleBrown" />
+    </FlexLayout>
+</ContentPage>

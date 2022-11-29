@@ -4,22 +4,38 @@
              x:Class="AppMAUIGallery.Views.Components.Mains.LabelPage"
              Title="LabelPage">
     <VerticalStackLayout>
+        <Label Text="TEXT" BackgroundColor="Gray" Padding="10" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
         <Label 
             Text="Welcome to .NET MAUI!"
             TextColor="#FF0000"
             TextDecorations="Underline"
-            TextTransform="Lowercase" />
-        <Label 
+            TextTransform="Lowercase"
+            Padding="10"/>
+
+        <Label Text="Bem vindo ao .NET MAUI!"
+               FontSize="20"
+               FontAttributes="Italic"
+               FontFamily="OpenSansSemibold"
+               Padding="10" />
+        
+
+        <Label Text="HTML" BackgroundColor="Gray" Padding="10" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+        <Label
+            Padding="10"
+            BackgroundColor="LightGray"
             TextType="Html"
             Text="Bem-vindo ao &#34;.NET MAUI&#34;! &lt;i&gt; Você está gostando do MAUI?&lt;/i&gt;">
         </Label>
 
-        <Label TextType="Html">
+        <Label TextType="Html" Padding="10"
+            BackgroundColor="LightGray">
             <Label.Text>
                 <![CDATA[
                 <i>Olá mundo!</i> <br /> <strong>Como vai você? </strong>
                 ]]>
             </Label.Text>
         </Label>
+        
+        
     </VerticalStackLayout>
 </ContentPage>

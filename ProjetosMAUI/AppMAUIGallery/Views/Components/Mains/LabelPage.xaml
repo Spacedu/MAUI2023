@@ -9,5 +9,17 @@
             TextColor="#FF0000"
             TextDecorations="Underline"
             TextTransform="Lowercase" />
+        <Label 
+            TextType="Html"
+            Text="Bem-vindo ao &#34;.NET MAUI&#34;! &lt;i&gt; Você está gostando do MAUI?&lt;/i&gt;">
+        </Label>
+
+        <Label TextType="Html">
+            <Label.Text>
+                <![CDATA[
+                <i>Olá mundo!</i> <br /> <strong>Como vai você? </strong>
+                ]]>
+            </Label.Text>
+        </Label>
     </VerticalStackLayout>
 </ContentPage>

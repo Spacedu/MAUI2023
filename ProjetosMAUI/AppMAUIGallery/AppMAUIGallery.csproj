@@ -60,6 +60,9 @@
 	  <MauiXaml Update="Views\Components\Mains\BoxViewPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\Mains\ButtonPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\Mains\LabelPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

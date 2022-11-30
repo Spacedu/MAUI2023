@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMAUIGallery.Views.Components.Mains.ButtonPage"
+             Title="ButtonPage">
+    <VerticalStackLayout Padding="10">
+        <Label x:Name="LblLog" />
+        <Button Text="Clique-me" 
+                CornerRadius="22" 
+                BackgroundColor="White" 
+                TextColor="Blue" 
+                BorderColor="Blue" 
+                BorderWidth="2" 
+                HorizontalOptions="Center"
+                
+                Clicked="Button_Clicked"
+                Pressed="Button_Pressed"
+                Released="Button_Released"
+                
+                />
+    </VerticalStackLayout>
+</ContentPage>

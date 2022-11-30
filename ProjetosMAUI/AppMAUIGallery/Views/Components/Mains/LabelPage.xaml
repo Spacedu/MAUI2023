@@ -24,6 +24,14 @@
                LineBreakMode="TailTruncation"
                />
 
+        <Label Padding="10">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Lorem Ipsum" TextDecorations="Underline" TextColor="Blue"  FontAttributes="Bold" />
+                    <Span Text=" is simply dummy text of the printing" FontAttributes="Italic" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
         <Label Text="HTML" BackgroundColor="Gray" Padding="10" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
         <Label
             Padding="10"

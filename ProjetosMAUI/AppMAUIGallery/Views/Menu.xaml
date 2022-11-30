@@ -6,24 +6,26 @@
              Padding="20"
              BackgroundColor="#F3F3F3"
              >
-    <VerticalStackLayout Spacing="10">
-        <Label 
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <Label 
             Text="MAUI - Gallery"
             Margin="30"
             FontSize="24"
             FontFamily="OpenSansSemibold"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Label Text="Início">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnTapInicio" />
-            </Label.GestureRecognizers>
-        </Label>
-        <Label Text="Extra" />
-        <Label Text="Créditos"/>
+            <Label Text="Início">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapInicio" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Extra" />
+            <Label Text="Créditos"/>
 
-        <VerticalStackLayout Margin="0, 10, 0, 0" x:Name="MenuContainer">
-            
+            <VerticalStackLayout Margin="0, 10, 0, 0" x:Name="MenuContainer">
+
+            </VerticalStackLayout>
         </VerticalStackLayout>
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

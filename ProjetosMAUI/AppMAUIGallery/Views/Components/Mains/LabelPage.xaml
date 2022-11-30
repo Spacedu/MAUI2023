@@ -24,6 +24,7 @@
                LineBreakMode="TailTruncation"
                />
 
+        
         <Label Padding="10">
             <Label.FormattedText>
                 <FormattedString>
@@ -32,6 +33,8 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+
+        <Label Text=".NET MAUI" BackgroundColor="#F2F2F2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="150" HorizontalOptions="FillAndExpand" Padding="10" FontSize="20" FontAttributes="Bold" />
         <Label Text="HTML" BackgroundColor="Gray" Padding="10" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
         <Label
             Padding="10"

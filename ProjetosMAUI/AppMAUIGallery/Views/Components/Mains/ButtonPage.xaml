@@ -6,12 +6,16 @@
     <VerticalStackLayout Padding="10">
         <Label x:Name="LblLog" />
         <Button Text="Clique-me" 
-                CornerRadius="22" 
+                CornerRadius="30" 
                 BackgroundColor="White" 
                 TextColor="Blue" 
                 BorderColor="Blue" 
                 BorderWidth="2" 
                 HorizontalOptions="Center"
+                HeightRequest="60"
+                
+                ImageSource="dotnet_bot.png"
+                ContentLayout="Left, 5"
                 
                 Clicked="Button_Clicked"
                 Pressed="Button_Pressed"

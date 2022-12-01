@@ -5,12 +5,16 @@
              Title="ImagePage">
     <VerticalStackLayout>
         <Image 
-            Aspect="AspectFill"
+            Source="http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png" 
+            Aspect="Center"
+            IsOpaque="True"
+            IsAnimationPlaying="True"
+            
+            x:Name="Imagem01"
             BackgroundColor="Gray"
-            WidthRequest="400"
-            HeightRequest="200"
-            Source="http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png" />
+            />
         <Image
-            Source="dotnet_bot.png"/>
+            Source="dotnet_bot.png"
+            Aspect="Center"/>
     </VerticalStackLayout>
 </ContentPage>

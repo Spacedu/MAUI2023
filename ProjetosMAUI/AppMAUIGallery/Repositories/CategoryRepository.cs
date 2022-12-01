@@ -66,6 +66,12 @@ namespace AppMAUIGallery.Repositories
                         Title = "Button",
                         Description = "Apresenta um botão na tela.",
                         Page = typeof(ButtonPage)
+                    },
+                    new Component
+                    {
+                        Title = "Image",
+                        Description = "Apresenta uma imagem na tela.",
+                        Page = typeof(ImagePage)
                     }
                 }
             });

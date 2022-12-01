@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMAUIGallery.Views.Components.Mains.ImagePage"
+             Title="ImagePage">
+    <VerticalStackLayout>
+        <Image 
+            Aspect="AspectFill"
+            BackgroundColor="Gray"
+            WidthRequest="400"
+            HeightRequest="200"
+            Source="http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png" />
+        <Image
+            Source="dotnet_bot.png"/>
+    </VerticalStackLayout>
+</ContentPage>

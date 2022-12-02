@@ -7,6 +7,7 @@
         <FlexLayout Direction="Column" JustifyContent="SpaceBetween">
 
             <Image
+                x:Name="ImgMain"
                 Source="forca1.png"
                 HeightRequest="200"
                 Margin="0, 20, 0, 0"
@@ -25,7 +26,7 @@
                 FontSize="36"
                 HorizontalOptions="Center" />
 
-            <VerticalStackLayout Spacing="3">
+            <VerticalStackLayout x:Name="KeyboardContainer" Spacing="3">
                 <HorizontalStackLayout Spacing="3" HorizontalOptions="Center">
                     <Button
                         Text="Q"

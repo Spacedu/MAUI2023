@@ -22,8 +22,8 @@
                 FontSize="36"
                 HorizontalOptions="Center" />
 
-            <VerticalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center">
+            <VerticalStackLayout Spacing="3">
+                <HorizontalStackLayout Spacing="3" HorizontalOptions="Center">
                     <Button
                         Text="Q"
                         HorizontalOptions="Center" />
@@ -55,7 +55,7 @@
                         Text="P"
                         HorizontalOptions="Center" />
                 </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center">
+                <HorizontalStackLayout Spacing="3" HorizontalOptions="Center">
                     <Button
                         Text="A"
                         HorizontalOptions="Center" />
@@ -84,7 +84,7 @@
                         Text="L"
                         HorizontalOptions="Center" />
                 </HorizontalStackLayout>
-                <HorizontalStackLayout Margin="0, 0, 0, 10" HorizontalOptions="Center">
+                <HorizontalStackLayout Spacing="3" Margin="0, 0, 0, 10" HorizontalOptions="Center">
                 <Button
                     Text="Z"
                     HorizontalOptions="Center" />

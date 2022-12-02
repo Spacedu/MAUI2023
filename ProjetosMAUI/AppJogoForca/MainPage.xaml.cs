@@ -1,24 +1,25 @@
-﻿namespace AppJogoForca
+﻿using AppJogoForca.Models;
+using AppJogoForca.Repositories;
+
+namespace AppJogoForca
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
+        private Word _word;
         public MainPage()
         {
             InitializeComponent();
+
+            var repository = new WordRepositories();
+            _word = repository.GetRandomWord();
+
+            LblTips.Text = _word.Tips;
+            LblText.Text = new string('_', _word.Text.Length);
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnButtonClicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            String letter = ((Button)sender).Text;
         }
     }
 }

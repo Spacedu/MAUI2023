@@ -13,12 +13,15 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="[Dica]"
+                x:Name="LblTips"
+                Text=""
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="_ _ _ _ _ _ _ _ _"
+                x:Name="LblText"
+                CharacterSpacing="5"
+                Text=""
                 FontSize="36"
                 HorizontalOptions="Center" />
 
@@ -26,87 +29,139 @@
                 <HorizontalStackLayout Spacing="3" HorizontalOptions="Center">
                     <Button
                         Text="Q"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center"
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="W"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center"
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="E"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="R"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="T"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="Y"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="U"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="I"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="O"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="P"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Spacing="3" HorizontalOptions="Center">
                     <Button
                         Text="A"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center"
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="S"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="D"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="F"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="G"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="H"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="J"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="K"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                     <Button
                         Text="L"
-                        HorizontalOptions="Center" />
+                        HorizontalOptions="Center" 
+                        Clicked="OnButtonClicked"
+                        />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Spacing="3" Margin="0, 0, 0, 10" HorizontalOptions="Center">
-                <Button
+                    <Button
                     Text="Z"
-                    HorizontalOptions="Center" />
-                <Button
+                    HorizontalOptions="Center"
+                    Clicked="OnButtonClicked"
+                    />
+                    <Button
                     Text="X"
-                    HorizontalOptions="Center" />
-                <Button
+                    HorizontalOptions="Center" 
+                    Clicked="OnButtonClicked"
+                    />
+                    <Button
                     Text="C"
-                    HorizontalOptions="Center" />
-                <Button
+                    HorizontalOptions="Center" 
+                    Clicked="OnButtonClicked"
+                    />
+                    <Button
                     Text="V"
-                    HorizontalOptions="Center" />
-                <Button
+                    HorizontalOptions="Center" 
+                    Clicked="OnButtonClicked"
+                    />
+                    <Button
                     Text="B"
-                    HorizontalOptions="Center" />
-                <Button
+                    HorizontalOptions="Center" 
+                    Clicked="OnButtonClicked"
+                    />
+                    <Button
                     Text="N"
-                    HorizontalOptions="Center" />
-                <Button
+                    HorizontalOptions="Center" 
+                    Clicked="OnButtonClicked"
+                    />
+                    <Button
                     Text="M"
-                    HorizontalOptions="Center" />
-            </HorizontalStackLayout>
+                    HorizontalOptions="Center" 
+                    Clicked="OnButtonClicked"
+                    />
+                </HorizontalStackLayout>
             </VerticalStackLayout>
 
         </FlexLayout>

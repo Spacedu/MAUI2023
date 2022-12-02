@@ -24,27 +24,57 @@ namespace AppJogoForca
 
             var positions = _word.Text.GetPositions(letter);
 
-            if(positions.Count == 0)
+            if (positions.Count == 0)
             {
-                _errors++;
-                ImgMain.Source = ImageSource.FromFile($"forca{_errors + 1}.png");
-                button.Style = App.Current.Resources.MergedDictionaries.ElementAt(1)["Fail"] as Style;
-                if(_errors == 6)
-                {
-                    await DisplayAlert("Perdeu!", "Você foi enforcado!", "Novo jogo");
-                    ResetScreen();
-                }
+                ErrorHandler(button);
+                await IsGameOver();
                 return;
             }
 
-            foreach(int position in positions)
+            ReplaceLetter(letter, positions);
+            button.Style = App.Current.Resources.MergedDictionaries.ElementAt(1)["Success"] as Style;
+
+            await HasWinner();
+        }
+        private void OnButtonClickedResetGame(object sender, EventArgs e)
+        {
+            ResetScreen();
+        }
+
+        #region Handler Success
+        private void ReplaceLetter(string letter, List<int> positions)
+        {
+            foreach (int position in positions)
             {
                 LblText.Text = LblText.Text.Remove(position, 1).Insert(position, letter);
             }
-            button.Style = App.Current.Resources.MergedDictionaries.ElementAt(1)["Success"] as Style;
         }
-
-
+        private async Task HasWinner()
+        {
+            if (!LblText.Text.Contains("_"))
+            {
+                await DisplayAlert("Parabéns!", "Você foi ganhou o jogo!", "Novo jogo");
+                ResetScreen();
+            }
+        }
+        #endregion
+        #region Handler Error
+        private void ErrorHandler(Button button)
+        {
+            _errors++;
+            ImgMain.Source = ImageSource.FromFile($"forca{_errors + 1}.png");
+            button.Style = App.Current.Resources.MergedDictionaries.ElementAt(1)["Fail"] as Style;
+        }
+        private async Task IsGameOver()
+        {
+            if (_errors == 6)
+            {
+                await DisplayAlert("Perdeu!", "Você foi enforcado!", "Novo jogo");
+                ResetScreen();
+            }
+        }
+        #endregion
+        #region Reset Screen - Back Screen to Initial State
         private void ResetScreen()
         {
             ResetVirtualKeyboard();
@@ -78,5 +108,7 @@ namespace AppJogoForca
                 button.Style = null;
             }
         }
+        #endregion
+
     }
 }

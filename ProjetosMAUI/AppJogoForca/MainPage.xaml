@@ -5,7 +5,7 @@
     
     <ScrollView>
         <FlexLayout Direction="Column" JustifyContent="SpaceBetween">
-
+            <Button Margin="0, 10, 0, 0"  HorizontalOptions="Center" Text="Reiniciar" Clicked="OnButtonClickedResetGame" />
             <Image
                 x:Name="ImgMain"
                 Source="forca1.png"

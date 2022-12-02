@@ -17,8 +17,10 @@ namespace AppJogoForca
 
         private async void OnButtonClicked(object sender, EventArgs e)
         {
-            ((Button)sender).IsEnabled = false;
-            String letter = ((Button)sender).Text;
+            Button button = ((Button)sender);
+            button.IsEnabled = false;
+
+            String letter = button.Text;
 
             var positions = _word.Text.GetPositions(letter);
 
@@ -26,7 +28,7 @@ namespace AppJogoForca
             {
                 _errors++;
                 ImgMain.Source = ImageSource.FromFile($"forca{_errors + 1}.png");
-
+                button.Style = App.Current.Resources.MergedDictionaries.ElementAt(1)["Fail"] as Style;
                 if(_errors == 6)
                 {
                     await DisplayAlert("Perdeu!", "Você foi enforcado!", "Novo jogo");
@@ -39,6 +41,7 @@ namespace AppJogoForca
             {
                 LblText.Text = LblText.Text.Remove(position, 1).Insert(position, letter);
             }
+            button.Style = App.Current.Resources.MergedDictionaries.ElementAt(1)["Success"] as Style;
         }
 
 
@@ -72,6 +75,7 @@ namespace AppJogoForca
             foreach(Button button in horizontal.Children)
             {
                 button.IsEnabled = true;
+                button.Style = null;
             }
         }
     }

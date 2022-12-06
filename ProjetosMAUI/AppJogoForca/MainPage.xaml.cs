@@ -53,7 +53,7 @@ namespace AppJogoForca
         {
             if (!LblText.Text.Contains("_"))
             {
-                await DisplayAlert("Parabéns!", "Você foi ganhou o jogo!", "Novo jogo");
+                await DisplayAlert("Parabéns!", "Você ganhou o jogo!", "Novo jogo");
                 ResetScreen();
             }
         }

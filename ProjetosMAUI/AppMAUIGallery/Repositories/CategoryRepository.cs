@@ -1,5 +1,6 @@
 ﻿using AppMAUIGallery.Models;
 using AppMAUIGallery.Views.Components.Mains;
+using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
 using System;
 using System.Collections.Generic;
@@ -81,7 +82,17 @@ namespace AppMAUIGallery.Repositories
                     }
                 }
             });
-
+            categories.Add(new Category
+            {
+                Name = "Visuais",
+                Components = new List<Component> {
+                    new Component {
+                        Title = "Frame",
+                        Description = "Caixa que envolve outros elementos.",
+                        Page = typeof(FramePage)
+                    }
+                }
+            });
             return categories;
         }
     }

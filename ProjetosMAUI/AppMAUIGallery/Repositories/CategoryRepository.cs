@@ -95,6 +95,11 @@ namespace AppMAUIGallery.Repositories
                         Title = "Border",
                         Description = "Caixa que envolve outros elementos.",
                         Page = typeof(BorderPage)
+                    },
+                    new Component {
+                        Title = "Shadow",
+                        Description = "Adiciona uma sobra ao elemento.",
+                        Page = typeof(ShadowPage)
                     }
                 }
             });

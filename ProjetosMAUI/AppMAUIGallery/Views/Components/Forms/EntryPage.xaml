@@ -13,6 +13,7 @@
             Text=""
             TextColor="Red"
             
+            IsReadOnly="True"
             IsPassword="False"
             ClearButtonVisibility="WhileEditing"
             

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMAUIGallery.Views.Components.Forms.EditorPage"
+             Title="EditorPage">
+    <VerticalStackLayout Padding="10">
+        <Label 
+            Text="Faça um resumo do seu caso:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Editor AutoSize="TextChanges" IsReadOnly="True" />
+    </VerticalStackLayout>
+</ContentPage>

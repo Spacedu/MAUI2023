@@ -29,6 +29,12 @@
             PlaceholderColor="Gray"
             
             ReturnType="Default"
+            
+            TextChanged="Entry_TextChanged"
+            Completed="Entry_Completed"
+            
+            
             />
+        <Label x:Name="LblText" />
     </VerticalStackLayout>
 </ContentPage>

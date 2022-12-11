@@ -6,4 +6,14 @@ public partial class EntryPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+		LblText.Text = $"Antigo: {e.OldTextValue} - Novo: {e.NewTextValue}";
+    }
+
+    private void Entry_Completed(object sender, EventArgs e)
+    {
+        LblText.Text = "Concluído!";
+    }
 }

@@ -143,6 +143,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Cria barra que incrementar ou decrementar um número.",
                         Page = typeof(SliderPage)
                     },
+                    new Component {
+                        Title = "TimePicker",
+                        Description = "Seleção da Hora e do Minuto.",
+                        Page = typeof(TimePickerPage)
+                    },
                 }
             });
             return categories;

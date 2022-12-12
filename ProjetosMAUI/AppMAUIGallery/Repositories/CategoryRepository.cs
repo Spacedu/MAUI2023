@@ -153,6 +153,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Seleção da Data.",
                         Page = typeof(DatePickerPage)
                     },
+                    new Component {
+                        Title = "SearchBar",
+                        Description = "Campo de entrada de texto para pesquisa.",
+                        Page = typeof(SearchBarPage)
+                    },
                 }
             });
             return categories;

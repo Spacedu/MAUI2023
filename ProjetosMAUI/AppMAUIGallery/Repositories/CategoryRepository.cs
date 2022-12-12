@@ -123,6 +123,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Cria uma caixa de marcação.",
                         Page = typeof(CheckBoxPage)
                     },
+                    new Component {
+                        Title = "RadioButton",
+                        Description = "Cria uma caixa de marcação de escolha única.",
+                        Page = typeof(RadioButtonPage)
+                    },
                 }
             });
             return categories;

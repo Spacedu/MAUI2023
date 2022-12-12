@@ -138,6 +138,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Cria opções de incrementar ou decrementar um número.",
                         Page = typeof(StepperPage)
                     },
+                    new Component {
+                        Title = "Slider",
+                        Description = "Cria barra que incrementar ou decrementar um número.",
+                        Page = typeof(SliderPage)
+                    },
                 }
             });
             return categories;

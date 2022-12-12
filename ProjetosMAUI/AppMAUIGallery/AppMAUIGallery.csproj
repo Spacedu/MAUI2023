@@ -74,6 +74,9 @@
 	  <MauiXaml Update="Views\Components\Forms\RadioButtonPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\Forms\SliderPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\Forms\StepperPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

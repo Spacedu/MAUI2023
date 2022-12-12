@@ -9,9 +9,10 @@
                 Text="Qual linguagem de programação você mais gosta?"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start" />
-            <RadioButton Content="C#" />
-            <RadioButton Content="Java"/>
-            <RadioButton Content="JavaScript" BorderWidth="1" BorderColor="Blue" CornerRadius="10" />
+            <RadioButton Content="C#" Value="C#" CheckedChanged="RadioButton_CheckedChanged" />
+            <RadioButton Content="Java" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton Content="JavaScript" BorderWidth="1" BorderColor="Blue" CornerRadius="10" CheckedChanged="RadioButton_CheckedChanged" />
+            <Label x:Name="LblResultAsk01" />
         </StackLayout>
         <StackLayout RadioButtonGroup.GroupName="ask02">
             <Label 

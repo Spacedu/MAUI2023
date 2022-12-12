@@ -148,6 +148,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Seleção da Hora e do Minuto.",
                         Page = typeof(TimePickerPage)
                     },
+                    new Component {
+                        Title = "DatePicker",
+                        Description = "Seleção da Data.",
+                        Page = typeof(DatePickerPage)
+                    },
                 }
             });
             return categories;

@@ -185,6 +185,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Apresenta uma label em conjunto com um switch.",
                         Page = typeof(SwitchCellPage)
                     },
+                    new Component {
+                        Title = "EntryCell",
+                        Description = "Apresenta uma label em conjunto com um entry.",
+                        Page = typeof(EntryCellPage)
+                    },
                 }
             });
 

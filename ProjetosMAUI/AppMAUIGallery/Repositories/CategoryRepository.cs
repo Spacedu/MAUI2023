@@ -190,6 +190,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Apresenta uma label em conjunto com um entry.",
                         Page = typeof(EntryCellPage)
                     },
+                    new Component {
+                        Title = "ViewCell",
+                        Description = "Permite criar a nossa célular com layout personalizado.",
+                        Page = typeof(ViewCellPage)
+                    },
                 }
             });
 

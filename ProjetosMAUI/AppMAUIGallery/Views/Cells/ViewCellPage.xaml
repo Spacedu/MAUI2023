@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Cells.ViewCellPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ViewCellPage">
+    <VerticalStackLayout>
+        <TableView>
+            <TableSection Title="Colaboradores">
+                <ViewCell>
+                    <Grid ColumnDefinitions="70, *, 70">
+                        <Image Margin="15" Source="dotnet_bot.png" />
+                        <VerticalStackLayout Grid.Column="1">
+                            <Label
+                                Margin="10,0,0,0"
+                                FontSize="30"
+                                Text="José Rodrigues Freitas" />
+                            <Label
+                                Margin="10,0,0,0"
+                                Text="Presidente (CEO)"
+                                TextColor="Gray" />
+                        </VerticalStackLayout>
+                        <Button
+                            Grid.Column="2"
+                            HorizontalOptions="Center"
+                            Text="Excluir"
+                            VerticalOptions="Center" />
+                    </Grid>
+
+                </ViewCell>
+            </TableSection>
+        </TableView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -175,6 +175,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Apresenta até duas labels onde uma é destinada ao título e outra a descrição.",
                         Page = typeof(TextCellPage)
                     },
+                    new Component {
+                        Title = "ImageCell",
+                        Description = "Apresenta uma imagem com duas labels onde uma é destinada ao título e outra a descrição.",
+                        Page = typeof(ImageCellPage)
+                    },
                 }
             });
 

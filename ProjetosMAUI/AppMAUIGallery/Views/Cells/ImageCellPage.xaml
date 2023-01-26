@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Cells.ImageCellPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ImageCellPage">
+    <VerticalStackLayout>
+        <TableView>
+            <TableSection Title="Lista de colaboradores">
+                <ImageCell
+                    Detail="Analista de Sistemas"
+                    DetailColor="Gray"
+                    ImageSource="https://cdn.slidesharecdn.com/profile-photo-rutefaria-48x48.jpg?cb=1626206876"
+                    Text="Maria Rodrigues"
+                    TextColor="Blue" />
+            </TableSection>
+        </TableView>
+    </VerticalStackLayout>
+</ContentPage>

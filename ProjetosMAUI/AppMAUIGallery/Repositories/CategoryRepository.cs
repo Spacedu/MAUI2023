@@ -4,6 +4,7 @@ using AppMAUIGallery.Views.Components.Forms;
 using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
+using AppMAUIGallery.Views.Lists;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -197,7 +198,17 @@ namespace AppMAUIGallery.Repositories
                     },
                 }
             });
-
+            categories.Add(new Category
+            {
+                Name = "Listas e Coleções",
+                Components = new List<Component> {
+                    new Component {
+                        Title = "TableView",
+                        Description = "Apresenta células em linhas separadas e permite agrupar por seção",
+                        Page = typeof(TableViewPage)
+                    },
+                }
+            });
             return categories;
         }
     }

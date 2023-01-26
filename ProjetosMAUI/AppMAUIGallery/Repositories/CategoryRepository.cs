@@ -180,6 +180,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Apresenta uma imagem com duas labels onde uma é destinada ao título e outra a descrição.",
                         Page = typeof(ImageCellPage)
                     },
+                    new Component {
+                        Title = "SwitchCell",
+                        Description = "Apresenta uma label em conjunto com um switch.",
+                        Page = typeof(SwitchCellPage)
+                    },
                 }
             });
 

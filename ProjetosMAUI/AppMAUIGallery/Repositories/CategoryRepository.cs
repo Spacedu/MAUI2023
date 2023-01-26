@@ -1,4 +1,5 @@
 ﻿using AppMAUIGallery.Models;
+using AppMAUIGallery.Views.Cells;
 using AppMAUIGallery.Views.Components.Forms;
 using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Components.Visuals;
@@ -165,6 +166,18 @@ namespace AppMAUIGallery.Repositories
                     },
                 }
             });
+            categories.Add(new Category
+            {
+                Name = "Células",
+                Components = new List<Component> {
+                    new Component {
+                        Title = "TextCell",
+                        Description = "Apresenta até duas labels onde uma é destinada ao título e outra a descrição.",
+                        Page = typeof(TextCellPage)
+                    },
+                }
+            });
+
             return categories;
         }
     }

@@ -13,6 +13,11 @@ namespace AppMAUIGallery.Views.Lists.Models
         public String Description { get; set; }
         public TimeSpan Duration { get; set; }
         public short LaunchYear { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id} - {Name} - {LaunchYear}";
+        }
     }
 
     public class MovieList

@@ -13,4 +13,11 @@ public partial class ListViewPage : ContentPage
     {
         ListViewControl.ItemsSource = MovieList.GetList();
     }
+
+    private void ListViewControl_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        var movie = (Movie)e.SelectedItem;
+
+        App.Current.MainPage.DisplayAlert("Filme selecionado!", $"O filme selecionado é: {movie.Name}", "OK");
+    }
 }

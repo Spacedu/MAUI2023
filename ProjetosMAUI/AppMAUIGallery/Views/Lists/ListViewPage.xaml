@@ -5,7 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="ListViewPage">
 
-    <ListView x:Name="ListViewControl">
+    <ListView
+        x:Name="ListViewControl"
+        ItemSelected="ListViewControl_ItemSelected"
+        SelectionMode="Single">
         <ListView.Header>
             <Button Clicked="Button_Clicked" Text="Carregar" />
         </ListView.Header>

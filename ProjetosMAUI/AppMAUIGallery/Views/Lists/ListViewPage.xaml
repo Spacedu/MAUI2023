@@ -8,15 +8,28 @@
     <ListView
         x:Name="ListViewControl"
         HasUnevenRows="True"
+        IsGroupingEnabled="True"
         IsPullToRefreshEnabled="True"
-        Refreshing="ListViewControl_Refreshing"
         ItemSelected="ListViewControl_ItemSelected"
+        Refreshing="ListViewControl_Refreshing"
         SelectionMode="Single"
         SeparatorColor="Blue"
         SeparatorVisibility="Default">
         <ListView.Header>
             <Button Clicked="Button_Clicked" Text="Carregar" />
         </ListView.Header>
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <VerticalStackLayout Padding="10" BackgroundColor="Purple">
+                        <Label
+                            FontAttributes="Bold"
+                            Text="{Binding CompanyName}"
+                            TextColor="White" />
+                    </VerticalStackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

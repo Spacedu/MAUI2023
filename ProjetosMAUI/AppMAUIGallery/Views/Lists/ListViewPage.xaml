@@ -7,6 +7,7 @@
 
     <ListView
         x:Name="ListViewControl"
+        HasUnevenRows="True"
         ItemSelected="ListViewControl_ItemSelected"
         SelectionMode="Single">
         <ListView.Header>

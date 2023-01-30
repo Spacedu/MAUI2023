@@ -8,8 +8,12 @@
     <ListView
         x:Name="ListViewControl"
         HasUnevenRows="True"
+        IsPullToRefreshEnabled="True"
+        Refreshing="ListViewControl_Refreshing"
         ItemSelected="ListViewControl_ItemSelected"
-        SelectionMode="Single">
+        SelectionMode="Single"
+        SeparatorColor="Blue"
+        SeparatorVisibility="Default">
         <ListView.Header>
             <Button Clicked="Button_Clicked" Text="Carregar" />
         </ListView.Header>

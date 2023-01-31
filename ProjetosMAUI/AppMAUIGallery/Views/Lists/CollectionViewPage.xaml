@@ -5,7 +5,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CollectionViewPage">
     <RefreshView RefreshColor="Purple" Refreshing="RefreshView_Refreshing">
-        <CollectionView x:Name="CollectionViewControl" RemainingItemsThreshold="3" RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached">
+        <CollectionView
+            x:Name="CollectionViewControl"
+            IsGrouped="True"
+            RemainingItemsThreshold="-1"
+            RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached">
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Padding="10" BackgroundColor="LightGray">
+                        <Label Text="Início " />
+                        <Label Text="{Binding CompanyName}" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <VerticalStackLayout Padding="10">
@@ -22,6 +34,14 @@
                     </VerticalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+            <CollectionView.GroupFooterTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Padding="10" BackgroundColor="#F2F2F2">
+                        <Label Text="Final " />
+                        <Label Text="{Binding CompanyName}" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.GroupFooterTemplate>
         </CollectionView>
     </RefreshView>
 </ContentPage>

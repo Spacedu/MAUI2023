@@ -12,7 +12,7 @@ public partial class CollectionViewPage : ContentPage
 		InitializeComponent();
 
 		AddTenMovies();
-		CollectionViewControl.ItemsSource = movies;
+		CollectionViewControl.ItemsSource = MovieList.GetGroupList();
 	}
 
     private async void RefreshView_Refreshing(object sender, EventArgs e)

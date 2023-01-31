@@ -10,6 +10,13 @@
             IsGrouped="True"
             RemainingItemsThreshold="-1"
             RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    HorizontalItemSpacing="30"
+                    Orientation="Vertical"
+                    Span="2"
+                    VerticalItemSpacing="10" />
+            </CollectionView.ItemsLayout>
             <CollectionView.GroupHeaderTemplate>
                 <DataTemplate>
                     <HorizontalStackLayout Padding="10" BackgroundColor="LightGray">

@@ -4,22 +4,24 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CollectionViewPage">
-    <CollectionView x:Name="CollectionViewControl">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <VerticalStackLayout Padding="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontSize="16"
-                        Text="{Binding Name}" />
-                    <Label Text="{Binding Description}" TextColor="Gray" />
-                    <HorizontalStackLayout>
-                        <Label Margin="10" Text="{Binding LaunchYear}" />
-                        <Label Margin="10" Text="{Binding Duration}" />
-                    </HorizontalStackLayout>
-                    <BoxView HeightRequest="1" Color="LightGray" />
-                </VerticalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <RefreshView RefreshColor="Purple" Refreshing="RefreshView_Refreshing">
+        <CollectionView x:Name="CollectionViewControl">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Text="{Binding Name}" />
+                        <Label Text="{Binding Description}" TextColor="Gray" />
+                        <HorizontalStackLayout>
+                            <Label Margin="10" Text="{Binding LaunchYear}" />
+                            <Label Margin="10" Text="{Binding Duration}" />
+                        </HorizontalStackLayout>
+                        <BoxView HeightRequest="1" Color="LightGray" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
 </ContentPage>

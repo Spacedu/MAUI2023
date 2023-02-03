@@ -57,4 +57,13 @@ public partial class CollectionViewPage : ContentPage
         }
 		LblSelectedMovies.Text = sb.ToString();
     }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+		var group = (List<GroupMovie>)CollectionViewControl.ItemsSource;
+		var item = group[2][0];
+
+        CollectionViewControl.ScrollTo(item, position: ScrollToPosition.Start);
+        //CollectionViewControl.ScrollTo(4, position: ScrollToPosition.Start);
+    }
 }

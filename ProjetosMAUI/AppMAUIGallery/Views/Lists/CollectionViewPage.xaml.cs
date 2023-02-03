@@ -1,5 +1,6 @@
 using AppMAUIGallery.Views.Lists.Models;
 using System.Collections.ObjectModel;
+using System.Text;
 
 namespace AppMAUIGallery.Views.Lists;
 
@@ -46,4 +47,14 @@ public partial class CollectionViewPage : ContentPage
 		}
 
 	}
+
+    private void CollectionViewControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+		StringBuilder sb = new StringBuilder();
+		foreach(Movie movie in e.CurrentSelection)
+		{
+			sb.Append(movie.Name + " - ");
+        }
+		LblSelectedMovies.Text = sb.ToString();
+    }
 }

@@ -9,7 +9,12 @@
             x:Name="CollectionViewControl"
             IsGrouped="True"
             RemainingItemsThreshold="-1"
-            RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached">
+            RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached"
+            SelectionChanged="CollectionViewControl_SelectionChanged"
+            SelectionMode="Multiple">
+            <CollectionView.Header>
+                <Label x:Name="LblSelectedMovies" />
+            </CollectionView.Header>
             <CollectionView.ItemsLayout>
                 <GridItemsLayout
                     HorizontalItemSpacing="30"

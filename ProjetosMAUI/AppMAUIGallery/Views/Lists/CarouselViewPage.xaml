@@ -4,10 +4,15 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CarouselViewPage">
-    <CarouselView x:Name="CarouselViewControl">
+    <CarouselView
+        x:Name="CarouselViewControl"
+        IsSwipeEnabled="True"
+        Loop="False"
+        PeekAreaInsets="50"
+        Position="0">
         <CarouselView.ItemTemplate>
             <DataTemplate>
-                <VerticalStackLayout>
+                <VerticalStackLayout Margin="10" BackgroundColor="#F2F2F2">
                     <Label
                         Padding="10"
                         FontAttributes="Bold"

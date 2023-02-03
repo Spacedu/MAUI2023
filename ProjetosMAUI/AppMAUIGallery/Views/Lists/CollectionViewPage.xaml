@@ -11,6 +11,7 @@
                 IsGrouped="True"
                 RemainingItemsThreshold="-1"
                 RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached"
+                Scrolled="CollectionViewControl_Scrolled"
                 SelectionChanged="CollectionViewControl_SelectionChanged"
                 SelectionMode="Multiple">
                 <CollectionView.Header>
@@ -60,5 +61,12 @@
             HorizontalOptions="End"
             Text="Vá para filme 8"
             VerticalOptions="Start" />
+
+        <Label
+            x:Name="LblScrollStatus"
+            Padding="10"
+            BackgroundColor="LightGray"
+            HorizontalOptions="End"
+            VerticalOptions="End" />
     </Grid>
 </ContentPage>

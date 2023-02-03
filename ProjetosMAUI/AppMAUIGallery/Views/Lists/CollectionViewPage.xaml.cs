@@ -66,4 +66,9 @@ public partial class CollectionViewPage : ContentPage
         CollectionViewControl.ScrollTo(item, position: ScrollToPosition.Start);
         //CollectionViewControl.ScrollTo(4, position: ScrollToPosition.Start);
     }
+
+    private void CollectionViewControl_Scrolled(object sender, ItemsViewScrolledEventArgs e)
+    {
+		LblScrollStatus.Text = $"Posicionamento: {e.VerticalOffset} - Espaçamento: {e.VerticalDelta}";
+    }
 }

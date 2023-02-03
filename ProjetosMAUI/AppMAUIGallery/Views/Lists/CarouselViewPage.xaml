@@ -4,6 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CarouselViewPage">
+
+    <ContentPage.Resources>
+        <Style x:Key="IndicatorStyle" TargetType="BoxView">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Color" Value="#DFD8F7" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="Color" Value="#512BD4" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
     <Grid>
         <CarouselView
             x:Name="CarouselViewControl"
@@ -41,6 +62,7 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+        <!-- Indicador Normal
         <IndicatorView
             x:Name="IndicatorViewControl"
             Margin="10"
@@ -50,5 +72,27 @@
             IndicatorsShape="Circle"
             SelectedIndicatorColor="#512BD4"
             VerticalOptions="End" />
+        -->
+
+        <!--  Indicador com Template  -->
+        <IndicatorView
+            x:Name="IndicatorViewControl"
+            Margin="10"
+            HorizontalOptions="Center"
+            IndicatorColor="Transparent"
+            IndicatorSize="16"
+            IndicatorsShape="Circle"
+            SelectedIndicatorColor="Transparent"
+            VerticalOptions="End">
+            <IndicatorView.IndicatorTemplate>
+                <DataTemplate>
+                    <BoxView
+                        CornerRadius="3"
+                        HeightRequest="10"
+                        Style="{StaticResource IndicatorStyle}"
+                        WidthRequest="20" />
+                </DataTemplate>
+            </IndicatorView.IndicatorTemplate>
+        </IndicatorView>
     </Grid>
 </ContentPage>

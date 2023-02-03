@@ -222,6 +222,11 @@ namespace AppMAUIGallery.Repositories
                         Description = "Apresenta uma lista de itens.",
                         Page = typeof(CollectionViewPage)
                     },
+                    new Component {
+                        Title = "CarouselView",
+                        Description = "Apresenta uma lista de itens horizontais com navegação lateral.",
+                        Page = typeof(CarouselViewPage)
+                    }
                 }
             });
             return categories;

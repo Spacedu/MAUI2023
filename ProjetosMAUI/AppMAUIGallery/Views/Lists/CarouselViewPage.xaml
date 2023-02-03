@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Lists.CarouselViewPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="CarouselViewPage">
+    <CarouselView x:Name="CarouselViewControl">
+        <CarouselView.ItemTemplate>
+            <DataTemplate>
+                <VerticalStackLayout>
+                    <Label
+                        Padding="10"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        Text="{Binding Name}" />
+                    <Label
+                        Padding="10"
+                        Text="{Binding Description}"
+                        TextColor="Gray" />
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
+                        <Label Text="{Binding LaunchYear}" />
+                        <Label Text="{Binding Duration}" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+</ContentPage>

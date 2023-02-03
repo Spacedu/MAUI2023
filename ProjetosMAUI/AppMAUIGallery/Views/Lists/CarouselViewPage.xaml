@@ -10,6 +10,13 @@
         Loop="False"
         PeekAreaInsets="50"
         Position="0">
+        <CarouselView.ItemsLayout>
+            <LinearItemsLayout
+                ItemSpacing="0"
+                Orientation="Horizontal"
+                SnapPointsAlignment="End"
+                SnapPointsType="Mandatory" />
+        </CarouselView.ItemsLayout>
         <CarouselView.ItemTemplate>
             <DataTemplate>
                 <VerticalStackLayout Margin="10" BackgroundColor="#F2F2F2">

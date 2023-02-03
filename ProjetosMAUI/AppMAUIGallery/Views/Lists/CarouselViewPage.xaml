@@ -4,39 +4,51 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CarouselViewPage">
-    <CarouselView
-        x:Name="CarouselViewControl"
-        IsSwipeEnabled="True"
-        Loop="False"
-        PeekAreaInsets="50"
-        Position="0">
-        <CarouselView.ItemsLayout>
-            <LinearItemsLayout
-                ItemSpacing="0"
-                Orientation="Horizontal"
-                SnapPointsAlignment="End"
-                SnapPointsType="Mandatory" />
-        </CarouselView.ItemsLayout>
-        <CarouselView.ItemTemplate>
-            <DataTemplate>
-                <VerticalStackLayout Margin="10" BackgroundColor="#F2F2F2">
-                    <Label
-                        Padding="10"
-                        FontAttributes="Bold"
-                        FontSize="18"
-                        HorizontalOptions="Center"
-                        Text="{Binding Name}" />
-                    <Label
-                        Padding="10"
-                        Text="{Binding Description}"
-                        TextColor="Gray" />
+    <Grid>
+        <CarouselView
+            x:Name="CarouselViewControl"
+            IndicatorView="IndicatorViewControl"
+            IsSwipeEnabled="True"
+            Loop="False"
+            PeekAreaInsets="50"
+            Position="0">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout
+                    ItemSpacing="0"
+                    Orientation="Horizontal"
+                    SnapPointsAlignment="End"
+                    SnapPointsType="Mandatory" />
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Margin="10" BackgroundColor="#F2F2F2">
+                        <Label
+                            Padding="10"
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            Text="{Binding Name}" />
+                        <Label
+                            Padding="10"
+                            Text="{Binding Description}"
+                            TextColor="Gray" />
 
-                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
-                        <Label Text="{Binding LaunchYear}" />
-                        <Label Text="{Binding Duration}" />
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
-            </DataTemplate>
-        </CarouselView.ItemTemplate>
-    </CarouselView>
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
+                            <Label Text="{Binding LaunchYear}" />
+                            <Label Text="{Binding Duration}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView
+            x:Name="IndicatorViewControl"
+            Margin="10"
+            HorizontalOptions="Center"
+            IndicatorColor="#DFD8F7"
+            IndicatorSize="16"
+            IndicatorsShape="Circle"
+            SelectedIndicatorColor="#512BD4"
+            VerticalOptions="End" />
+    </Grid>
 </ContentPage>

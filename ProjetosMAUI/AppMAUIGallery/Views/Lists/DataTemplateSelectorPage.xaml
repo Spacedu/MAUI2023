@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Lists.DataTemplateSelectorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="DataTemplateSelectorPage">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="DataTemplateMovieDefault">
+            <Grid
+                Padding="10"
+                ColumnDefinitions="*, 40"
+                RowDefinitions="Auto, Auto">
+                <Label FontAttributes="Bold" Text="{Binding Name}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Text="{Binding Description}"
+                    TextColor="Gray" />
+                <Label Grid.Column="1" Text="{Binding LaunchYear}" />
+            </Grid>
+        </DataTemplate>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <CollectionView x:Name="CollectionViewControl" ItemTemplate="{StaticResource DataTemplateMovieDefault}" />
+    </VerticalStackLayout>
+
+</ContentPage>

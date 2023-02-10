@@ -231,6 +231,11 @@ namespace AppMAUIGallery.Repositories
                         Title = "BindableLayout (Atributo)",
                         Description = "Permite que os layouts possam apresentar nossas listas e coleções.",
                         Page = typeof(BindableLayoutPage)
+                    },
+                    new Component {
+                        Title = "DataTemplateSelector (Classe)",
+                        Description = "Permitir que os itens possam ser apresetados com layouts diferentes.",
+                        Page = typeof(DataTemplateSelectorPage)
                     }
                 }
             });

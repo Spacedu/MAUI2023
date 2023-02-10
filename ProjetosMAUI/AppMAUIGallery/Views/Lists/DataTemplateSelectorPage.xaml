@@ -19,9 +19,33 @@
                 <Label Grid.Column="1" Text="{Binding LaunchYear}" />
             </Grid>
         </DataTemplate>
+        <DataTemplate x:Key="DataTemplateMovieLongMovie">
+            <Grid
+                Padding="10"
+                BackgroundColor="#FFFFD9"
+                ColumnDefinitions="*, 40"
+                RowDefinitions="Auto, Auto">
+                <Label FontAttributes="Bold" Text="{Binding Name}" />
+                <Label
+                    Grid.Row="1"
+                    Text="{Binding Description}"
+                    TextColor="Gray" />
+                <Label Grid.Column="1" Text="{Binding LaunchYear}" />
+                <VerticalStackLayout
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalOptions="Center">
+                    <Image
+                        HorizontalOptions="Center"
+                        Source="clock.png"
+                        WidthRequest="20" />
+                    <Label FontSize="10" Text="{Binding Duration}" />
+                </VerticalStackLayout>
+            </Grid>
+        </DataTemplate>
     </ContentPage.Resources>
     <VerticalStackLayout>
-        <CollectionView x:Name="CollectionViewControl" ItemTemplate="{StaticResource DataTemplateMovieDefault}" />
+        <CollectionView x:Name="CollectionViewControl" ItemTemplate="{StaticResource DataTemplateMovieLongMovie}" />
     </VerticalStackLayout>
 
 </ContentPage>

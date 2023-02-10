@@ -3,6 +3,7 @@
     x:Class="AppMAUIGallery.Views.Lists.DataTemplateSelectorPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:utils="clr-namespace:AppMAUIGallery.Views.Lists.Utils"
     Title="DataTemplateSelectorPage">
     <ContentPage.Resources>
         <DataTemplate x:Key="DataTemplateMovieDefault">
@@ -43,9 +44,12 @@
                 </VerticalStackLayout>
             </Grid>
         </DataTemplate>
+
+        <utils:MovieTemplateSelector
+            x:Key="MovieTemplateSelector"
+            TemplateDefault="{StaticResource DataTemplateMovieDefault}"
+            TemplateLongMovie="{StaticResource DataTemplateMovieLongMovie}" />
     </ContentPage.Resources>
-    <VerticalStackLayout>
-        <CollectionView x:Name="CollectionViewControl" ItemTemplate="{StaticResource DataTemplateMovieLongMovie}" />
-    </VerticalStackLayout>
+    <CollectionView x:Name="CollectionViewControl" ItemTemplate="{StaticResource MovieTemplateSelector}" />
 
 </ContentPage>

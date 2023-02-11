@@ -50,7 +50,7 @@ namespace AppMAUIGallery.Repositories
             });
             categories.Add(new Category()
             {
-                Name = "Componentes (Views)",
+                Name = "Controles (Views)",
                 Components = new List<Component>
                 {
                     new Component

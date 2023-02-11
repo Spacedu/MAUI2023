@@ -27,14 +27,17 @@
         <CollectionView.GroupHeaderTemplate>
             <DataTemplate>
                 <Label
-                    Margin="8,0"
+                    Margin="16,10"
                     FontAttributes="Bold"
                     Text="{Binding Name}" />
             </DataTemplate>
         </CollectionView.GroupHeaderTemplate>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <VerticalStackLayout Padding="30,10">
+                <VerticalStackLayout Padding="40,10,20,10">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="{Binding Page}" Tapped="OnTapComponent" />
+                    </VerticalStackLayout.GestureRecognizers>
                     <Label FontAttributes="Bold" Text="{Binding Title}" />
                     <Label Text="{Binding Description}" TextColor="{StaticResource Gray500}" />
                 </VerticalStackLayout>

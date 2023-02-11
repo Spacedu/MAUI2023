@@ -15,11 +15,9 @@ public partial class Menu : ContentPage
 		MenuCollection.ItemsSource = _repository.GetGroupComponents();
     }
 
-	private void OnTapComponent(object sender, EventArgs e)
+	private void OnTapComponent(object sender, TappedEventArgs e)
 	{
-		var label = (Label)sender;
-		var tap = (TapGestureRecognizer)label.GestureRecognizers[0];
-		var page = (Type)tap.CommandParameter;
+		var page = (Type)e.Parameter;
 
 		((FlyoutPage)App.Current.MainPage).Detail = new NavigationPage( (Page)Activator.CreateInstance(page) );
 		((FlyoutPage)App.Current.MainPage).IsPresented = false;

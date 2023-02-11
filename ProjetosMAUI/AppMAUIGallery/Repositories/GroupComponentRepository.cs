@@ -7,16 +7,21 @@ using System.Threading.Tasks;
 
 namespace AppMAUIGallery.Repositories
 {
-    public class GroupComponentRepository : IGroupComponentRepository
+    public partial class GroupComponentRepository : IGroupComponentRepository
     {
+        private List<Component> _components;
+        private List<GroupComponent> _groupComponents;
+        public GroupComponentRepository()
+        {
+            LoadData();
+        }
         public List<Component> GetComponents()
         {
-            throw new NotImplementedException();
+            return _components;
         }
-
         public List<GroupComponent> GetGroupComponents()
         {
-            throw new NotImplementedException();
+            return _groupComponents;
         }
     }
 }

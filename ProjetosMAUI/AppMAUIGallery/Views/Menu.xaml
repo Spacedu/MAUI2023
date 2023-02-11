@@ -4,11 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Menu"
-    Padding="20"
     BackgroundColor="#F3F3F3">
     <CollectionView x:Name="MenuCollection" IsGrouped="True">
         <CollectionView.Header>
-            <VerticalStackLayout Spacing="10">
+            <VerticalStackLayout Padding="20,0" Spacing="10">
                 <Label
                     Margin="30"
                     FontFamily="OpenSansSemibold"
@@ -27,14 +26,17 @@
         </CollectionView.Header>
         <CollectionView.GroupHeaderTemplate>
             <DataTemplate>
-                <Label FontAttributes="Bold" Text="{Binding Name}" />
+                <Label
+                    Margin="8,0"
+                    FontAttributes="Bold"
+                    Text="{Binding Name}" />
             </DataTemplate>
         </CollectionView.GroupHeaderTemplate>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <VerticalStackLayout>
-                    <Label Text="{Binding Title}" />
-                    <Label Text="{Binding Description}" />
+                <VerticalStackLayout Padding="30,10">
+                    <Label FontAttributes="Bold" Text="{Binding Title}" />
+                    <Label Text="{Binding Description}" TextColor="{StaticResource Gray500}" />
                 </VerticalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>

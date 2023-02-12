@@ -50,7 +50,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Libraries\Fix\KeyboardFix.cs~RFdea9f.TMP" />
 	  <None Remove="Resources\Images\clock.svg" />
 	  <None Remove="Resources\Images\poweroff.png" />
 	  <None Remove="Resources\Images\poweron.png" />

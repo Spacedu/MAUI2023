@@ -1,4 +1,6 @@
-﻿namespace AppTask
+﻿using AppTask.Views;
+
+namespace AppTask
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new StartPage());
         }
     }
 }

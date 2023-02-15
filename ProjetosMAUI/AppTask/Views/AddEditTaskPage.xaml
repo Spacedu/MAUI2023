@@ -11,14 +11,26 @@
             Color="{StaticResource Black}" />
         <VerticalStackLayout Padding="15">
 
-            <Button HorizontalOptions="End" Text="x" Clicked="CloseModal" />
+            <Button
+                Padding="0"
+                Clicked="CloseModal"
+                HorizontalOptions="End"
+                MinimumHeightRequest="31"
+                MinimumWidthRequest="31"
+                Text="X" />
             <Entry Placeholder="Tarefa" />
             <Editor Placeholder="Descrição" />
             <DatePicker />
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Etapas (Subtarefas)" VerticalOptions="Center" />
-                <Button HorizontalOptions="EndAndExpand" Text="+" Clicked="AddStep" />
+                <Button
+                    Padding="0"
+                    Clicked="AddStep"
+                    HorizontalOptions="EndAndExpand"
+                    MinimumHeightRequest="31"
+                    MinimumWidthRequest="31"
+                    Text="+" />
             </StackLayout>
             <Grid ColumnDefinitions="30, *, 30">
                 <CheckBox />
@@ -35,9 +47,9 @@
         </VerticalStackLayout>
         <Button
             Margin="15"
+            Clicked="SaveData"
             HorizontalOptions="Center"
             Text="Salvar"
-            Clicked="SaveData"
             VerticalOptions="End" />
     </Grid>
 </ContentPage>

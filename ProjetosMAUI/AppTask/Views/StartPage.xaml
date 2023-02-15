@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppTask.Views.StartPage"
-             Title="StartPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="AppTask.Views.StartPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="false">
+    <Grid RowDefinitions="70, *">
+        <Entry Margin="20,20,20,0" Placeholder="Pesquisar..." />
+        <Label
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            Text="O que você deseja fazer?"
+            TextColor="{StaticResource Gray400}"
+            VerticalOptions="Center" />
+        <Button
+            Grid.Row="1"
+            Margin="15"
+            HorizontalOptions="Center"
+            Text="+    Adicionar Tarefa"
+            VerticalOptions="End" />
+    </Grid>
 </ContentPage>

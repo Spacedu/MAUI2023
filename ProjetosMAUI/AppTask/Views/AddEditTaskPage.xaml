@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppTask.Views.AddEditTaskPage"
-             Title="AddEditTaskPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="AppTask.Views.AddEditTaskPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="AddEditTaskPage">
+    <Grid>
+        <BoxView
+            HeightRequest="5"
+            VerticalOptions="Start"
+            Color="{StaticResource Black}" />
+        <VerticalStackLayout Padding="15">
+
+            <Button HorizontalOptions="End" Text="x" />
+            <Entry Placeholder="Tarefa" />
+            <Editor Placeholder="Descrição" />
+            <DatePicker />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Etapas (Subtarefas)" VerticalOptions="Center" />
+                <Button HorizontalOptions="EndAndExpand" Text="+" />
+            </StackLayout>
+            <Grid ColumnDefinitions="30, *, 30">
+                <CheckBox />
+                <Label
+                    Grid.Column="1"
+                    Text="Etapa"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Column="2"
+                    Text="Trash"
+                    VerticalOptions="Center" />
+            </Grid>
+
+        </VerticalStackLayout>
+        <Button
+            Margin="15"
+            HorizontalOptions="Center"
+            Text="Salvar"
+            VerticalOptions="End" />
+    </Grid>
 </ContentPage>

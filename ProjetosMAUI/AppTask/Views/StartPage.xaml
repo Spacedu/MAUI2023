@@ -17,6 +17,7 @@
             Margin="15"
             HorizontalOptions="Center"
             Text="+    Adicionar Tarefa"
+            Clicked="Button_Clicked"
             VerticalOptions="End" />
     </Grid>
 </ContentPage>

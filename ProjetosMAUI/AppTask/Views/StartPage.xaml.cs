@@ -11,4 +11,9 @@ public partial class StartPage : ContentPage
     {
 		Navigation.PushModalAsync(new AddEditTaskPage());
     }
+
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        Entry_Search.Focus();
+    }
 }

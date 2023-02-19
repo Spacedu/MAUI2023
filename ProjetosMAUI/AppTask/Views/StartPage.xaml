@@ -5,7 +5,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     NavigationPage.HasNavigationBar="false">
     <Grid RowDefinitions="70, *">
-        <Entry Margin="20,20,20,0" Placeholder="Pesquisar..." />
+        <Border
+            Margin="20,20,20,0"
+            BackgroundColor="#F7F7F7"
+            HeightRequest="50"
+            StrokeShape="RoundRectangle 25"
+            StrokeThickness="0">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Border.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    Margin="9,0,0,0"
+                    HeightRequest="33"
+                    Source="find.png"
+                    WidthRequest="33" />
+                <Entry
+                    x:Name="Entry_Search"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Pesquisar..."
+                    PlaceholderColor="#A8A8A8" />
+            </StackLayout>
+        </Border>
         <Label
             Grid.Row="1"
             HorizontalOptions="Center"
@@ -15,9 +36,9 @@
         <Button
             Grid.Row="1"
             Margin="15"
+            Clicked="Button_Clicked"
             HorizontalOptions="Center"
             Text="+    Adicionar Tarefa"
-            Clicked="Button_Clicked"
             VerticalOptions="End" />
     </Grid>
 </ContentPage>

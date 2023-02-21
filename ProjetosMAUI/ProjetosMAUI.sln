@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App 05", "App 05", "{4AA827
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask", "AppTask\AppTask.csproj", "{561360BA-64A1-472D-842D-2D7264B1B873}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask.Models", "AppTask.Models\AppTask.Models.csproj", "{3BB4D99E-CC7B-484E-AD6C-930877D4B872}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{561360BA-64A1-472D-842D-2D7264B1B873}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{561360BA-64A1-472D-842D-2D7264B1B873}.Release|Any CPU.Build.0 = Release|Any CPU
 		{561360BA-64A1-472D-842D-2D7264B1B873}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3BB4D99E-CC7B-484E-AD6C-930877D4B872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB4D99E-CC7B-484E-AD6C-930877D4B872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB4D99E-CC7B-484E-AD6C-930877D4B872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB4D99E-CC7B-484E-AD6C-930877D4B872}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +102,7 @@ Global
 		{A7C1C1AE-141F-4F98-835A-6FC1CA2E6B4E} = {718035F7-CA56-4495-ACD2-350CE700949D}
 		{E99C030C-102E-41CE-ABFD-31C95688FF83} = {E7EF6FEC-C7D4-47F4-ACE0-64EB0D9D2FFC}
 		{561360BA-64A1-472D-842D-2D7264B1B873} = {4AA8270A-0E84-44A0-ABDE-501D83F0EAF0}
+		{3BB4D99E-CC7B-484E-AD6C-930877D4B872} = {4AA8270A-0E84-44A0-ABDE-501D83F0EAF0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace AppTask.Database
@@ -10,5 +11,14 @@ namespace AppTask.Database
     {
         public DbSet<TaskModel> Tasks { get; set; }
         public DbSet<SubTaskModel> SubTasks { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "apptask.db");
+
+            optionsBuilder.UseSqlite($"Filename={databasePath}");
+        }
     }
 }

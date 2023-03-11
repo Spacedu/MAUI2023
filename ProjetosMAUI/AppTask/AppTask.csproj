@@ -57,4 +57,9 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\AppTask.Database\AppTask.Database.csproj" />
+	  <ProjectReference Include="..\AppTask.Models\AppTask.Models.csproj" />
+	</ItemGroup>
+
 </Project>

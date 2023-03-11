@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask", "AppTask\AppTask.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask.Models", "AppTask.Models\AppTask.Models.csproj", "{3BB4D99E-CC7B-484E-AD6C-930877D4B872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTask.Database", "AppTask.Database\AppTask.Database.csproj", "{E4D06F0B-03DA-4C87-97C7-517E75495E2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask.Database", "AppTask.Database\AppTask.Database.csproj", "{E4D06F0B-03DA-4C87-97C7-517E75495E2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTask.Database.Migration.Runtime", "AppTask.Database.Migration.Runtime\AppTask.Database.Migration.Runtime.csproj", "{57A2BB97-6536-49F3-954C-F70B3B7154DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{E4D06F0B-03DA-4C87-97C7-517E75495E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4D06F0B-03DA-4C87-97C7-517E75495E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4D06F0B-03DA-4C87-97C7-517E75495E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A2BB97-6536-49F3-954C-F70B3B7154DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A2BB97-6536-49F3-954C-F70B3B7154DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A2BB97-6536-49F3-954C-F70B3B7154DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A2BB97-6536-49F3-954C-F70B3B7154DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{561360BA-64A1-472D-842D-2D7264B1B873} = {4AA8270A-0E84-44A0-ABDE-501D83F0EAF0}
 		{3BB4D99E-CC7B-484E-AD6C-930877D4B872} = {4AA8270A-0E84-44A0-ABDE-501D83F0EAF0}
 		{E4D06F0B-03DA-4C87-97C7-517E75495E2F} = {4AA8270A-0E84-44A0-ABDE-501D83F0EAF0}
+		{57A2BB97-6536-49F3-954C-F70B3B7154DA} = {4AA8270A-0E84-44A0-ABDE-501D83F0EAF0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

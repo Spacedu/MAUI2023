@@ -12,7 +12,7 @@
             StrokeShape="RoundRectangle 25"
             StrokeThickness="0">
             <Border.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                <TapGestureRecognizer Tapped="OnBorderClickedToFocusEntry" />
             </Border.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
                 <Image
@@ -32,13 +32,21 @@
         <CollectionView x:Name="CollectionViewTasks" Grid.Row="1">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="70, *, 70">
-                        <CheckBox Grid.Column="0" />
+                    <Grid Padding="10,5" ColumnDefinitions="70, *, 70">
+                        <CheckBox Grid.Column="0" HorizontalOptions="Center" />
                         <StackLayout Grid.Column="1">
-                            <Label Text="Comprar roupa" />
-                            <Label Text="Segunda, 10 de Out de 2023" />
+                            <Label FontAttributes="Bold" Text="{Binding Name}" />
+                            <Label Text="{Binding PrevisionDate}" />
                         </StackLayout>
-                        <Button Grid.Column="2" Text="T" />
+                        <Image
+                            Grid.Column="2"
+                            Source="trash.png"
+                            WidthRequest="25">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnImageClickedToDelete" CommandParameter="{Binding .}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -53,7 +61,7 @@
         <Button
             Grid.Row="1"
             Margin="15"
-            Clicked="Button_Clicked"
+            Clicked="OnButtonClickedToAdd"
             HorizontalOptions="Center"
             Text="+    Adicionar Tarefa"
             VerticalOptions="End" />

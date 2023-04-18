@@ -33,7 +33,16 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10,5" ColumnDefinitions="70, *, 70">
-                        <CheckBox Grid.Column="0" HorizontalOptions="Center" />
+                        <CheckBox
+                            Grid.Column="0"
+                            HorizontalOptions="Center"
+                            IsChecked="{Binding IsCompleted}"
+                        >
+                            <CheckBox.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCheckBoxClickedToComplete" CommandParameter="{Binding .}" />
+                            </CheckBox.GestureRecognizers>
+                        </CheckBox>
+
                         <StackLayout Grid.Column="1">
                             <Label FontAttributes="Bold" Text="{Binding Name}" />
                             <Label Text="{Binding PrevisionDate}" />
@@ -43,7 +52,7 @@
                             Source="trash.png"
                             WidthRequest="25">
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnImageClickedToDelete" CommandParameter="{Binding .}" />
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnImageClickedToDelete" />
                             </Image.GestureRecognizers>
                         </Image>
 

@@ -53,4 +53,11 @@ public partial class StartPage : ContentPage
             LoadData();
         }
     }
+
+    private void OnCheckBoxClickedToComplete(object sender, TappedEventArgs e)
+    {
+        var task = (TaskModel)e.Parameter;
+        task.IsCompleted = ((CheckBox)sender).IsChecked;
+        _repository.Update(task);
+    }
 }

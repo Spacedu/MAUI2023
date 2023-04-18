@@ -27,6 +27,22 @@
                     PlaceholderColor="#A8A8A8" />
             </StackLayout>
         </Border>
+
+        <!--  Inicio - Segunda Linha  -->
+        <CollectionView x:Name="CollectionViewTasks" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="70, *, 70">
+                        <CheckBox Grid.Column="0" />
+                        <StackLayout Grid.Column="1">
+                            <Label Text="Comprar roupa" />
+                            <Label Text="Segunda, 10 de Out de 2023" />
+                        </StackLayout>
+                        <Button Grid.Column="2" Text="T" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <Label
             Grid.Row="1"
             HorizontalOptions="Center"
@@ -40,5 +56,6 @@
             HorizontalOptions="Center"
             Text="+    Adicionar Tarefa"
             VerticalOptions="End" />
+        <!--  Final - Segunda Linha  -->
     </Grid>
 </ContentPage>

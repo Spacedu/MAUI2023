@@ -18,7 +18,7 @@ namespace AppTask.Repositories
         }
         public IList<TaskModel> GetAll()
         {
-            return _db.Tasks.ToList();
+            return _db.Tasks.OrderByDescending(a=>a.PrevisionDate).ToList();
         }
         public TaskModel GetById(int id)
         {

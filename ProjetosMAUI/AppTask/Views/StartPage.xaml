@@ -44,6 +44,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         <Label
+            x:Name="LblEmptyText"
             Grid.Row="1"
             HorizontalOptions="Center"
             Text="O que você deseja fazer?"

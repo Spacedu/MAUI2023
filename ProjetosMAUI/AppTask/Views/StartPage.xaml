@@ -3,7 +3,11 @@
     x:Class="AppTask.Views.StartPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:AppTask.Libraries.Converters"
     NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <converter:BoolToTextDecorationStrikeThroughConverter x:Key="BoolToTextDecorationStrikeThroughConverter" />
+    </ContentPage.Resources>
     <Grid RowDefinitions="70, *">
         <Border
             Margin="20,20,20,0"
@@ -36,16 +40,21 @@
                         <CheckBox
                             Grid.Column="0"
                             HorizontalOptions="Center"
-                            IsChecked="{Binding IsCompleted}"
-                        >
+                            IsChecked="{Binding IsCompleted}">
                             <CheckBox.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCheckBoxClickedToComplete" CommandParameter="{Binding .}" />
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnCheckBoxClickedToComplete" />
                             </CheckBox.GestureRecognizers>
                         </CheckBox>
 
                         <StackLayout Grid.Column="1">
-                            <Label FontAttributes="Bold" Text="{Binding Name}" />
-                            <Label Text="{Binding PrevisionDate}" />
+                            <Label
+                                FontAttributes="Bold"
+                                Text="{Binding Name}"
+                                TextDecorations="{Binding IsCompleted, Converter={StaticResource BoolToTextDecorationStrikeThroughConverter}}" />
+                            <Label
+                                Text="{Binding PrevisionDate}"
+                                TextColor="{StaticResource Gray400}"
+                                TextDecorations="{Binding IsCompleted, Converter={StaticResource BoolToTextDecorationStrikeThroughConverter}}" />
                         </StackLayout>
                         <Image
                             Grid.Column="2"

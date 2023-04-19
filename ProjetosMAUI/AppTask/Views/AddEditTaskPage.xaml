@@ -19,10 +19,13 @@
                 MinimumWidthRequest="31"
                 Text="X" />
             <Border StrokeShape="RoundRectangle 10">
-                <Entry Placeholder="Tarefa" />
+                <Entry x:Name="Entry_TaskName" Placeholder="Tarefa" />
             </Border>
             <Border StrokeShape="RoundRectangle 10">
-                <Editor HeightRequest="150" Placeholder="Descrição" />
+                <Editor
+                    x:Name="Editor_TaskDescription"
+                    HeightRequest="150"
+                    Placeholder="Descrição" />
             </Border>
             <Border StrokeShape="RoundRectangle 10">
                 <StackLayout>
@@ -30,7 +33,7 @@
                 </StackLayout>
             </Border>
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout HeightRequest="31" Orientation="Horizontal">
                 <Label Text="Etapas (Subtarefas)" VerticalOptions="Center" />
                 <Button
                     Padding="0"
@@ -46,10 +49,10 @@
                     Grid.Column="1"
                     Text="Etapa"
                     VerticalOptions="Center" />
-                <Label
+                <Image
                     Grid.Column="2"
-                    Text="Trash"
-                    VerticalOptions="Center" />
+                    Source="trash.png"
+                    WidthRequest="25" />
             </Grid>
 
         </VerticalStackLayout>

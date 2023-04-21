@@ -5,6 +5,7 @@ using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
 using AppMAUIGallery.Views.Lists;
+using AppMAUIGallery.Views.Styles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace AppMAUIGallery.Repositories
             LoadForms();
             LoadCells();
             LoadCollections();
+            LoadStyles();
         }
 
         private void LoadLayouts()
@@ -273,6 +275,22 @@ namespace AppMAUIGallery.Repositories
             };
 
             var group = new GroupComponent() { Name = "Listas e Coleções" };
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
+        private void LoadStyles()
+        {
+            var components = new List<Component> {
+                new Component {
+                    Title = "Implicit & Explicit Styles",
+                    Description = "Explicar como funciona os estilos.",
+                    Page = typeof(ImplicitExplicitStyles)
+                },
+            };
+
+            var group = new GroupComponent() { Name = "Styles" };
             group.AddRange(components);
 
             _components.AddRange(components);

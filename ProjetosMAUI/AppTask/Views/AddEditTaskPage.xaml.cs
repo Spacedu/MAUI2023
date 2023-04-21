@@ -1,10 +1,14 @@
+using AppTask.Models;
+
 namespace AppTask.Views;
 
 public partial class AddEditTaskPage : ContentPage
 {
+    private TaskModel _task;
 	public AddEditTaskPage()
 	{
 		InitializeComponent();
+        _task = new TaskModel();        
 	}
 
     private void CloseModal(object sender, EventArgs e)
@@ -20,6 +24,11 @@ public partial class AddEditTaskPage : ContentPage
     private async void AddStep(object sender, EventArgs e)
     {
         var stepName = await DisplayPromptAsync("Etapa(subtarefa)", "Digite o nome da etapa(subtarefa):", "Adicionar", "Cancelar");
+
+        if(!string.IsNullOrWhiteSpace(stepName))
+        {
+            _task.SubTasks.Add(new SubTaskModel { Name = stepName, IsCompleted = false });
+        }
     }
 
     protected override void OnSizeAllocated(double width, double height)

@@ -25,17 +25,7 @@ public partial class StartPage : ContentPage
 
     private void OnButtonClickedToAdd(object sender, EventArgs e)
     {
-        _repository.Add(new TaskModel
-        {
-            Name = "Comprar Frutas",
-            Description = "Comprar abacate, laranja, maçã...",
-            IsCompleted = false,
-            Created = DateTime.Now,
-            PrevisionDate = DateTime.Now.AddDays(2)
-        }) ;
-
-        LoadData();
-		//Navigation.PushModalAsync(new AddEditTaskPage());
+        Navigation.PushModalAsync(new AddEditTaskPage());
     }
 
     private void OnBorderClickedToFocusEntry(object sender, TappedEventArgs e)

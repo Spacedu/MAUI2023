@@ -6,6 +6,7 @@ namespace AppTask.Views;
 public partial class StartPage : ContentPage
 {
     private ITaskModelRepository _repository;
+    private IList<TaskModel> _tasks;
 	public StartPage()
 	{
 		InitializeComponent();
@@ -18,9 +19,9 @@ public partial class StartPage : ContentPage
 
     public void LoadData()
     {
-        var tasks = _repository.GetAll();
-        CollectionViewTasks.ItemsSource = tasks;
-        LblEmptyText.IsVisible = tasks.Count <= 0;
+        _tasks = _repository.GetAll();
+        CollectionViewTasks.ItemsSource = _tasks;
+        LblEmptyText.IsVisible = _tasks.Count <= 0;
     }
 
     private void OnButtonClickedToAdd(object sender, EventArgs e)
@@ -56,5 +57,11 @@ public partial class StartPage : ContentPage
         var task = (TaskModel)e.Parameter;
         
         Navigation.PushModalAsync(new AddEditTaskPage(_repository.GetById(task.Id)));
+    }
+
+    private void OnTextChanged_FilterList(object sender, TextChangedEventArgs e)
+    {
+        var word = e.NewTextValue;
+        CollectionViewTasks.ItemsSource = _tasks.Where(a => a.Name.ToLower().Contains(word.ToLower())).ToList();
     }
 }

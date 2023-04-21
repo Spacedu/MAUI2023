@@ -26,6 +26,7 @@
                     WidthRequest="33" />
                 <Entry
                     x:Name="Entry_Search"
+                    TextChanged="OnTextChanged_FilterList"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Pesquisar..."
                     PlaceholderColor="#A8A8A8" />

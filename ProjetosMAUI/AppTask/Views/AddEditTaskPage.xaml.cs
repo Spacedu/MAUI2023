@@ -8,8 +8,10 @@ public partial class AddEditTaskPage : ContentPage
 	public AddEditTaskPage()
 	{
 		InitializeComponent();
-        _task = new TaskModel();        
-	}
+        _task = new TaskModel();
+
+        BindableLayout.SetItemsSource(BindableLayout_Steps, _task.SubTasks);
+    }
 
     private void CloseModal(object sender, EventArgs e)
     {

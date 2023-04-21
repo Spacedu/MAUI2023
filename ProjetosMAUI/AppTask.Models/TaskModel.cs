@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace AppTask.Models
 {
@@ -21,7 +22,7 @@ namespace AppTask.Models
 
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
-        public List<SubTaskModel> SubTasks { get; set; } = new List<SubTaskModel>();
+        public ObservableCollection<SubTaskModel> SubTasks { get; set; } = new ObservableCollection<SubTaskModel>();
 
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propName)

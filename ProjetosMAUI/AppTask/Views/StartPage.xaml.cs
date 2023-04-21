@@ -16,7 +16,7 @@ public partial class StartPage : ContentPage
         LoadData();
 	}
 
-    private void LoadData()
+    public void LoadData()
     {
         var tasks = _repository.GetAll();
         CollectionViewTasks.ItemsSource = tasks;

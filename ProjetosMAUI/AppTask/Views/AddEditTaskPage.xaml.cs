@@ -1,14 +1,18 @@
 using AppTask.Models;
+using AppTask.Repositories;
 using System.Text;
 
 namespace AppTask.Views;
 
 public partial class AddEditTaskPage : ContentPage
 {
+    private ITaskModelRepository _repository;
     private TaskModel _task;
+    
 	public AddEditTaskPage()
 	{
 		InitializeComponent();
+        _repository = new TaskModelRepository();
         _task = new TaskModel();
 
         BindableLayout.SetItemsSource(BindableLayout_Steps, _task.SubTasks);
@@ -24,13 +28,16 @@ public partial class AddEditTaskPage : ContentPage
         //Obter os dados
         GetDataFromForm();
         //Validar os dados
-        ValidateData();
+        bool valid = ValidateData();
         //Salvar os dados
-
+        if (valid)
+            SaveInDatabase();
         //Fechar a tela
+        Navigation.PopModalAsync();
 
         //Solicitar a atualização da listagem da tela anterior.
-        Navigation.PopModalAsync();
+        UpdateListInStartPage();
+        
     }
     private void GetDataFromForm()
     {
@@ -63,6 +70,18 @@ public partial class AddEditTaskPage : ContentPage
 
         return validResult;
     }
+    private void SaveInDatabase()
+    {
+        _repository.Add(_task);
+    }
+    private void UpdateListInStartPage()
+    {
+        var navPage = (NavigationPage)App.Current.MainPage;
+        var startPage = (StartPage)navPage.CurrentPage;
+        startPage.LoadData();
+    }
+
+
     private async void AddStep(object sender, EventArgs e)
     {
         var stepName = await DisplayPromptAsync("Etapa(subtarefa)", "Digite o nome da etapa(subtarefa):", "Adicionar", "Cancelar");

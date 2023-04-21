@@ -30,14 +30,15 @@ public partial class AddEditTaskPage : ContentPage
         //Validar os dados
         bool valid = ValidateData();
         //Salvar os dados
-        if (valid)
+        if (valid) { 
             SaveInDatabase();
-        //Fechar a tela
-        Navigation.PopModalAsync();
+            //Fechar a tela
+            Navigation.PopModalAsync();
 
-        //Solicitar a atualização da listagem da tela anterior.
-        UpdateListInStartPage();
-        
+            //Solicitar a atualização da listagem da tela anterior.
+            UpdateListInStartPage();
+        }
+
     }
     private void GetDataFromForm()
     {

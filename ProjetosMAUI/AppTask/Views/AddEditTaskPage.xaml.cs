@@ -39,4 +39,9 @@ public partial class AddEditTaskPage : ContentPage
 
         DatePicker_TaskDate.WidthRequest = width - 30;
     }
+
+    private void OnTapToDelete(object sender, TappedEventArgs e)
+    {
+        _task.SubTasks.Remove((SubTaskModel)e.Parameter);
+    }
 }

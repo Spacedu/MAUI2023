@@ -20,9 +20,29 @@ public partial class AddEditTaskPage : ContentPage
 
     private void SaveData(object sender, EventArgs e)
     {
+        //Obter os dados
+        GetDataFromForm();
+        //Validar os dados
+
+        //Salvar os dados
+
+        //Fechar a tela
+
+        //Solicitar a atualização da listagem da tela anterior.
         Navigation.PopModalAsync();
     }
+    private void GetDataFromForm()
+    {
+        _task.Name = Entry_TaskName.Text;
+        _task.Description = Editor_TaskDescription.Text;
+        _task.PrevisionDate = DatePicker_TaskDate.Date;
+        _task.PrevisionDate = _task.PrevisionDate.AddHours(23);
+        _task.PrevisionDate = _task.PrevisionDate.AddMinutes(59);
+        _task.PrevisionDate = _task.PrevisionDate.AddSeconds(59);
 
+        _task.Created = DateTime.Now;
+        _task.IsCompleted = false;
+    }
     private async void AddStep(object sender, EventArgs e)
     {
         var stepName = await DisplayPromptAsync("Etapa(subtarefa)", "Digite o nome da etapa(subtarefa):", "Adicionar", "Cancelar");

@@ -17,6 +17,22 @@ public partial class AddEditTaskPage : ContentPage
 
         BindableLayout.SetItemsSource(BindableLayout_Steps, _task.SubTasks);
     }
+    public AddEditTaskPage(TaskModel task)
+    {
+        _repository = new TaskModelRepository();
+
+        InitializeComponent();
+        _task = task;
+        FillFields();
+
+        BindableLayout.SetItemsSource(BindableLayout_Steps, _task.SubTasks);
+    }
+    private void FillFields()
+    {
+        Entry_TaskName.Text = _task.Name;
+        Editor_TaskDescription.Text = _task.Description;
+        DatePicker_TaskDate.Date = _task.PrevisionDate;
+    }
 
     private void CloseModal(object sender, EventArgs e)
     {
@@ -73,7 +89,11 @@ public partial class AddEditTaskPage : ContentPage
     }
     private void SaveInDatabase()
     {
-        _repository.Add(_task);
+        if(_task.Id == 0)
+            _repository.Add(_task);
+        else
+            _repository.Update(_task);
+        
     }
     private void UpdateListInStartPage()
     {

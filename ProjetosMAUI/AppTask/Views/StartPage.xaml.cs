@@ -50,4 +50,11 @@ public partial class StartPage : ContentPage
         task.IsCompleted = ((CheckBox)sender).IsChecked;
         _repository.Update(task);
     }
+
+    private void OnTapToEdit(object sender, TappedEventArgs e)
+    {
+        var task = (TaskModel)e.Parameter;
+        
+        Navigation.PushModalAsync(new AddEditTaskPage(_repository.GetById(task.Id)));
+    }
 }

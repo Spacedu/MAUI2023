@@ -4,16 +4,35 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="ImplicitExplicitStyles">
-    <VerticalStackLayout>
-        <Label Text="Artigo 1" />
-        <Label
-            FontSize="12"
-            Text="P1"
-            TextColor="Gray" />
-        <Label Text="P2" />
-        <Label Text="Artigo 2" />
-        <Label Text="P1" />
-        <Label Text="P2" />
-        <Label Text="P3" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <!--  Implicit  -->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Red" />
+            <Setter Property="Text" Value="Oi tudo Bem!" />
+        </Style>
+        <!--  Explicit  -->
+        <Style x:Key="StyleTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0, 15, 0, 10" />
+        </Style>
+        <Style x:Key="StyleParagraph" TargetType="Label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="Gray" />
+            <Setter Property="Padding" Value="0, 5" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView Padding="20">
+        <VerticalStackLayout>
+            <Label Text="Publicado em 23/04/2023" />
+            <Label Style="{StaticResource StyleTitle}" Text="Artigo 1" />
+            <Label Style="{StaticResource StyleParagraph}" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit at imperdiet. Tellus molestie nunc non blandit massa enim nec dui. Consequat mauris nunc congue nisi vitae suscipit tellus mauris a. Lorem donec massa sapien faucibus et molestie. Imperdiet proin fermentum leo vel. A pellentesque sit amet porttitor. Vivamus at augue eget arcu dictum varius duis at. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Consequat mauris nunc congue nisi. Fringilla urna porttitor rhoncus dolor purus. Pulvinar elementum integer enim neque. Mi eget mauris pharetra et ultrices." />
+            <Label Style="{StaticResource StyleParagraph}" Text="Leo a diam sollicitudin tempor. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Est lorem ipsum dolor sit amet consectetur adipiscing. Est velit egestas dui id. Etiam erat velit scelerisque in. Erat imperdiet sed euismod nisi porta. Proin nibh nisl condimentum id venenatis a condimentum. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Libero nunc consequat interdum varius sit. Integer vitae justo eget magna. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Sit amet tellus cras adipiscing enim. Nulla facilisi morbi tempus iaculis urna id. Sodales ut etiam sit amet nisl purus. Blandit massa enim nec dui nunc. Risus pretium quam vulputate dignissim suspendisse in est. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Donec adipiscing tristique risus nec feugiat in fermentum posuere urna. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent." />
+            <Label Style="{StaticResource StyleTitle}" Text="Artigo 2" />
+            <Label Style="{StaticResource StyleParagraph}" Text="Turpis egestas maecenas pharetra convallis posuere morbi. Lectus urna duis convallis convallis tellus id interdum velit. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. A diam sollicitudin tempor id eu nisl nunc. Elit sed vulputate mi sit amet mauris. Consectetur adipiscing elit duis tristique. Egestas dui id ornare arcu odio. Sed ullamcorper morbi tincidunt ornare. Non blandit massa enim nec dui nunc mattis enim ut. Urna nec tincidunt praesent semper feugiat nibh sed. Sociis natoque penatibus et magnis dis parturient. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Nisi lacus sed viverra tellus in. Mattis pellentesque id nibh tortor id aliquet lectus. Rutrum quisque non tellus orci ac. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Placerat vestibulum lectus mauris ultrices eros in. Eu facilisis sed odio morbi. Magna etiam tempor orci eu lobortis elementum." />
+            <Label Style="{StaticResource StyleParagraph}" Text="Urna porttitor rhoncus dolor purus non enim praesent elementum. Risus nec feugiat in fermentum posuere. Integer enim neque volutpat ac. In vitae turpis massa sed elementum tempus. Augue lacus viverra vitae congue eu consequat ac felis donec. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Augue neque gravida in fermentum et. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Erat imperdiet sed euismod nisi porta. Ac turpis egestas maecenas pharetra convallis posuere. Cras ornare arcu dui vivamus arcu felis bibendum. Tincidunt lobortis feugiat vivamus at augue." />
+            <Label Style="{StaticResource StyleParagraph}" Text="Tortor consequat id porta nibh venenatis cras sed felis. Amet est placerat in egestas erat imperdiet sed. Vitae proin sagittis nisl rhoncus mattis rhoncus. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi. Interdum velit euismod in pellentesque. Ipsum consequat nisl vel pretium lectus quam id. Erat imperdiet sed euismod nisi porta lorem mollis aliquam ut. Purus gravida quis blandit turpis cursus in. Vitae ultricies leo integer malesuada nunc. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Eget aliquet nibh praesent tristique magna. Rhoncus mattis rhoncus urna neque viverra justo. Magna eget est lorem ipsum dolor. Hendrerit gravida rutrum quisque non. Ac felis donec et odio pellentesque diam. Justo eget magna fermentum iaculis eu non diam phasellus. In hac habitasse platea dictumst vestibulum rhoncus est. Tristique senectus et netus et malesuada. Morbi enim nunc faucibus a pellentesque sit amet porttitor." />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

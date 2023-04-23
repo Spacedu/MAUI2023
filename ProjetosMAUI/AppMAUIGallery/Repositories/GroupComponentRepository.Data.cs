@@ -293,6 +293,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Como criar estilos para todo o seu projeto.",
                     Page = typeof(GlobalStyle)
                 },
+                new Component {
+                    Title = "ApplyToDerivedTypes",
+                    Description = "Aplicar um estilo aos elementos derividos da classe/component atual.",
+                    Page = typeof(ApplyDerivedTypes)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

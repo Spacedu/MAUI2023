@@ -288,6 +288,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Explicar como funciona os estilos.",
                     Page = typeof(ImplicitExplicitStyles)
                 },
+                new Component {
+                    Title = "Global Style",
+                    Description = "Como criar estilos para todo o seu projeto.",
+                    Page = typeof(GlobalStyle)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

@@ -6,9 +6,7 @@
     Title="StaticDynamicResource">
     <ContentPage.Resources>
         <Color x:Key="TitleColor">#FF0000</Color>
-        <Style x:Key="TitleStyle">
-            
-        </Style>
+        <Style x:Key="TitleStyle" />
     </ContentPage.Resources>
     <VerticalStackLayout Padding="20">
         <Label

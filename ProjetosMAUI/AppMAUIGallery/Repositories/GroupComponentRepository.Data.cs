@@ -308,6 +308,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Cria classes de estilos para serem aplicado aos componentes",
                     Page = typeof(StyleClassPage)
                 },
+                new Component {
+                    Title = "StaticResource/DynamicResource",
+                    Description = "Define se o estilo pode ser alterado em tempo real.",
+                    Page = typeof(StaticDynamicResource)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

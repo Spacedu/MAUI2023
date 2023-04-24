@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Styles.InheirtanceStyle"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="InheirtanceStyle">
+    <ContentPage.Resources>
+        <Style x:Key="Paragraph" TargetType="Label">
+            <Setter Property="Padding" Value="20, 10" />
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+        <Style
+            x:Key="Paragraph2"
+            BasedOn="{StaticResource Paragraph}"
+            TargetType="Label">
+            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <Label Style="{StaticResource Paragraph}" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit at imperdiet. Tellus molestie nunc non blandit massa enim nec dui. Consequat mauris nunc congue nisi vitae suscipit tellus mauris a. Lorem donec massa sapien faucibus et molestie. Imperdiet proin fermentum leo vel. A pellentesque sit amet porttitor. Vivamus at augue eget arcu dictum varius duis at. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Consequat mauris nunc congue nisi. Fringilla urna porttitor rhoncus dolor purus. Pulvinar elementum integer enim neque. Mi eget mauris pharetra et ultrices." />
+        <Label Style="{StaticResource Paragraph}" Text="Leo a diam sollicitudin tempor. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Est lorem ipsum dolor sit amet consectetur adipiscing. Est velit egestas dui id. Etiam erat velit scelerisque in. Erat imperdiet sed euismod nisi porta. Proin nibh nisl condimentum id venenatis a condimentum. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Libero nunc consequat interdum varius sit. Integer vitae justo eget magna. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Sit amet tellus cras adipiscing enim. Nulla facilisi morbi tempus iaculis urna id. Sodales ut etiam sit amet nisl purus. Blandit massa enim nec dui nunc. Risus pretium quam vulputate dignissim suspendisse in est. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Donec adipiscing tristique risus nec feugiat in fermentum posuere urna. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent." />
+        <Label Style="{StaticResource Paragraph2}" Text="Leo a diam sollicitudin tempor. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Est lorem ipsum dolor sit amet consectetur adipiscing. Est velit egestas dui id. Etiam erat velit scelerisque in. Erat imperdiet sed euismod nisi porta. Proin nibh nisl condimentum id venenatis a condimentum. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Libero nunc consequat interdum varius sit. Integer vitae justo eget magna. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Sit amet tellus cras adipiscing enim. Nulla facilisi morbi tempus iaculis urna id. Sodales ut etiam sit amet nisl purus. Blandit massa enim nec dui nunc. Risus pretium quam vulputate dignissim suspendisse in est. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Donec adipiscing tristique risus nec feugiat in fermentum posuere urna. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent." />
+
+    </VerticalStackLayout>
+</ContentPage>

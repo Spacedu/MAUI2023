@@ -183,6 +183,9 @@
 	  <MauiXaml Update="Views\Styles\ImplicitExplicitStyles.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Styles\InheirtanceStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

@@ -298,6 +298,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Aplicar um estilo aos elementos derividos da classe/component atual.",
                     Page = typeof(ApplyDerivedTypes)
                 },
+                new Component {
+                    Title = "Inheritance Style",
+                    Description = "Como criar estilos derivados de outros.",
+                    Page = typeof(InheirtanceStyle)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

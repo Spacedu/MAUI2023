@@ -303,6 +303,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Como criar estilos derivados de outros.",
                     Page = typeof(InheirtanceStyle)
                 },
+                new Component {
+                    Title = "Style Class",
+                    Description = "Cria classes de estilos para serem aplicado aos componentes",
+                    Page = typeof(StyleClassPage)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

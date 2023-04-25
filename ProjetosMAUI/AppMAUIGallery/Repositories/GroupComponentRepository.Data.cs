@@ -323,6 +323,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Adapta o tema ao modo claro/escuro do Sistema Operacional.",
                     Page = typeof(AppThemeBindingPage)
                 },
+                new Component {
+                    Title = "Visual State Manager (VSM)",
+                    Description = "Personaliza a apresentação de acordo com o estado do componente.",
+                    Page = typeof(VisualStateManagerPage)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

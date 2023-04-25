@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Styles.VisualStateManagerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="VisualStateManagerPage">
+    <VerticalStackLayout>
+        <!--
+            CommonStates:
+            - Normal
+            - Disabled
+            - Focused (Entry)
+            - Selected (CollectionView, ListView)
+            - Pressed (Button)
+            - PointerOver
+            
+            Entry:
+            - Ativado
+            - Desativado
+            - Erro (VSM > Erro)
+            - Sucesso (VSM > Sucesso)
+        -->
+
+
+        <Label
+            HorizontalOptions="Center"
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" />
+
+        <Button IsEnabled="True" Text="Clique-me">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Gray" />
+                            <Setter Property="TextColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="PointerOver">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Purple" />
+                            <Setter Property="TextColor" Value="White" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Red" />
+                            <Setter Property="TextColor" Value="White" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>

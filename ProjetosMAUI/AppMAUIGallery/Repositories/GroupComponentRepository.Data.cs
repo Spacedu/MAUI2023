@@ -1,4 +1,5 @@
 ﻿using AppMAUIGallery.Models;
+using AppMAUIGallery.Views.Animations;
 using AppMAUIGallery.Views.Cells;
 using AppMAUIGallery.Views.Components.Forms;
 using AppMAUIGallery.Views.Components.Mains;
@@ -28,6 +29,7 @@ namespace AppMAUIGallery.Repositories
             LoadCells();
             LoadCollections();
             LoadStyles();
+            LoadAnimations();
         }
 
         private void LoadLayouts()
@@ -331,6 +333,23 @@ namespace AppMAUIGallery.Repositories
             };
 
             var group = new GroupComponent() { Name = "Styles" };
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
+
+        private void LoadAnimations()
+        {
+            var components = new List<Component> {
+                new Component {
+                    Title = "Basic Animation",
+                    Description = "Animação básica do .NET MAUI.",
+                    Page = typeof(BasicAnimation)
+                },
+            };
+
+            var group = new GroupComponent() { Name = "Animation" };
             group.AddRange(components);
 
             _components.AddRange(components);

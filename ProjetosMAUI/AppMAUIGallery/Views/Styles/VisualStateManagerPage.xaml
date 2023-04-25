@@ -4,6 +4,24 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="VisualStateManagerPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="TextDecorations" Value="Underline" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="LinkStates">
+                        <VisualState x:Name="Tapped">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Purple" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
     <VerticalStackLayout>
         <!--
             CommonStates:
@@ -24,8 +42,21 @@
 
         <Label
             HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
+            Text="Google"
+            VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedChangeVisualState"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+            HorizontalOptions="Center"
+            Text="Microsoft"
+            VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedChangeVisualState"/>
+            </Label.GestureRecognizers>
+        </Label>
 
         <Button IsEnabled="True" Text="Clique-me">
             <VisualStateManager.VisualStateGroups>

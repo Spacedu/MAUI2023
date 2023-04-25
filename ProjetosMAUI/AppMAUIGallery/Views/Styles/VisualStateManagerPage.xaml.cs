@@ -6,4 +6,10 @@ public partial class VisualStateManagerPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void OnTappedChangeVisualState(object sender, TappedEventArgs e)
+    {
+		var label = (Label)sender;
+		VisualStateManager.GoToState(label, "Tapped");
+    }
 }

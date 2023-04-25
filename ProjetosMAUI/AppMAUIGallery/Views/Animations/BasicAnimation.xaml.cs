@@ -80,4 +80,9 @@ public partial class BasicAnimation : ContentPage
 
 
     }
+
+    private void Cor(object sender, EventArgs e)
+    {
+        Image.ColorTo(Colors.White, Colors.Violet, v => Image.BackgroundColor = v, 2000, null);
+    }
 }

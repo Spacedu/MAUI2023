@@ -30,6 +30,7 @@
             <Border Margin="10" Padding="10">
                 <VerticalStackLayout>
                     <Button Clicked="Custom" Text="Animação customizada" />
+                    <Button Clicked="Cor" Text="Animação da Cor" />
                 </VerticalStackLayout>
             </Border>
         </VerticalStackLayout>

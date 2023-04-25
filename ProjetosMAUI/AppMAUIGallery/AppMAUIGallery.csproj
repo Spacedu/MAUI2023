@@ -183,6 +183,9 @@
 	  <MauiXaml Update="Views\Styles\ApplyDerivedTypes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Styles\AppThemeBindingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Styles\GlobalStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

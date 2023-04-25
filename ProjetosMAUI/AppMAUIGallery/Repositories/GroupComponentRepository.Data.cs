@@ -318,6 +318,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Define um tema padrão para o nosso projeto.",
                     Page = typeof(Theme)
                 },
+                new Component {
+                    Title = "AppThemeBinding",
+                    Description = "Adapta o tema ao modo claro/escuro do Sistema Operacional.",
+                    Page = typeof(AppThemeBindingPage)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

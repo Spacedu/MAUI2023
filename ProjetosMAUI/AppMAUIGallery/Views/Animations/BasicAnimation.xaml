@@ -16,5 +16,6 @@
         <Button Clicked="Aumentar" Text="Aumentar" />
         <Button Clicked="Diminuir" Text="Diminuir" />
         <Button Clicked="Mover" Text="Mover" />
+        <Button Clicked="Rotacao" Text="Rotação" />
     </VerticalStackLayout>
 </ContentPage>

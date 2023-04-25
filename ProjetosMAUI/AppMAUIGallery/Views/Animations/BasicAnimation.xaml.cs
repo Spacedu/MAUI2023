@@ -31,4 +31,11 @@ public partial class BasicAnimation : ContentPage
     {
         Image.TranslateTo(100, 100, 2000);
     }
+
+    private async void Rotacao(object sender, EventArgs e)
+    {
+        //await Image.RotateTo(720, 2000);
+        //await Image.RotateYTo(360, 1000);
+        await Image.RelRotateTo(90, 1000);
+    }
 }

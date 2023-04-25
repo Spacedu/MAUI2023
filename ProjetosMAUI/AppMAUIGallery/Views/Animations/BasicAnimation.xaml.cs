@@ -43,4 +43,25 @@ public partial class BasicAnimation : ContentPage
     {
         await Image.FadeTo(0.3, 1000);
     }
+
+    private async void Sequencial(object sender, EventArgs e)
+    {
+        await Image.TranslateTo(100, 0, 250);
+        await Image.TranslateTo(-100, 0, 500);
+        await Image.TranslateTo(0, 0, 250);
+    }
+
+    private async void Paralelo(object sender, EventArgs e)
+    {
+        await Task.WhenAll(
+            Image.TranslateTo(100, 0, 4000),
+            Image.RotateTo(360, 4000),
+            Image.FadeTo(0.6, 4000)
+        );
+    }
+
+    private void Cancelamento(object sender, EventArgs e)
+    {
+        Image.CancelAnimations();
+    }
 }

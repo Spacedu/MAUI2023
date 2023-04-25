@@ -12,6 +12,6 @@
             TextColor="{DynamicResource PrimaryColor}"
             VerticalOptions="Center" />
 
-        <Button Text="Alterar" Clicked="Button_Clicked" />
+        <Button Clicked="Button_Clicked" Text="Alterar" />
     </VerticalStackLayout>
 </ContentPage>

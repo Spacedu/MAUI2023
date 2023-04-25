@@ -9,7 +9,7 @@
             <Image
                 x:Name="Image"
                 Source="dotnet_bot.png"
-                WidthRequest="100" />
+                WidthRequest="100" Scale="1.2" TranslationX="10" Rotation="10" Opacity="1" />
         </Border>
 
         <Button Clicked="Normal" Text="Normal" />
@@ -17,5 +17,6 @@
         <Button Clicked="Diminuir" Text="Diminuir" />
         <Button Clicked="Mover" Text="Mover" />
         <Button Clicked="Rotacao" Text="Rotação" />
+        <Button Clicked="Transparencia" Text="Transparência" />
     </VerticalStackLayout>
 </ContentPage>

@@ -6,7 +6,10 @@
     Title="MainPage">
     <CollectionView x:Name="ComponentCollection">
         <CollectionView.Header>
-            <Entry Margin="20,20,20,10" Placeholder="Pesquisa..." TextChanged="Entry_TextChanged"/>
+            <Entry
+                Margin="20,20,20,10"
+                Placeholder="Pesquisa..."
+                TextChanged="Entry_TextChanged" />
         </CollectionView.Header>
         <CollectionView.ItemTemplate>
             <DataTemplate>

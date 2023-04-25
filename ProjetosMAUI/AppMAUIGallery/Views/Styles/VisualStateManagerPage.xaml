@@ -45,7 +45,7 @@
             Text="Google"
             VerticalOptions="Center">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnTappedChangeVisualState"/>
+                <TapGestureRecognizer Tapped="OnTappedChangeVisualState" />
             </Label.GestureRecognizers>
         </Label>
 
@@ -54,7 +54,7 @@
             Text="Microsoft"
             VerticalOptions="Center">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnTappedChangeVisualState"/>
+                <TapGestureRecognizer Tapped="OnTappedChangeVisualState" />
             </Label.GestureRecognizers>
         </Label>
 

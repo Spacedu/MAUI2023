@@ -38,4 +38,9 @@ public partial class BasicAnimation : ContentPage
         //await Image.RotateYTo(360, 1000);
         await Image.RelRotateTo(90, 1000);
     }
+
+    private async void Transparencia(object sender, EventArgs e)
+    {
+        await Image.FadeTo(0.3, 1000);
+    }
 }

@@ -313,6 +313,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Define se o estilo pode ser alterado em tempo real.",
                     Page = typeof(StaticDynamicResource)
                 },
+                new Component {
+                    Title = "Theme",
+                    Description = "Define um tema padrão para o nosso projeto.",
+                    Page = typeof(Theme)
+                },
             };
 
             var group = new GroupComponent() { Name = "Styles" };

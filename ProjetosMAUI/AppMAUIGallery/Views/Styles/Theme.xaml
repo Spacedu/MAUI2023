@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Styles.Theme"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Theme"
+    BackgroundColor="{DynamicResource BackgroundColor}">
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Welcome to .NET MAUI!"
+            TextColor="{DynamicResource PrimaryColor}"
+            VerticalOptions="Center" />
+
+        <Button Text="Alterar" Clicked="Button_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>

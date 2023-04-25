@@ -29,7 +29,7 @@ public partial class BasicAnimation : ContentPage
 
     private void Mover(object sender, EventArgs e)
     {
-        Image.TranslateTo(100, 100, 2000);
+        Image.TranslateTo(0, 90, 2000, Easing.BounceOut);
     }
 
     private async void Rotacao(object sender, EventArgs e)

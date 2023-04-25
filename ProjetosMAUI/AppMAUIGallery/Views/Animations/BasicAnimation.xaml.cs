@@ -27,4 +27,8 @@ public partial class BasicAnimation : ContentPage
         Image.ScaleTo(0.5, 2000);
     }
 
+    private void Mover(object sender, EventArgs e)
+    {
+        Image.TranslateTo(100, 100, 2000);
+    }
 }

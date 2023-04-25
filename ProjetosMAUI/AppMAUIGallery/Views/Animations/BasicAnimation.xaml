@@ -5,9 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="BasicAnimation">
     <VerticalStackLayout>
-        <Image Source="dotnet_bot.png" x:Name="Image" WidthRequest="150"/>
-        <Button Text="Normal" Clicked="Normal" />
-        <Button Text="Aumentar" Clicked="Aumentar" />
-        <Button Text="Diminuir" Clicked="Diminuir"/>
+        <Border HeightRequest="300">
+            <Image
+                x:Name="Image"
+                Source="dotnet_bot.png"
+                WidthRequest="100" />
+        </Border>
+
+        <Button Clicked="Normal" Text="Normal" />
+        <Button Clicked="Aumentar" Text="Aumentar" />
+        <Button Clicked="Diminuir" Text="Diminuir" />
+        <Button Clicked="Mover" Text="Mover" />
     </VerticalStackLayout>
 </ContentPage>

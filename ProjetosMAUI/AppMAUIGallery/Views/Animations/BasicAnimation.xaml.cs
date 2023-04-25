@@ -64,4 +64,20 @@ public partial class BasicAnimation : ContentPage
     {
         Image.CancelAnimations();
     }
+
+    private void Custom(object sender, EventArgs e)
+    {
+        var principal = new Animation();
+        var animacao01 = new Animation(v=> Image.TranslationX = v, 0, 150, Easing.Linear, null);
+        var animacao02 = new Animation(v=> Image.Rotation = v, 0, 360, Easing.Linear, null);
+
+
+        principal.Add(0, 1, animacao01);
+        principal.Add(0.5, 1, animacao02);
+
+        principal.Commit(this, "AnimacaoPersonalizada", 16, 10000, null, null, null);
+        //animacao01.Commit(this, "MoverORobo", 16, 3000, null, null, repeat: ()=>true);
+
+
+    }
 }

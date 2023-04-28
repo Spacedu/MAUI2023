@@ -21,6 +21,17 @@
 
         <Label Text="{Binding Person.Name}" />
         <Label Text="{Binding Person.Email}" />
-        <Button Text="Enviar" />
+        <Button Command="{Binding SaveCommand}" Text="Salvar" />
+
+        <CollectionView ItemsSource="{Binding People}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Name}" />
+                        <Label Text="{Binding Email}" TextColor="Gray" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

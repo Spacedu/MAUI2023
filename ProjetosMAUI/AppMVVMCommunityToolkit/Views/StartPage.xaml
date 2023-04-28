@@ -9,6 +9,7 @@
         <vm:StartPageViewModel />
     </ContentPage.BindingContext>
     <VerticalStackLayout Padding="20" Spacing="10">
+        <Button Command="{Binding GoToPubSubPageCommand}" Text="Pub/Sub" />
         <Label
             Margin="0,0,0,20"
             FontAttributes="Bold"

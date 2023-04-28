@@ -1,4 +1,5 @@
 ﻿using AppMVVMCommunityToolkit.Models;
+using AppMVVMCommunityToolkit.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -27,6 +28,13 @@ namespace AppMVVMCommunityToolkit.ViewModels
         {
             People.Add(Person);
             Person = new Person();
+        }
+
+        [RelayCommand]
+        private void GoToPubSubPage()
+        {
+            NavigationPage navPag = (NavigationPage)App.Current.MainPage;
+            navPag.PushAsync(new PubSubPage());
         }
     }
 }

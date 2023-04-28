@@ -1,4 +1,6 @@
 ﻿using AppMVVMCommunityToolkit.Models;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,13 +11,21 @@ using System.Windows.Input;
 
 namespace AppMVVMCommunityToolkit.ViewModels
 {
-    public class StartPageViewModel
+    public partial class StartPageViewModel : ObservableObject
     {
-        public ICommand SaveCommand { get; set; }
-        public Person Person { get; set; }
+        [ObservableProperty]
+        private Person person;
         public ObservableCollection<Person> People { get; set; }
         public StartPageViewModel()
         {
+            Person = new Person();
+            People = new ObservableCollection<Person>();
+        }
+
+        [RelayCommand]
+        private void Save()
+        {
+            People.Add(Person);
             Person = new Person();
         }
     }

@@ -3,7 +3,11 @@
     x:Class="AppMVVM.Views.StartPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AppMVVM.ViewModels"
     Title="StartPage">
+    <ContentPage.BindingContext>
+        <vm:StartPageViewModel />
+    </ContentPage.BindingContext>
     <VerticalStackLayout Padding="20" Spacing="10">
         <Label
             Margin="0,0,0,20"
@@ -12,8 +16,11 @@
             Text="Formulário de cadastro"
             TextTransform="Uppercase"
             VerticalOptions="Center" />
-        <Entry Placeholder="Nome" />
-        <Entry Placeholder="Email" />
+        <Entry Placeholder="Nome" Text="{Binding Person.Name}" />
+        <Entry Placeholder="Email" Text="{Binding Person.Email}" />
+
+        <Label Text="{Binding Person.Name}" />
+        <Label Text="{Binding Person.Email}" />
         <Button Text="Enviar" />
     </VerticalStackLayout>
 </ContentPage>

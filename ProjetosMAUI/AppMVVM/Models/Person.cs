@@ -13,7 +13,7 @@ namespace AppMVVM.Models
         public int Id
         {
             get { return _id; }
-            set { _id = value; OnPropertyChanged(nameof(Id)); }
+            set {  _id = value; OnPropertyChanged(nameof(Id)); }
         }
         private string _name;
         public string Name { 
@@ -34,6 +34,5 @@ namespace AppMVVM.Models
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-
     }
 }

@@ -1,5 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AppMVVMCommunityToolkit.Libraries.Messages;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +18,7 @@ namespace AppMVVMCommunityToolkit.ViewModels
         [RelayCommand]
         private void SendText()
         {
-
+            WeakReferenceMessenger.Default.Send(new TextMessage(InputText));
         }
     }
 }

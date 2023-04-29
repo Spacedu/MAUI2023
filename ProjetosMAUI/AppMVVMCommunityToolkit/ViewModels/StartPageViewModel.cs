@@ -1,7 +1,9 @@
-﻿using AppMVVMCommunityToolkit.Models;
+﻿using AppMVVMCommunityToolkit.Libraries.Messages;
+using AppMVVMCommunityToolkit.Models;
 using AppMVVMCommunityToolkit.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +26,14 @@ namespace AppMVVMCommunityToolkit.ViewModels
         {
             Person = new Person();
             People = new ObservableCollection<Person>();
+
+
+            //Subscribe
+            WeakReferenceMessenger.Default.Register<TextMessage>(this, (obj, msg) => {
+
+                Message = msg.Value;
+
+            });
         }
 
         [RelayCommand]

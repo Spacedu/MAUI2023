@@ -7,6 +7,7 @@ using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
 using AppMAUIGallery.Views.Lists;
 using AppMAUIGallery.Views.Styles;
+using AppMAUIGallery.Views.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +31,24 @@ namespace AppMAUIGallery.Repositories
             LoadCollections();
             LoadStyles();
             LoadAnimations();
+            LoadUtils();
         }
+        private void LoadUtils()
+        {
+            var components = new List<Component> {
+                new Component {
+                    Title = "Behavior",
+                    Description = "Lógica que pode ser associada a um componente da tela.",
+                    Page = typeof(BehaviorPage)
+                }
+            };
 
+            var group = new GroupComponent() { Name = "Útils" };
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
         private void LoadLayouts()
         {
             var components = new List<Component> {

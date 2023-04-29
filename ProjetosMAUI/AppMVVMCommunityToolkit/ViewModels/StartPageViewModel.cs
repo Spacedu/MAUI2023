@@ -30,9 +30,12 @@ namespace AppMVVMCommunityToolkit.ViewModels
 
             //Subscribe
             WeakReferenceMessenger.Default.Register<TextMessage>(this, (obj, msg) => {
-
                 Message = msg.Value;
+            });
 
+            WeakReferenceMessenger.Default.Register<PersonMessage>(this, (obj, msg) =>
+            {
+                People.Add(msg.Value);
             });
         }
 

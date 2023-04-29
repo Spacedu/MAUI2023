@@ -11,5 +11,10 @@
     <VerticalStackLayout Padding="20">
         <Entry Placeholder="Digite uma mensagem para a tela anterior." Text="{Binding InputText}" />
         <Button Command="{Binding SendTextCommand}" Text="Enviar mensagem" />
+
+        <Button
+            Margin="0,10"
+            Command="{Binding AddNewPersonCommand}"
+            Text="Adicionar nova pessoa" />
     </VerticalStackLayout>
 </ContentPage>

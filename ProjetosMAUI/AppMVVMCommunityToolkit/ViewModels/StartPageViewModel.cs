@@ -15,6 +15,9 @@ namespace AppMVVMCommunityToolkit.ViewModels
     public partial class StartPageViewModel : ObservableObject
     {
         [ObservableProperty]
+        private string message;
+
+        [ObservableProperty]
         private Person person;
         public ObservableCollection<Person> People { get; set; }
         public StartPageViewModel()

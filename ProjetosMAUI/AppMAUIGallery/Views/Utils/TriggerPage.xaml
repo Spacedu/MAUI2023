@@ -43,11 +43,24 @@
         </Button>
 
 
-        <Entry Placeholder="Digite sua idade">
+        <Entry x:Name="EntryAge" Placeholder="Digite sua idade">
             <Entry.Triggers>
                 <EventTrigger Event="TextChanged">
                     <trigger:AgeTrigger />
                 </EventTrigger>
+            </Entry.Triggers>
+        </Entry>
+
+        <Entry Placeholder="Digite seu e-mail">
+            <Entry.Triggers>
+                <MultiTrigger TargetType="Entry">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding Source={x:Reference EntryAge}, Path=Text}" Value="18" />
+                        <PropertyCondition Property="Text" Value="elias.ribeiro.s@gmail.com" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="TextColor" Value="Green" />
+                    <Setter Property="BackgroundColor" Value="LightGray" />
+                </MultiTrigger>
             </Entry.Triggers>
         </Entry>
     </VerticalStackLayout>

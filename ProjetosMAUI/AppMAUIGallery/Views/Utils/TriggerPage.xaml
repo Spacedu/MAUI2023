@@ -3,9 +3,12 @@
     x:Class="AppMAUIGallery.Views.Utils.TriggerPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:AppMAUIGallery.Views.Utils.Converters"
     xmlns:trigger="clr-namespace:AppMAUIGallery.Views.Utils.Triggers"
     Title="TriggerPage">
+
     <ContentPage.Resources>
+        <converter:MoreThenZeroConverter x:Key="MoreThenZeroConverter" />
         <Style TargetType="Entry">
             <Style.Triggers>
                 <Trigger TargetType="Entry" Property="IsEnabled" Value="False">
@@ -29,14 +32,14 @@
             <Label Text="/1000" />
         </HorizontalStackLayout>
 
-        <Button IsEnabled="True" Text="Salva">
+        <Button IsEnabled="False" Text="Salvar">
             <Button.Triggers>
 
                 <DataTrigger
-                    Binding="{Binding Source={x:Reference EntryName}, Path=Text.Length}"
+                    Binding="{Binding Source={x:Reference EntryName}, Path=Text.Length, Converter={StaticResource MoreThenZeroConverter}}"
                     TargetType="Button"
-                    Value="0">
-                    <Setter Property="IsEnabled" Value="False" />
+                    Value="True">
+                    <Setter Property="IsEnabled" Value="True" />
                 </DataTrigger>
 
             </Button.Triggers>
@@ -51,7 +54,7 @@
             </Entry.Triggers>
         </Entry>
 
-        <Entry Placeholder="Digite seu e-mail">
+        <Entry x:Name="EntryEmail" Placeholder="Digite seu e-mail">
             <Entry.Triggers>
                 <MultiTrigger TargetType="Entry">
                     <MultiTrigger.Conditions>
@@ -63,5 +66,18 @@
                 </MultiTrigger>
             </Entry.Triggers>
         </Entry>
+
+
+        <Button IsEnabled="False" Text="Salvar">
+            <Button.Triggers>
+                <MultiTrigger TargetType="Button">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding Source={x:Reference EntryAge}, Path=Text.Length, Converter={StaticResource MoreThenZeroConverter}}" Value="True" />
+                        <BindingCondition Binding="{Binding Source={x:Reference EntryEmail}, Path=Text.Length, Converter={StaticResource MoreThenZeroConverter}}" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="True" />
+                </MultiTrigger>
+            </Button.Triggers>
+        </Button>
     </VerticalStackLayout>
 </ContentPage>

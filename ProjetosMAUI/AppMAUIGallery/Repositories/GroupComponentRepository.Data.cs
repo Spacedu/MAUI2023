@@ -40,7 +40,12 @@ namespace AppMAUIGallery.Repositories
                     Title = "Behavior",
                     Description = "Lógica que pode ser associada a um componente da tela.",
                     Page = typeof(BehaviorPage)
-                }
+                },
+                new Component {
+                    Title = "Trigger",
+                    Description = "Gatilho que dispara uma alteração visual no componente.",
+                    Page = typeof(TriggerPage)
+                },
             };
 
             var group = new GroupComponent() { Name = "Útils" };

@@ -30,7 +30,7 @@
         <Setter Property="Padding" Value="14,10" />
         <Setter Property="MinimumHeightRequest" Value="44" />
         <Setter Property="MinimumWidthRequest" Value="44" />
-        <!--
+
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
@@ -44,7 +44,6 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
-        -->
     </Style>
 
     <Style TargetType="CheckBox">

@@ -18,7 +18,26 @@
         </Style>
     </ContentPage.Resources>
     <VerticalStackLayout Padding="20">
-        <Entry IsEnabled="True" Placeholder="Digite algo" />
-        <Entry IsEnabled="True" Placeholder="Digite algo" />
+        <Entry
+            x:Name="EntryName"
+            IsEnabled="True"
+            Placeholder="Digite o nome" />
+
+        <HorizontalStackLayout>
+            <Label Text="{Binding Source={x:Reference EntryName}, Path=Text.Length}" />
+            <Label Text="/1000" />
+        </HorizontalStackLayout>
+        <Button IsEnabled="True" Text="Salva">
+            <Button.Triggers>
+
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference EntryName}, Path=Text.Length}"
+                    TargetType="Button"
+                    Value="0">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+
+            </Button.Triggers>
+        </Button>
     </VerticalStackLayout>
 </ContentPage>

@@ -11,5 +11,12 @@
             HorizontalOptions="Center"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" />
+
+        <Border Margin="10" Padding="10">
+            <Border.Background>
+                <SolidColorBrush Color="Aqua" />
+            </Border.Background>
+            <Label Text="Olá Brush!" />
+        </Border>
     </VerticalStackLayout>
 </ContentPage>

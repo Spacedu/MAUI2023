@@ -213,6 +213,9 @@
 	  <MauiXaml Update="Views\Utils\BehaviorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Utils\ColorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Utils\FontPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

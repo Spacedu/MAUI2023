@@ -18,5 +18,18 @@
             </Border.Background>
             <Label Text="Olá Brush!" />
         </Border>
+
+        <!--
+            X/Y = 0/1 = 0 Inicio/1 Final
+        -->
+        <Border Margin="10" Padding="10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Offset="0.1" Color="#00C2FF" />
+                    <GradientStop Offset="1.0" Color="#A1E880" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Label Text="Olá Brush!" />
+        </Border>
     </VerticalStackLayout>
 </ContentPage>

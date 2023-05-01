@@ -20,7 +20,7 @@
             VerticalOptions="Center" />
 
 
-        <Image WidthRequest="50">
+        <Image Margin="0,0,0,50" WidthRequest="50">
             <Image.Source>
                 <FontImageSource
                     FontFamily="Icons"

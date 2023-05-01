@@ -52,6 +52,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Foldit-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Foldit-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Icons.ttf" />
 	  <None Remove="Resources\Images\clock.svg" />
 	  <None Remove="Resources\Images\poweroff.png" />
 	  <None Remove="Resources\Images\poweron.png" />

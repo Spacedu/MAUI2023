@@ -18,5 +18,25 @@
             HorizontalOptions="Center"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" />
+
+
+        <Image WidthRequest="50">
+            <Image.Source>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xf301;"
+                    Size="200"
+                    Color="#1877f2" />
+            </Image.Source>
+        </Image>
+        <Image WidthRequest="50">
+            <Image.Source>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xf303;"
+                    Size="60"
+                    Color="#00acee" />
+            </Image.Source>
+        </Image>
     </VerticalStackLayout>
 </ContentPage>

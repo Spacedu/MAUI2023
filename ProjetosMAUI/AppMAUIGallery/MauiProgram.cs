@@ -11,6 +11,8 @@ namespace AppMAUIGallery
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
+                    fonts.AddFont("Foldit-Bold.ttf", "FolditBold");
+                    fonts.AddFont("Foldit-Medium.ttf", "FolditMedium");
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });

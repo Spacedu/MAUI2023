@@ -50,6 +50,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Foldit-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Foldit-Medium.ttf" />
 	  <None Remove="Resources\Images\clock.svg" />
 	  <None Remove="Resources\Images\poweroff.png" />
 	  <None Remove="Resources\Images\poweron.png" />
@@ -208,6 +210,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Utils\BehaviorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Utils\FontPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Utils\PlatformIdiomPage.xaml">

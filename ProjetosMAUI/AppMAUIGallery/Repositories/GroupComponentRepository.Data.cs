@@ -33,27 +33,7 @@ namespace AppMAUIGallery.Repositories
             LoadAnimations();
             LoadUtils();
         }
-        private void LoadUtils()
-        {
-            var components = new List<Component> {
-                new Component {
-                    Title = "Behavior",
-                    Description = "Lógica que pode ser associada a um componente da tela.",
-                    Page = typeof(BehaviorPage)
-                },
-                new Component {
-                    Title = "Trigger",
-                    Description = "Gatilho que dispara uma alteração visual no componente.",
-                    Page = typeof(TriggerPage)
-                },
-            };
-
-            var group = new GroupComponent() { Name = "Útils" };
-            group.AddRange(components);
-
-            _components.AddRange(components);
-            _groupComponents.Add(group);
-        }
+        
         private void LoadLayouts()
         {
             var components = new List<Component> {
@@ -372,6 +352,32 @@ namespace AppMAUIGallery.Repositories
             };
 
             var group = new GroupComponent() { Name = "Animation" };
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
+        private void LoadUtils()
+        {
+            var components = new List<Component> {
+                new Component {
+                    Title = "Behavior",
+                    Description = "Lógica que pode ser associada a um componente da tela.",
+                    Page = typeof(BehaviorPage)
+                },
+                new Component {
+                    Title = "Trigger",
+                    Description = "Gatilho que dispara uma alteração visual no componente.",
+                    Page = typeof(TriggerPage)
+                },
+                new Component {
+                    Title = "OnPlatform/OnIdiom",
+                    Description = "Define valores diferentes entre o S.O. e também pelo tipo de dispositivo.",
+                    Page = typeof(PlatformIdiomPage)
+                },
+            };
+
+            var group = new GroupComponent() { Name = "Útils" };
             group.AddRange(components);
 
             _components.AddRange(components);

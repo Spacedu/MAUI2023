@@ -210,6 +210,9 @@
 	  <MauiXaml Update="Views\Utils\BehaviorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Utils\PlatformIdiomPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Utils\TriggerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

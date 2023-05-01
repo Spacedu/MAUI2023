@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Utils.PlatformIdiomPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PlatformIdiomPage">
+    <VerticalStackLayout Padding="{OnPlatform Default='10,10,10,20', WinUI='20, 10, 0, 0', Android=30, iOS=40}">
+        <Label Text="{OnPlatform Default='Indefinido', Android='Android', WinUI='Windows 10/11', iOS='iOS', MacCatalyst='MacOS', Tizen='Tizen'}" />
+        <Label Text="{OnIdiom Default='Indefinido', Desktop='PC', Phone='Celular', Tablet='Tablet', TV='TV', Watch='Watch'}" />
+    </VerticalStackLayout>
+</ContentPage>

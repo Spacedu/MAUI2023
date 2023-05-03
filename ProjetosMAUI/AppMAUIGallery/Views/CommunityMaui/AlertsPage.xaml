@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMAUIGallery.Views.CommunityMaui.AlertsPage"
              Title="AlertsPage">
-    <VerticalStackLayout Padding="20">
+    <VerticalStackLayout Padding="20" Spacing="10">
         <Button Text="Snackbar" Clicked="OnButtonClicked_ShowSnackbar" />
+        <Button Text="Toast" Clicked="OnButtonClicked_ShowToast" />
     </VerticalStackLayout>
 </ContentPage>

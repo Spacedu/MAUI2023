@@ -25,4 +25,11 @@ public partial class AlertsPage : ContentPage
 		//Apresentação da Snack
 		snackbar.Show();
     }
+
+    private void OnButtonClicked_ShowToast(object sender, EventArgs e)
+    {
+		var toast = Toast.Make("Ocorreu um erro inesperado!", ToastDuration.Long, 18);
+
+		toast.Show();
+    }
 }

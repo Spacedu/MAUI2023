@@ -54,6 +54,8 @@
 	  <None Remove="Resources\Fonts\Foldit-Medium.ttf" />
 	  <None Remove="Resources\Fonts\Icons.ttf" />
 	  <None Remove="Resources\Images\clock.svg" />
+	  <None Remove="Resources\Images\five.svg" />
+	  <None Remove="Resources\Images\four.svg" />
 	  <None Remove="Resources\Images\one.svg" />
 	  <None Remove="Resources\Images\poweroff.png" />
 	  <None Remove="Resources\Images\poweron.png" />

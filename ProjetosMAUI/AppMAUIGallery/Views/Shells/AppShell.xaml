@@ -7,6 +7,7 @@
     Title="AppShell">
     <TabBar>
         <!--  Páginas  -->
+
         <ShellContent
             Title="Página 01"
             ContentTemplate="{DataTemplate pages:Page01}"
@@ -19,5 +20,15 @@
             Title="Página 03"
             ContentTemplate="{DataTemplate pages:Page03}"
             Icon="three.png" />
+
+        <Tab Title="4 e 5">
+            
+            <pages:Page04 />
+            
+            <ShellContent Title="Page05" Icon="five.png">
+                <pages:Page05 />
+            </ShellContent>
+        </Tab>
+        
     </TabBar>
 </Shell>

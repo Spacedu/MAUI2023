@@ -4,7 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:AppMAUIGallery.Views.CommunityMaui.ViewModels"
     Title="CommunityBehaviorPage">
+    <ContentPage.BindingContext>
+        <vm:CommunityBehaviorPageViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="CadetBlue" StatusBarStyle="LightContent" />
     </ContentPage.Behaviors>
@@ -19,5 +23,12 @@
                 <toolkit:MaskedBehavior Mask="000.000.000-00" UnmaskedCharacter="0" />
             </Entry.Behaviors>
         </Entry>
+
+        <Button Pressed="OnPressed" Text="Chamar um Command sem o Behavior" />
+        <Button Text="Chamar um Command com o EventToCommandBehavior">
+            <Button.Behaviors>
+                <toolkit:EventToCommandBehavior Command="{Binding PressedCommand}" EventName="Pressed" />
+            </Button.Behaviors>
+        </Button>
     </VerticalStackLayout>
 </ContentPage>

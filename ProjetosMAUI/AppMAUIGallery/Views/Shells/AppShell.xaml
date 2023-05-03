@@ -21,14 +21,14 @@
             ContentTemplate="{DataTemplate pages:Page03}"
             Icon="three.png" />
 
-        <Tab Title="4 e 5">
-            
-            <pages:Page04 />
-            
+        <Tab Title="4 e 5" Icon="four.png">
+
+            <pages:Page04 Shell.TabBarIsVisible="False" />
+
             <ShellContent Title="Page05" Icon="five.png">
                 <pages:Page05 />
             </ShellContent>
         </Tab>
-        
+
     </TabBar>
 </Shell>

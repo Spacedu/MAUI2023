@@ -414,6 +414,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Um componente que oculta/apresenta um conteúdo associado a ele.",
                     Page = typeof(ExpanderPage)
                 },
+                new Component {
+                    Title = "Pop-up",
+                    Description = "Apresenta um modal(Pop-up) na tela",
+                    Page = typeof(PopupPage)
+                },
             };
 
             var group = new GroupComponent() { Name = ".NET MAUI Community Toolkit" };

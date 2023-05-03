@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="AppMAUIGallery.Views.CommunityMaui.Popups.MyPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    CanBeDismissedByTappingOutsideOfPopup="False"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"
+    Size="400, 200"
+    Color="#F2F2F2">
+    <Border Padding="20">
+        <VerticalStackLayout>
+            <Button
+                Clicked="OnClickedClose"
+                HorizontalOptions="EndAndExpand"
+                Text="X" />
+
+            <Label Text="Digite seu e-mail para receber novidades!" />
+            <Entry Placeholder="Digite o seu e-mail" />
+            <Button Clicked="OnClickSaveEmailAndClose" Text="Enviar" />
+        </VerticalStackLayout>
+    </Border>
+</toolkit:Popup>

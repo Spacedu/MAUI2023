@@ -5,8 +5,50 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:AppMAUIGallery.Views.Shells.Pages"
     Title="AppShell">
+    <!--
+    <FlyoutItem Title="Página 01" FlyoutIcon="one.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page01}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Página 02" FlyoutIcon="two.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page02}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Página 03" FlyoutIcon="three.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page03}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Página 04" FlyoutIcon="four.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page04}" />
+    </FlyoutItem>
+    -->
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent
+            Title="Página 01"
+            ContentTemplate="{DataTemplate pages:Page01}"
+            Icon="one.png" />
+        <ShellContent
+            Title="Página 02"
+            ContentTemplate="{DataTemplate pages:Page02}"
+            Icon="two.png" />
+        <ShellContent
+            Title="Página 03"
+            ContentTemplate="{DataTemplate pages:Page03}"
+            Icon="three.png" />
+
+        <Tab Title="4 e 5" Icon="four.png">
+
+            <pages:Page04 Shell.TabBarIsVisible="False" />
+
+            <ShellContent Title="Page05" Icon="five.png">
+                <pages:Page05 />
+            </ShellContent>
+        </Tab>
+
+    </FlyoutItem>
+
+
+    <!-- Backup do TabBar
     <TabBar>
-        <!--  Páginas  -->
 
         <ShellContent
             Title="Página 01"
@@ -31,4 +73,5 @@
         </Tab>
 
     </TabBar>
+    -->
 </Shell>

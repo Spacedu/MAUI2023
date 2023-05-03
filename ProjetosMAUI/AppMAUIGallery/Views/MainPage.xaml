@@ -15,7 +15,7 @@
             <DataTemplate>
                 <VerticalStackLayout Padding="20,10">
                     <VerticalStackLayout.GestureRecognizers>
-                        <TapGestureRecognizer CommandParameter="{Binding Page}" Tapped="OnTapComponent" />
+                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnTapComponent" />
                     </VerticalStackLayout.GestureRecognizers>
                     <Label FontAttributes="Bold" Text="{Binding Title}" />
                     <Label Text="{Binding Description}" TextColor="{StaticResource Gray500}" />

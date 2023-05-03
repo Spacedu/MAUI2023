@@ -206,6 +206,9 @@
 	  <MauiXaml Update="Views\Menu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Shells\AppShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Styles\ApplyDerivedTypes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -7,6 +7,7 @@ using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
 using AppMAUIGallery.Views.Lists;
+using AppMAUIGallery.Views.Shells;
 using AppMAUIGallery.Views.Styles;
 using AppMAUIGallery.Views.Utils;
 using System;
@@ -34,8 +35,25 @@ namespace AppMAUIGallery.Repositories
             LoadAnimations();
             LoadUtils();
             LoadCommunityMaui();
+            LoadShell();
         }
-        
+        private void LoadShell()
+        {
+            var components = new List<Component> {
+                new Component {
+                    Title = "Shell",
+                    Description = "Uma nova forma de estruturar as páginas do nosso projeto",
+                    Page = typeof(AppShell),
+                    IsReplaceMainPage = true
+                },
+            };
+
+            var group = new GroupComponent() { Name = "Shell" };
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
         private void LoadLayouts()
         {
             var components = new List<Component> {

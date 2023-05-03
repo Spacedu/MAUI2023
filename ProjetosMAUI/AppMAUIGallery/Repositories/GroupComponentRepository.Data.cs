@@ -409,6 +409,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Apresenta alguns behaviors que são: Masked, StatusBar e EventToCommand(MVVM).",
                     Page = typeof(CommunityBehaviorPage)
                 },
+                new Component {
+                    Title = "Expander",
+                    Description = "Um componente que oculta/apresenta um conteúdo associado a ele.",
+                    Page = typeof(ExpanderPage)
+                },
             };
 
             var group = new GroupComponent() { Name = ".NET MAUI Community Toolkit" };

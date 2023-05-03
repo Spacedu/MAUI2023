@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.CommunityMaui.CommunityBehaviorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="CommunityBehaviorPage">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Entry Keyboard="Numeric" Placeholder="Telefone">
+            <Entry.Behaviors>
+                <toolkit:MaskedBehavior Mask="(XX) XXXXX-XXXX" />
+            </Entry.Behaviors>
+        </Entry>
+        <Entry Keyboard="Numeric" Placeholder="CPF">
+            <Entry.Behaviors>
+                <toolkit:MaskedBehavior Mask="000.000.000-00" UnmaskedCharacter="0" />
+            </Entry.Behaviors>
+        </Entry>
+    </VerticalStackLayout>
+</ContentPage>

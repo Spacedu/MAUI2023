@@ -404,6 +404,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Formas de emitir mensagens para o usuário.",
                     Page = typeof(AlertsPage)
                 },
+                new Component {
+                    Title = "Behaviors",
+                    Description = "Apresenta alguns behaviors que são: Masked, StatusBar e EventToCommand(MVVM).",
+                    Page = typeof(CommunityBehaviorPage)
+                },
             };
 
             var group = new GroupComponent() { Name = ".NET MAUI Community Toolkit" };

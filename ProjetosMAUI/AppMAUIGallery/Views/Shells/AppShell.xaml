@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:AppMAUIGallery.Views.Shells.Pages"
-    Title="AppShell">
+    Title="AppShell"
+    Shell.TabBarIsVisible="False">
     <!--
     <FlyoutItem Title="Página 01" FlyoutIcon="one.png">
         <ShellContent ContentTemplate="{DataTemplate pages:Page01}" />
@@ -19,6 +20,21 @@
         <ShellContent ContentTemplate="{DataTemplate pages:Page04}" />
     </FlyoutItem>
     -->
+
+    <Shell.FlyoutHeader>
+        <StackLayout Padding="20">
+            <Image HeightRequest="70" Source="clock.png" />
+            <Label
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="Elias Ribeiro"
+                TextColor="Black" />
+            <Label
+                FontSize="8"
+                HorizontalOptions="Center"
+                Text="elias@gmail.com" />
+        </StackLayout>
+    </Shell.FlyoutHeader>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
 
@@ -46,6 +62,14 @@
 
     </FlyoutItem>
 
+    <MenuItem IconImageSource="five.png" Text="Menu Item" />
+
+    <Shell.FlyoutFooter>
+        <Label
+            Padding="10"
+            FontSize="8"
+            Text="Versão: 1.0.0" />
+    </Shell.FlyoutFooter>
 
     <!-- Backup do TabBar
     <TabBar>

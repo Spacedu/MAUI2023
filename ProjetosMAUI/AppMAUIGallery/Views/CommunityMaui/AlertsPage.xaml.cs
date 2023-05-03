@@ -21,7 +21,6 @@ public partial class AlertsPage : ContentPage
 		//Criação do Objeto
 		var snackbar = Snackbar.Make("Ocorreu um erro inesperado!", null, "OK", TimeSpan.FromSeconds(5), options);
 
-
 		//Apresentação da Snack
 		snackbar.Show();
     }

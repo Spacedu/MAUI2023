@@ -11,6 +11,7 @@ namespace AppMAUIGallery
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseMauiCommunityToolkitMediaElement()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("Icons.ttf", "Icons");

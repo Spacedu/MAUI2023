@@ -419,6 +419,11 @@ namespace AppMAUIGallery.Repositories
                     Description = "Apresenta um modal(Pop-up) na tela",
                     Page = typeof(PopupPage)
                 },
+                new Component {
+                    Title = "MediaElement",
+                    Description = "Player de mídia (Áudio/Vídeo)",
+                    Page = typeof(MediaElementPage)
+                },
             };
 
             var group = new GroupComponent() { Name = ".NET MAUI Community Toolkit" };

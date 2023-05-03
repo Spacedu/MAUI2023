@@ -5,6 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     Title="CommunityBehaviorPage">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="CadetBlue" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
     <VerticalStackLayout Padding="20" Spacing="10">
         <Entry Keyboard="Numeric" Placeholder="Telefone">
             <Entry.Behaviors>

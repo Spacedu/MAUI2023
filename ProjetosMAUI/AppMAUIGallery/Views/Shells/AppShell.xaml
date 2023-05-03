@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppMAUIGallery.Views.Shells.AppShell"
-             Title="AppShell">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+<Shell
+    x:Class="AppMAUIGallery.Views.Shells.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:AppMAUIGallery.Views.Shells.Pages"
+    Title="AppShell">
+    <TabBar>
+        <!--  Páginas  -->
+        <ShellContent
+            Title="Página 01"
+            ContentTemplate="{DataTemplate pages:Page01}"
+            Icon="one.png" />
+        <ShellContent
+            Title="Página 02"
+            ContentTemplate="{DataTemplate pages:Page02}"
+            Icon="two.png" />
+        <ShellContent
+            Title="Página 03"
+            ContentTemplate="{DataTemplate pages:Page03}"
+            Icon="three.png" />
+    </TabBar>
+</Shell>

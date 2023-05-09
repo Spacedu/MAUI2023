@@ -6,4 +6,10 @@ public partial class Page01 : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void GoToStep01(object sender, EventArgs e)
+    {
+		//Relativa: /page01+/page01step01
+		Shell.Current.GoToAsync("page01step01");
+    }
 }

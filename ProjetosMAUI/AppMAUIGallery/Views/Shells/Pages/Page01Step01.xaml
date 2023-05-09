@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="AppMAUIGallery.Views.Shells.Pages.Page01"
+    x:Class="AppMAUIGallery.Views.Shells.Pages.Page01Step01"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Page01">
-    <VerticalStackLayout>
+    Title="Page01Step01">
+    <VerticalStackLayout Spacing="10">
         <Label
             HorizontalOptions="Center"
-            Text="01"
+            Text="Página 01 Passo 01"
             VerticalOptions="Center" />
-
-        <Button Clicked="GoToStep01" Text="Vá para o passo 01" />
+        <Button Text="Voltar" Clicked="GoBack"/>
+        <Button Text="Próxima etapa (Step02)" Clicked="GoStep02" />
     </VerticalStackLayout>
 </ContentPage>

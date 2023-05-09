@@ -217,6 +217,12 @@
 	  <MauiXaml Update="Views\Shells\Pages\Page01.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Shells\Pages\Page01Step01.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Shells\Pages\Page01Step02.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Shells\Pages\Page02.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -74,21 +74,39 @@
         <ShellContent
             Title="Página 01"
             ContentTemplate="{DataTemplate pages:Page01}"
-            Icon="one.png" />
+            Icon="one.png"
+            Route="page01" />
         <ShellContent
             Title="Página 02"
             ContentTemplate="{DataTemplate pages:Page02}"
-            Icon="two.png" />
+            Icon="two.png"
+            Route="page02" />
         <ShellContent
             Title="Página 03"
             ContentTemplate="{DataTemplate pages:Page03}"
-            Icon="three.png" />
+            Icon="three.png"
+            Route="page03" />
 
-        <Tab Title="4 e 5" Icon="four.png">
+        <!--
+            cadastro/passo1
+            cadastro/passo2
+        -->
+        <Tab
+            Title="4 e 5"
+            Icon="four.png"
+            Route="cadastro">
+            <ShellContent
+                Title="Page04"
+                Icon="four.png"
+                Route="passo1"
+                Shell.TabBarIsVisible="False">
+                <pages:Page04 />
+            </ShellContent>
 
-            <pages:Page04 Shell.TabBarIsVisible="False" />
-
-            <ShellContent Title="Page05" Icon="five.png">
+            <ShellContent
+                Title="Page05"
+                Icon="five.png"
+                Route="passo2">
                 <pages:Page05 />
             </ShellContent>
         </Tab>

@@ -4,10 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Page01Step02">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="10">
         <Label
             HorizontalOptions="Center"
             Text="Página 01 Passo 02"
             VerticalOptions="Center" />
+        <Button Clicked="GoToRegisterStep02" Text="Vá para passo 2 do cadastro (Page05)" />
+        <Button Clicked="GoToRegisterStep01" Text="Vá para passo 2 do cadastro usando a pesquisa(Page04)" />
     </VerticalStackLayout>
 </ContentPage>

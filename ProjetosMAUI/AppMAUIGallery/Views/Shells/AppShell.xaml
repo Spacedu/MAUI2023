@@ -21,6 +21,34 @@
     </FlyoutItem>
     -->
 
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10,0" ColumnDefinitions="*, 40">
+                <Label
+                    Text="{Binding Title}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Grid.Column="1"
+                    Margin="5"
+                    Source="{Binding Icon}" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10,0" ColumnDefinitions="*, 40">
+                <Label
+                    Text="{Binding Title}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Grid.Column="1"
+                    Margin="5"
+                    Source="{Binding Icon}" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
     <Shell.FlyoutHeader>
         <StackLayout Padding="20">
             <Image HeightRequest="70" Source="clock.png" />

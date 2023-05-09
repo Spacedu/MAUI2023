@@ -64,6 +64,11 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
+    <!--
+    <Shell.FlyoutContent>
+        <Label Text="Conteúdo" />
+    </Shell.FlyoutContent>
+    -->
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
 
         <ShellContent
@@ -89,7 +94,6 @@
         </Tab>
 
     </FlyoutItem>
-
     <MenuItem IconImageSource="five.png" Text="Menu Item" />
 
     <Shell.FlyoutFooter>

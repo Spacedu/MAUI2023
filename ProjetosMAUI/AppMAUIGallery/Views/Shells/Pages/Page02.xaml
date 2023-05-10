@@ -4,12 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Page02">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="10">
         <Label
             HorizontalOptions="Center"
             Text="02"
             VerticalOptions="Center" />
-        <Button Text="Vai para Passo 1 com Parâmetros(Simples)" Clicked="GoToStep1WithSimpleParameters" />
-        <Button Text="Vai para Passo 1 com Parâmetros(Complexos)" />
+        <Button Clicked="GoToStep1WithSimpleParameters" Text="Vai para Passo 1 com Parâmetros(Simples)" />
+        <Button Clicked="GoToStep1WithComplexParameters" Text="Vai para Passo 1 com Parâmetros(Complexos)" />
     </VerticalStackLayout>
 </ContentPage>

@@ -6,9 +6,11 @@
     Title="Page02Step01WithParameters">
     <VerticalStackLayout>
         <Label
-            x:Name="LblParameter"
+            x:Name="LblMSGParameter"
             HorizontalOptions="Center"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" />
+
+        <Label x:Name="LblPersonParameter" />
     </VerticalStackLayout>
 </ContentPage>

@@ -57,6 +57,7 @@
 	  <None Remove="Resources\Images\five.svg" />
 	  <None Remove="Resources\Images\four.svg" />
 	  <None Remove="Resources\Images\one.svg" />
+	  <None Remove="Resources\Images\out.svg" />
 	  <None Remove="Resources\Images\poweroff.png" />
 	  <None Remove="Resources\Images\poweron.png" />
 	  <None Remove="Resources\Images\three.svg" />

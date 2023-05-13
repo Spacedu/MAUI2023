@@ -5,17 +5,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="AccessabilityPage">
     <VerticalStackLayout Padding="20" Spacing="20">
-        <Image Source="dotnet_bot.png" />
+        <Image
+            SemanticProperties.Description="Robô do .NET MAUI"
+            SemanticProperties.Hint="Logo do .NET MAUI - Robô roxo que está acenando!"
+            Source="dotnet_bot.png" />
         <Label
             FontSize="24"
             HorizontalOptions="Center"
+            SemanticProperties.HeadingLevel="Level1"
             Text="Bem-vindo ao .NET MAUI!"
             TextColor="Black"
             VerticalOptions="Center" />
 
         <Label Text="Com o .NET MAUI vc consegue construir aplicativos multiplataforma nativo com um único código-base." />
 
-        <Button Text=".NET MAUI - Button" />
-        <Entry Placeholder="Campo de texto" />
+        <Button
+            SemanticProperties.Description="Botão Fechar"
+            SemanticProperties.Hint="Ao clicar nesse botão o aplicativo será totalmente fechado!"
+            Text=".NET MAUI - Button - Fechar" />
+        <Entry Placeholder="Digite o E-mail" SemanticProperties.Description="Campo de entrada de texto para digitar o e-mail" />
     </VerticalStackLayout>
 </ContentPage>

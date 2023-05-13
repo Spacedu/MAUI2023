@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Accessability.AccessabilityPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="AccessabilityPage">
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Image Source="dotnet_bot.png" />
+        <Label
+            FontSize="24"
+            HorizontalOptions="Center"
+            Text="Bem-vindo ao .NET MAUI!"
+            TextColor="Black"
+            VerticalOptions="Center" />
+
+        <Label Text="Com o .NET MAUI vc consegue construir aplicativos multiplataforma nativo com um único código-base." />
+
+        <Button Text=".NET MAUI - Button" />
+        <Entry Placeholder="Campo de texto" />
+    </VerticalStackLayout>
+</ContentPage>

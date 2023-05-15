@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace AppShoppingCenter.Models
 {
-    internal class Establishment
+    public class Establishment
     {
+        public int Id { get; set; }
+        public string Name { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public string Localization { get; set; } = null!;
+        public string? Phone { get; set; }
+
+        public string Cover { get; set; } = null!;
+        public string Logo { get; set; } = null!;
     }
 }

@@ -12,15 +12,15 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>AppShoppingCenter</ApplicationTitle>
+		<ApplicationTitle>Shopping Center</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.appshoppingcenter</ApplicationId>
+		<ApplicationId>br.com.spacedu.appshoppingcenter</ApplicationId>
 		<ApplicationIdGuid>21a7a577-fb1a-411b-81e5-de0f500051f5</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationVersion>100</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>

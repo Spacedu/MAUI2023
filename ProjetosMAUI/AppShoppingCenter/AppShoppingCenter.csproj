@@ -32,7 +32,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg"  Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" ForegroundFile="Resources\AppIcon\appiconfg_android.svg" Color="#FFFFFF" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" ForegroundFile="Resources\AppIcon\appiconfg_android.svg" Color="#FFFFFF" />
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
@@ -54,6 +54,25 @@
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.2" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Models\" />
+	  <Folder Include="Libraries\" />
+	  <Folder Include="ViewModels\Cinemas\" />
+	  <Folder Include="ViewModels\Authentications\" />
+	  <Folder Include="ViewModels\Restaurants\" />
+	  <Folder Include="ViewModels\Stores\" />
+	  <Folder Include="ViewModels\Tickets\" />
+	  <Folder Include="Views\Cinemas\" />
+	  <Folder Include="Views\Authentications\" />
+	  <Folder Include="Views\Tickets\" />
+	  <Folder Include="Views\Restaurants\" />
+	  <Folder Include="Views\Stores\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AppShoppingCenter.Models\AppShoppingCenter.Models.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -40,13 +40,19 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\cinema.svg" />
+	  <None Remove="Resources\Images\restaurant.svg" />
+	  <None Remove="Resources\Images\store.svg" />
+	  <None Remove="Resources\Images\ticket.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -64,15 +70,29 @@
 	  <Folder Include="ViewModels\Restaurants\" />
 	  <Folder Include="ViewModels\Stores\" />
 	  <Folder Include="ViewModels\Tickets\" />
-	  <Folder Include="Views\Cinemas\" />
 	  <Folder Include="Views\Authentications\" />
-	  <Folder Include="Views\Tickets\" />
-	  <Folder Include="Views\Restaurants\" />
-	  <Folder Include="Views\Stores\" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\AppShoppingCenter.Models\AppShoppingCenter.Models.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Cinemas\ListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Restaurants\ListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Stores\ListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Tickets\ListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Tickets\ScanPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

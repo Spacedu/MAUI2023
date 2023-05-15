@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Menu"
     BackgroundColor="#F3F3F3">
-    <CollectionView x:Name="MenuCollection" IsGrouped="True">
+    <CollectionView x:Name="MenuCollection" IsGrouped="True" EmptyView="Nenhum registro">
         <CollectionView.Header>
             <VerticalStackLayout Padding="20,0" Spacing="10">
                 <Label

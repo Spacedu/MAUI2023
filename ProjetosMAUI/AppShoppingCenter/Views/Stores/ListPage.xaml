@@ -9,18 +9,18 @@
     <ContentPage.BindingContext>
         <vm:ListPageViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout Padding="20">
+    <Grid Padding="20" RowDefinitions="50, *">
         <Entry Placeholder="Pesquisa por loja" Text="{Binding TextSearch}">
             <Entry.Behaviors>
                 <behaviors:EventToCommandBehavior Command="{Binding TextSearchChangedFilterListCommand}" EventName="TextChanged" />
             </Entry.Behaviors>
         </Entry>
-        <CollectionView ItemsSource="{Binding EstablishmentsFiltered}">
+        <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentsFiltered}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Label Text="{Binding Name}" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>

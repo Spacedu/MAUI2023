@@ -1,6 +1,7 @@
 ﻿using AppShoppingCenter.Models;
 using AppShoppingCenter.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,19 @@ namespace AppShoppingCenter.ViewModels.Stores
 
         public ListPageViewModel()
         {
-            var service = new StoreService();
+            var service = App.Current.Handler.MauiContext.Services.GetService<StoreService>();
             establishmentsFull = service.GetStores();
             establishmentsFiltered = establishmentsFull.ToList();
+        }
+
+        [RelayCommand]
+        private void OnTextSearchChangedFilterList()
+        {
+            EstablishmentsFiltered = establishmentsFull
+                .Where(
+                    a => a.Name.ToLower().Contains(TextSearch.ToLower())
+                )
+                .ToList();
         }
     }
 }

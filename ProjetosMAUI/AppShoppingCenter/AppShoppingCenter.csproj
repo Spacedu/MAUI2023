@@ -68,7 +68,6 @@
 	  <Folder Include="ViewModels\Cinemas\" />
 	  <Folder Include="ViewModels\Authentications\" />
 	  <Folder Include="ViewModels\Restaurants\" />
-	  <Folder Include="ViewModels\Stores\" />
 	  <Folder Include="ViewModels\Tickets\" />
 	  <Folder Include="Views\Authentications\" />
 	</ItemGroup>

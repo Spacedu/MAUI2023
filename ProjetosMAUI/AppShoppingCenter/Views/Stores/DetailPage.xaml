@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppShoppingCenter.Views.Stores.DetailPage"
-             Title="DetailPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="AppShoppingCenter.Views.Stores.DetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Stores"
+    Title="DetailPage">
+    <ContentPage.BindingContext>
+        <vm:DetailPageViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Image Source="{Binding Establishment.Cover}" />
+            <Image Source="{Binding Establishment.Logo}" />
+            <Label
+                HorizontalOptions="Center"
+                Text="{Binding Establishment.Name}"
+                VerticalOptions="Center" />
+            <Label Text="{Binding Establishment.Description}" />
+            <Label Text="{Binding Establishment.Localization}" />
+            <Label Text="{Binding Establishment.Phone}" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

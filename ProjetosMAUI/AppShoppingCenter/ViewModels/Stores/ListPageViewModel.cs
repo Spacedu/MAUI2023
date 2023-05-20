@@ -36,5 +36,11 @@ namespace AppShoppingCenter.ViewModels.Stores
                 )
                 .ToList();
         }
+
+        [RelayCommand]
+        private async void OnTapEstablishmentGoToDetailPage()
+        {
+            await Shell.Current.GoToAsync("detail");
+        }
     }
 }

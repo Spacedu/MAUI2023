@@ -7,10 +7,13 @@
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Stores"
     Title="ListPage">
     <ContentPage.BindingContext>
-        <vm:ListPageViewModel />
+        <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
     <Grid Padding="20" RowDefinitions="50, *">
-        <Entry Placeholder="Pesquisa por loja" Text="{Binding TextSearch}">
+        <Entry
+            x:Name="txt"
+            Placeholder="Pesquisa por loja"
+            Text="{Binding TextSearch}">
             <Entry.Behaviors>
                 <behaviors:EventToCommandBehavior Command="{Binding TextSearchChangedFilterListCommand}" EventName="TextChanged" />
             </Entry.Behaviors>
@@ -18,7 +21,11 @@
         <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentsFiltered}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Name}" />
+                    <Label Text="{Binding Name}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapEstablishmentGoToDetailPageCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

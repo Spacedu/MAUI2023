@@ -23,9 +23,10 @@
                 <DataTemplate>
                     <Label Text="{Binding Name}">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapEstablishmentGoToDetailPageCommand}" />
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapEstablishmentGoToDetailPageCommand}" CommandParameter="{Binding .}" />
                         </Label.GestureRecognizers>
                     </Label>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

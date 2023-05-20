@@ -38,9 +38,13 @@ namespace AppShoppingCenter.ViewModels.Stores
         }
 
         [RelayCommand]
-        private async void OnTapEstablishmentGoToDetailPage()
+        private async void OnTapEstablishmentGoToDetailPage(Establishment establishment)
         {
-            await Shell.Current.GoToAsync("detail");
+            var navigationParameter = new Dictionary<string, object>()
+            {
+                { "establishment", establishment }
+            };
+            await Shell.Current.GoToAsync("detail", navigationParameter);
         }
     }
 }

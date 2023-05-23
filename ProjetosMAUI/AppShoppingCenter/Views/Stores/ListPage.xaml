@@ -10,14 +10,22 @@
         <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
     <Grid Padding="20" RowDefinitions="50, *">
-        <Entry
-            x:Name="txt"
-            Placeholder="Pesquisa por loja"
-            Text="{Binding TextSearch}">
-            <Entry.Behaviors>
-                <behaviors:EventToCommandBehavior Command="{Binding TextSearchChangedFilterListCommand}" EventName="TextChanged" />
-            </Entry.Behaviors>
-        </Entry>
+        <Border StrokeShape="RoundRectangle 5">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="1,1">
+                    <GradientStop Offset="0.1" Color="#F5AF19" />
+                    <GradientStop Offset="1.0" Color="#FF0000" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Entry
+                x:Name="txt"
+                Placeholder="Pesquisa por loja"
+                Text="{Binding TextSearch}">
+                <Entry.Behaviors>
+                    <behaviors:EventToCommandBehavior Command="{Binding TextSearchChangedFilterListCommand}" EventName="TextChanged" />
+                </Entry.Behaviors>
+            </Entry>
+        </Border>
         <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentsFiltered}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

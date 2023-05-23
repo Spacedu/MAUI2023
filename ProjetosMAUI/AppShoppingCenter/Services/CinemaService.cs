@@ -32,7 +32,7 @@ namespace AppShoppingCenter.Services
                     Duration = new TimeOnly(2, 23,0),
                     
                     Cover = "https://upload.wikimedia.org/wikipedia/pt/b/b7/Fantastic_Beasts_The_Secrets_of_Dumbledore_poster_IMP.jpg",
-                    Trailer = ""
+                    Trailer = "https://arquivos.spacedu.com.br/MAUI2023/S22/01.mp4"
                 },
                 new Movie
                 {
@@ -42,7 +42,7 @@ namespace AppShoppingCenter.Services
                     Duration = new TimeOnly(2, 1,0),
 
                     Cover = "https://br.web.img3.acsta.net/c_310_420/pictures/23/04/14/22/00/1046089.jpg",
-                    Trailer = ""
+                    Trailer = "https://arquivos.spacedu.com.br/MAUI2023/S22/02.mp4"
                 },
                 new Movie
                 {
@@ -52,7 +52,7 @@ namespace AppShoppingCenter.Services
                     Duration = new TimeOnly(1, 32,0),
 
                     Cover = "https://br.web.img2.acsta.net/pictures/23/04/03/19/45/2854005.jpg",
-                    Trailer = ""
+                    Trailer = "https://arquivos.spacedu.com.br/MAUI2023/S22/03.mp4"
                 },
 
             };

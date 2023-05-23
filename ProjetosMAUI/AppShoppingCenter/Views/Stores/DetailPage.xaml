@@ -9,16 +9,50 @@
         <vm:DetailPageViewModel />
     </ContentPage.BindingContext>
     <ScrollView>
-        <VerticalStackLayout>
-            <Image Source="{Binding Establishment.Cover}" />
-            <Image Source="{Binding Establishment.Logo}" />
-            <Label
-                HorizontalOptions="Center"
-                Text="{Binding Establishment.Name}"
-                VerticalOptions="Center" />
-            <Label Text="{Binding Establishment.Description}" />
-            <Label Text="{Binding Establishment.Localization}" />
-            <Label Text="{Binding Establishment.Phone}" />
-        </VerticalStackLayout>
+        <Grid>
+            <Image Source="{Binding Establishment.Cover}" VerticalOptions="Start" />
+
+            <Border
+                Margin="0,250,0,0"
+                Background="White"
+                StrokeShape="RoundRectangle 30,30,0,0"
+                StrokeThickness="0">
+                <Grid ColumnDefinitions="1*,1*,5*" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
+
+                    <Image Grid.ColumnSpan="2" Source="{Binding Establishment.Logo}" />
+                    <Label
+                        Grid.Column="2"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource PrimaryText}"
+                        Text="{Binding Establishment.Name}"
+                        VerticalOptions="Center" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        Style="{StaticResource SecondaryText}"
+                        Text="{Binding Establishment.Description}" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Text="Localização" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Text="{Binding Establishment.Localization}" />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Text="Telefone" />
+                    <Label
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Text="{Binding Establishment.Phone}" />
+                </Grid>
+            </Border>
+        </Grid>
     </ScrollView>
 </ContentPage>

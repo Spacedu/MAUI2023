@@ -49,6 +49,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\OpenSans-Bold.ttf" />
+	  <None Remove="Resources\Fonts\OpenSans-Light.ttf" />
 	  <None Remove="Resources\Images\cinema.svg" />
 	  <None Remove="Resources\Images\restaurant.svg" />
 	  <None Remove="Resources\Images\store.svg" />
@@ -77,6 +79,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\ExplicitStyles.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Cinemas\ListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -29,12 +29,27 @@
         <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentsFiltered}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Name}">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapEstablishmentGoToDetailPageCommand}" CommandParameter="{Binding .}" />
-                        </Label.GestureRecognizers>
-                    </Label>
-
+                    <Grid
+                        Margin="0,15"
+                        ColumnDefinitions="1*, 3*"
+                        RowDefinitions="20, 45">
+                        <Image
+                            Grid.RowSpan="2"
+                            Margin="0,0,15,0"
+                            Source="{Binding Logo}" />
+                        <Label Grid.Column="1" Text="{Binding Name}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapEstablishmentGoToDetailPageCommand}" CommandParameter="{Binding .}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            MaxLines="2"
+                            Text="{Binding Description}"
+                            TextColor="Gray"
+                            VerticalOptions="End" />
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

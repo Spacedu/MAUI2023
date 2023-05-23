@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppShoppingCenter.Views.Restaurants.DetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Restaurants"
+    Title="DetailPage">
+    <ContentPage.BindingContext>
+        <vm:DetailPageViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <Grid>
+            <Image Source="{Binding Establishment.Cover}" VerticalOptions="Start" />
+            <Image
+                Margin="20"
+                HorizontalOptions="Start"
+                Source="back.png"
+                VerticalOptions="Start"
+                WidthRequest="32">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapToBackCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Border
+                Margin="0,210,0,0"
+                Background="White"
+                StrokeShape="RoundRectangle 30,30,0,0"
+                StrokeThickness="0">
+                <Grid
+                    Padding="60"
+                    ColumnDefinitions="1*,1*,5*"
+                    RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
+
+                    <Image
+                        Grid.ColumnSpan="2"
+                        Margin="10,0"
+                        Source="{Binding Establishment.Logo}" />
+                    <Label
+                        Grid.Column="2"
+                        Margin="50,0,0,0"
+                        Style="{StaticResource PrimaryText}"
+                        Text="{Binding Establishment.Name}"
+                        VerticalOptions="Center" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        Margin="0,40"
+                        Style="{StaticResource SecondaryText}"
+                        Text="{Binding Establishment.Description}" />
+
+                    <!--  Start - Locazation  -->
+                    <Image
+                        Grid.Row="2"
+                        Grid.RowSpan="2"
+                        Source="pin.png"
+                        WidthRequest="21" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Style="{StaticResource HeadingText}"
+                        Text="Localização" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Style="{StaticResource DetailText}"
+                        Text="{Binding Establishment.Localization}" />
+                    <!--  End - Localization  -->
+
+                    <!--  Start - Phone  -->
+                    <Image
+                        Grid.Row="4"
+                        Grid.RowSpan="2"
+                        Source="phone.png"
+                        VerticalOptions="End"
+                        WidthRequest="31" />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="0,40,0,0"
+                        Style="{StaticResource HeadingText}"
+                        Text="Telefone" />
+                    <Label
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Style="{StaticResource DetailText}"
+                        Text="{Binding Establishment.Phone}" />
+                    <!--  End - Phone  -->
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentPage>

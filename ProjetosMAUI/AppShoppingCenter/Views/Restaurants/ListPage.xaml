@@ -3,11 +3,60 @@
     x:Class="AppShoppingCenter.Views.Restaurants.ListPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Restaurants"
     Title="ListPage">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <vm:ListPageViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+    <Grid Padding="20,20,20,0" RowDefinitions="50, *">
+        <Border StrokeShape="RoundRectangle 5">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="1,1">
+                    <GradientStop Offset="0.1" Color="#F5AF19" />
+                    <GradientStop Offset="1.0" Color="#FF0000" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Entry
+                x:Name="txt"
+                Placeholder="Pesquisa por restaurantes"
+                Text="{Binding TextSearch}">
+                <Entry.Behaviors>
+                    <behaviors:EventToCommandBehavior Command="{Binding TextSearchChangedFilterListCommand}" EventName="TextChanged" />
+                </Entry.Behaviors>
+            </Entry>
+        </Border>
+        <CollectionView
+            Grid.Row="1"
+            EmptyView="Nenhum registro encontrado!"
+            ItemsSource="{Binding EstablishmentsFiltered}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        Margin="0,15"
+                        ColumnDefinitions="1*, 3*"
+                        RowDefinitions="20, 45">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapEstablishmentGoToDetailPageCommand}" CommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
+                        <Image
+                            Grid.RowSpan="2"
+                            Margin="0,0,15,0"
+                            Source="{Binding Logo}" />
+                        <Label
+                            Grid.Column="1"
+                            Style="{StaticResource PrimaryText}"
+                            Text="{Binding Name}" />
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            MaxLines="2"
+                            Style="{StaticResource SecondaryText}"
+                            Text="{Binding Description}"
+                            VerticalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

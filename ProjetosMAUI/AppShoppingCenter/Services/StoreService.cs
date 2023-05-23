@@ -272,7 +272,7 @@ namespace AppShoppingCenter.Services
                     Phone = "(61) 3475-2419",
                     Type = EstablishmentType.Store,
 
-                    Logo = "https://th.bing.com/th/id/OIP._7UmPQ-CwGjuohFLU4qm6AAAAA?pid=Api&rs=1",
+                    Logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiRokiv_4pZyS25L8XL6Bd1ltaMtyv8loON_EwHwB1odjIY6lf_Ea9kb6qLKFoGmKIlUc&usqp=CAU",
                     Cover = "https://www.abcdacomunicacao.com.br/wp-content/uploads/Quem-disse-Berenice_logo-500x375.png"
                 },
                 new Establishment()

@@ -138,7 +138,7 @@ namespace AppShoppingCenter.Services
                     Phone = "(61) 3491-1031",
                     Type = EstablishmentType.Restaurant,
 
-                    Logo = "https://upload.wikimedia.org/wikipedia/pt/thumb/8/80/Spoleto_logo.png/120px-Spoleto_logo.png",
+                    Logo = "https://gsobmidia.com.br/uploads/lojas/585/foto-perfil_1661200210.jpg",
                     Cover = "https://pwaservicesappbr.blob.core.windows.net/imagens-cardapio/image_13032023122809.png"
                 },
             };

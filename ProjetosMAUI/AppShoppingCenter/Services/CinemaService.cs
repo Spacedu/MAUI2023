@@ -11,10 +11,7 @@ namespace AppShoppingCenter.Services
     {
         public List<Movie> GetMovies()
         {
-            return new List<Movie>
-            {
-
-            };
+            return MockCinemaService.GetMovies();
         }
     }
 
@@ -31,7 +28,7 @@ namespace AppShoppingCenter.Services
                     Description = "O professor Alvo Dumbledore (Jude Law) sabe que o poderoso mago das trevas Gellert Grindelwald (Mads Mikkelsen) está se movimentando para assumir o controle do mundo mágico. Incapaz de detê-lo sozinho, ele pede ao magizoologista Newt Scamander (Eddie Redmayne) para liderar uma intrépida equipe de b",
                     Duration = new TimeOnly(2, 23,0),
                     
-                    Cover = "https://upload.wikimedia.org/wikipedia/pt/b/b7/Fantastic_Beasts_The_Secrets_of_Dumbledore_poster_IMP.jpg",
+                    Cover = "https://m.media-amazon.com/images/I/51WaxgXXlEL.jpg",
                     Trailer = "https://arquivos.spacedu.com.br/MAUI2023/S22/01.mp4"
                 },
                 new Movie

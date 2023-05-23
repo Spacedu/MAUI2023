@@ -3,11 +3,32 @@
     x:Class="AppShoppingCenter.Views.Cinemas.ListPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Cinemas"
     Title="ListPage">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <vm:ListPageViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="70, *">
+        <VerticalStackLayout Padding="50,0,0,0" VerticalOptions="End">
+            <Label Text="CINEMIX" />
+            <Label Text="Em cartaz" />
+        </VerticalStackLayout>
+        <CarouselView Grid.Row="1" ItemsSource="{Binding Movies}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapMovieGoToDetailPageCommand}" CommandParameter="{Binding .}" />
+                        </VerticalStackLayout.GestureRecognizers>
+                        <Border StrokeShape="RoundRectangle 30" StrokeThickness="0">
+                            <Image Source="{Binding Cover}" />
+                        </Border>
+                        <Label Text="{Binding Duration}" />
+                        <Label Text="{Binding Name}" />
+                    </VerticalStackLayout>
+
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </Grid>
 </ContentPage>

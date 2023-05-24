@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Cinemas"
-    Title="ListPage">
+    Title="ListPage"
+    Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
         <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
@@ -13,19 +14,47 @@
             <Label Text="CINEMIX" />
             <Label Text="Em cartaz" />
         </VerticalStackLayout>
-        <CarouselView Grid.Row="1" ItemsSource="{Binding Movies}">
+        <CarouselView
+            Grid.Row="1"
+            ItemsSource="{Binding Movies}"
+            PeekAreaInsets="50">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout
+                    ItemSpacing="{OnPlatform Default=0,
+                                             WinUI=10}"
+                    Orientation="Horizontal"
+                    SnapPointsAlignment="Center"
+                    SnapPointsType="Mandatory" />
+            </CarouselView.ItemsLayout>
             <CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <VerticalStackLayout>
-                        <VerticalStackLayout.GestureRecognizers>
+                    <Grid RowDefinitions="360, 20, 40">
+                        <Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapMovieGoToDetailPageCommand}" CommandParameter="{Binding .}" />
-                        </VerticalStackLayout.GestureRecognizers>
-                        <Border StrokeShape="RoundRectangle 30" StrokeThickness="0">
-                            <Image Source="{Binding Cover}" />
+                        </Grid.GestureRecognizers>
+                        <Border
+                            BackgroundColor="Blue"
+                            HeightRequest="300"
+                            StrokeShape="RoundRectangle 30"
+                            StrokeThickness="0"
+                            WidthRequest="220">
+                            <Image
+                                Aspect="Fill"
+                                HeightRequest="300"
+                                Source="{Binding Cover}"
+                                WidthRequest="220" />
                         </Border>
-                        <Label Text="{Binding Duration}" />
-                        <Label Text="{Binding Name}" />
-                    </VerticalStackLayout>
+                        <Label
+                            Grid.Row="1"
+                            HorizontalOptions="Center"
+                            Text="{Binding Duration}" />
+                        <Label
+                            Grid.Row="2"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Style="{StaticResource PrimaryText}"
+                            Text="{Binding Name}" />
+                    </Grid>
 
                 </DataTemplate>
             </CarouselView.ItemTemplate>

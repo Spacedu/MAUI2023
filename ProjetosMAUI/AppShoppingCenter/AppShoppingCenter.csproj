@@ -53,6 +53,8 @@
 	  <None Remove="Resources\Fonts\OpenSans-Light.ttf" />
 	  <None Remove="Resources\Images\back.svg" />
 	  <None Remove="Resources\Images\cinema.svg" />
+	  <None Remove="Resources\Images\cinemafundo.jpg" />
+	  <None Remove="Resources\Images\clock.svg" />
 	  <None Remove="Resources\Images\phone.svg" />
 	  <None Remove="Resources\Images\pin.svg" />
 	  <None Remove="Resources\Images\restaurant.svg" />

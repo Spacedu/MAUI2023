@@ -9,15 +9,13 @@
     <ContentPage.BindingContext>
         <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
-    <Grid RowDefinitions="70, *">
-        <VerticalStackLayout Padding="50,0,0,0" VerticalOptions="End">
-            <Label Text="CINEMIX" />
-            <Label Text="Em cartaz" />
-        </VerticalStackLayout>
+    <Grid RowDefinitions="*">
+        <Image Source="cinemafundo.jpg" VerticalOptions="Start" />
+
         <CarouselView
             Grid.Row="1"
             ItemsSource="{Binding Movies}"
-            PeekAreaInsets="50">
+            PeekAreaInsets="10">
             <CarouselView.ItemsLayout>
                 <LinearItemsLayout
                     ItemSpacing="{OnPlatform Default=0,
@@ -28,28 +26,35 @@
             </CarouselView.ItemsLayout>
             <CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <Grid RowDefinitions="360, 20, 40">
+                    <Grid RowDefinitions="{OnPlatform Default='360, 20, 60', WinUI='520, 20, 60'}">
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=TapMovieGoToDetailPageCommand}" CommandParameter="{Binding .}" />
                         </Grid.GestureRecognizers>
                         <Border
                             BackgroundColor="Blue"
-                            HeightRequest="300"
+                            HeightRequest="{OnPlatform Default=300,
+                                                       WinUI=500}"
                             StrokeShape="RoundRectangle 30"
                             StrokeThickness="0"
-                            WidthRequest="220">
+                            WidthRequest="{OnPlatform Default=220,
+                                                      WinUI=320}">
                             <Image
                                 Aspect="Fill"
-                                HeightRequest="300"
+                                HeightRequest="{OnPlatform Default=300,
+                                                           WinUI=500}"
                                 Source="{Binding Cover}"
-                                WidthRequest="220" />
+                                WidthRequest="{OnPlatform Default=220,
+                                                          WinUI=320}" />
                         </Border>
-                        <Label
-                            Grid.Row="1"
-                            HorizontalOptions="Center"
-                            Text="{Binding Duration}" />
+                        <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center">
+                            <Image Source="clock.png" />
+                            <Label HorizontalOptions="Center" Text="{Binding Duration}" />
+                        </HorizontalStackLayout>
+
+
                         <Label
                             Grid.Row="2"
+                            Margin="0,20,0,0"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Style="{StaticResource PrimaryText}"
@@ -59,5 +64,15 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+        <VerticalStackLayout Padding="50,35,0,0" VerticalOptions="Start">
+            <Label
+                Style="{StaticResource PrimaryText}"
+                Text="CINEMIX"
+                TextColor="White" />
+            <Label
+                Style="{StaticResource SecondaryText}"
+                Text="Em cartaz"
+                TextColor="White" />
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>

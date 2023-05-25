@@ -10,13 +10,18 @@ public partial class DetailPage : ContentPage
 
     private void PlayPause(object sender, TappedEventArgs e)
     {
-		if(firstTime == false)
-		{
-			var mediaHalf = player.Width / 2;
+		var btn = (Image)sender;
 
-			btn_playpause.TranslateTo(-mediaHalf, mediaHalf, 500);
+        if (firstTime == false)
+		{
+			var mediaWidthHalf = player.Width / 2 - btn.Width + 10;
+			var mediaHeightHalf = player.Height / 2 - btn.Height - 20;
+
+			btn_playpause.TranslateTo(-mediaWidthHalf, mediaHeightHalf, 500);
 			firstTime = true;
-		}
+
+			MovieText.TranslateTo(0, 40);
+        }
 		if(player.CurrentState == CommunityToolkit.Maui.Core.Primitives.MediaElementState.Playing)
 		{
 			player.Pause();

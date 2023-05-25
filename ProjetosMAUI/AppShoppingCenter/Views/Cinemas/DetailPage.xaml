@@ -61,6 +61,7 @@
             </HorizontalStackLayout>
         </Border>
         <Border
+            x:Name="MovieText"
             Margin="0,260,0,0"
             Padding="50"
             BackgroundColor="White"
@@ -81,7 +82,6 @@
                     VerticalOptions="Center" />
             </VerticalStackLayout>
         </Border>
-
 
     </Grid>
 </ContentPage>

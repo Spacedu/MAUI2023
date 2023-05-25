@@ -9,7 +9,7 @@
     <ContentPage.BindingContext>
         <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
-    <Grid Padding="20, 20, 20, 0" RowDefinitions="50, *">
+    <Grid Padding="20,20,20,0" RowDefinitions="50, *">
         <Border StrokeShape="RoundRectangle 5">
             <Border.Stroke>
                 <LinearGradientBrush EndPoint="1,1">
@@ -26,7 +26,10 @@
                 </Entry.Behaviors>
             </Entry>
         </Border>
-        <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentsFiltered}" EmptyView="Nenhum registro encontrado!">
+        <CollectionView
+            Grid.Row="1"
+            EmptyView="Nenhum registro encontrado!"
+            ItemsSource="{Binding EstablishmentsFiltered}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid

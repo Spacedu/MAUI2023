@@ -55,8 +55,10 @@
 	  <None Remove="Resources\Images\cinema.svg" />
 	  <None Remove="Resources\Images\cinemafundo.jpg" />
 	  <None Remove="Resources\Images\clock.svg" />
+	  <None Remove="Resources\Images\close.svg" />
 	  <None Remove="Resources\Images\phone.svg" />
 	  <None Remove="Resources\Images\pin.svg" />
+	  <None Remove="Resources\Images\play.svg" />
 	  <None Remove="Resources\Images\restaurant.svg" />
 	  <None Remove="Resources\Images\store.svg" />
 	  <None Remove="Resources\Images\ticket.svg" />

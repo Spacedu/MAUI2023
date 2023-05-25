@@ -8,23 +8,64 @@
     <ContentPage.BindingContext>
         <vm:DetailPageViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="{Binding Movie.Name}"
-            VerticalOptions="Center" />
-        <Label
-            HorizontalOptions="Center"
-            Text="{Binding Movie.Description}"
-            VerticalOptions="Center" />
-        <Label
-            HorizontalOptions="Center"
-            Text="{Binding Movie.Duration}"
-            VerticalOptions="Center" />
+    <Grid>
+        <Label Text="{Binding Movie.Trailer}" />
         <Image
             HorizontalOptions="Center"
             Source="{Binding Movie.Cover}"
-            VerticalOptions="Center" />
-        <Label Text="{Binding Movie.Trailer}" />
-    </VerticalStackLayout>
+            VerticalOptions="Start" />
+        <Image
+            Margin="15"
+            HorizontalOptions="Start"
+            Source="close.png"
+            VerticalOptions="Start"
+            WidthRequest="29" />
+        <Image
+            Margin="0,110,0,0"
+            Source="play.png"
+            VerticalOptions="Start"
+            WidthRequest="50" />
+        <Border
+            Margin="15"
+            Padding="10,0"
+            BackgroundColor="#DDB3B3B3"
+            HeightRequest="28"
+            HorizontalOptions="End"
+            StrokeShape="RoundRectangle 30"
+            StrokeThickness="0"
+            VerticalOptions="Start"
+            WidthRequest="82">
+            <HorizontalStackLayout Spacing="4">
+                <Image Source="clock.png" WidthRequest="19" />
+                <Label
+                    Style="{StaticResource DurationText}"
+                    Text="{Binding Movie.Duration}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </Border>
+        <Border
+            Margin="0,260,0,0"
+            Padding="50"
+            BackgroundColor="White"
+            StrokeShape="RoundRectangle 30, 30, 0, 0"
+            StrokeThickness="0">
+            <VerticalStackLayout>
+                <Label
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource PrimaryText}"
+                    Text="{Binding Movie.Name}"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="0,35,0,0"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource TercearyText}"
+                    Text="{Binding Movie.Description}"
+                    VerticalOptions="Center" />
+            </VerticalStackLayout>
+        </Border>
+
+
+    </Grid>
 </ContentPage>

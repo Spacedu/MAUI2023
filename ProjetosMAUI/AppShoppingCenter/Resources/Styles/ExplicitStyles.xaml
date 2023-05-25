@@ -14,6 +14,11 @@
         <Setter Property="FontSize" Value="12" />
         <Setter Property="TextColor" Value="#A0A0A0" />
     </Style>
+    <Style x:Key="TercearyText" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="#404040" />
+    </Style>
 
     <Style x:Key="HeadingText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansBold" />
@@ -23,6 +28,11 @@
     <Style x:Key="DetailText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="DurationText" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansLight" />
+        <Setter Property="FontSize" Value="11" />
         <Setter Property="TextColor" Value="Black" />
     </Style>
 </ResourceDictionary>

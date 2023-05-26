@@ -85,7 +85,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Cinemas\DetailDesktopPage.xaml.cs">
+	    <DependentUpon>DetailDesktopPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Resources\Styles\ExplicitStyles.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Cinemas\DetailDesktopPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Cinemas\DetailDesktopPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Cinemas\DetailPage.xaml">

@@ -10,11 +10,14 @@
         <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
     <Grid RowDefinitions="*">
-        <Image Source="cinemafundo.jpg" VerticalOptions="Start" />
+        <Image
+            Aspect="AspectFill"
+            Source="cinemafundo.jpg"
+            VerticalOptions="Start" />
 
         <CarouselView
-            Margin="0,60,0,0"
             Grid.Row="1"
+            Margin="0,60,0,0"
             ItemsSource="{Binding Movies}"
             PeekAreaInsets="10">
             <CarouselView.ItemsLayout>

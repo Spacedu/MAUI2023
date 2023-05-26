@@ -16,26 +16,27 @@
             ShouldShowPlaybackControls="True"
             Source="{Binding Movie.Trailer}"
             VerticalOptions="Start" />
-        <Image
-            Grid.Column="1"
-            Margin="15"
-            HorizontalOptions="Start"
-            Source="close.png"
-            VerticalOptions="Start"
-            WidthRequest="29">
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding TapCloseGoToMoviesListCommand}" CommandParameter="{x:Reference player}" />
-            </Image.GestureRecognizers>
-        </Image>
+
 
         <Border
             x:Name="MovieText"
             Grid.Column="1"
-            Padding="50"
+            Padding="50,0"
             BackgroundColor="White"
             StrokeThickness="0">
             <ScrollView>
                 <VerticalStackLayout>
+                    <Image
+                        Grid.Column="1"
+                        Margin="15"
+                        HorizontalOptions="Start"
+                        Source="close.png"
+                        VerticalOptions="Start"
+                        WidthRequest="29">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TapCloseGoToMoviesListCommand}" CommandParameter="{x:Reference player}" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Border
                         Margin="15"
                         Padding="10,0"

@@ -15,7 +15,7 @@ public partial class DetailPage : ContentPage
         if (firstTime == false)
 		{
 			var mediaWidthHalf = player.Width / 2 - btn.Width + 10;
-			var mediaHeightHalf = player.Height / 2 - btn.Height - 20;
+			var mediaHeightHalf = player.Height / 2 - btn.Height - 0;
 
 			btn_playpause.TranslateTo(-mediaWidthHalf, mediaHeightHalf, 500);
 			firstTime = true;

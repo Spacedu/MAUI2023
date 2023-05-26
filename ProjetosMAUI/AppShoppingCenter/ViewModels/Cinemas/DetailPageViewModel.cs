@@ -1,4 +1,5 @@
 ﻿using AppShoppingCenter.Models;
+using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -16,9 +17,11 @@ namespace AppShoppingCenter.ViewModels.Cinemas
         private Movie movie;
 
         [RelayCommand]
-        private void OnTapCloseGoToMoviesList()
+        private void OnTapCloseGoToMoviesList(MediaElement player)
         {
+            player.Stop();
             Shell.Current.GoToAsync("..");
+
         }
     }
 }

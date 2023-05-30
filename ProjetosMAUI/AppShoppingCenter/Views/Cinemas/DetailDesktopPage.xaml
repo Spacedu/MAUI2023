@@ -29,7 +29,7 @@
                     <Image
                         Grid.Column="1"
                         Margin="15"
-                        HorizontalOptions="Start"
+                        HorizontalOptions="End"
                         Source="close.png"
                         VerticalOptions="Start"
                         WidthRequest="29">

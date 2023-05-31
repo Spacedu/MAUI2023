@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="AppShoppingCenter.Views.Tickets.ListPage"
+    x:Class="AppShoppingCenter.Views.Tickets.PayPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
-    Title="ListPage">
+    Title="PayPage">
     <ContentPage.BindingContext>
-        <vm:ListPageViewModel />
+        <vm:PayPageViewModel />
     </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Label

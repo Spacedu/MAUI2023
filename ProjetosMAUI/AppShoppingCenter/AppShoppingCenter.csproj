@@ -52,6 +52,7 @@
 	  <None Remove="Resources\Fonts\OpenSans-Bold.ttf" />
 	  <None Remove="Resources\Fonts\OpenSans-Light.ttf" />
 	  <None Remove="Resources\Images\back.svg" />
+	  <None Remove="Resources\Images\camera.svg" />
 	  <None Remove="Resources\Images\cinema.svg" />
 	  <None Remove="Resources\Images\cinemafundo.jpg" />
 	  <None Remove="Resources\Images\clock.svg" />

@@ -11,38 +11,24 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
-                            <Span
-                                FontSize="24"
-                                Text="Pague o seu"
-                                TextColor="Black" />
+                            <Span Style="{StaticResource HeadingText01}" Text="Pague o seu" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span
-                                FontSize="24"
-                                Text="ESTACIONAMENTO"
-                                TextColor="#FF5524" />
+                            <Span Style="{StaticResource HeadingText02}" Text="ESTACIONAMENTO" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Border
-                Margin="0,50,0,0"
-                Stroke="Black"
-                StrokeShape="RoundRectangle 5"
-                StrokeThickness="1">
+            <Border Margin="0,50,0,0" Style="{StaticResource BorderStyle}">
                 <StackLayout Orientation="Horizontal">
                     <Entry HorizontalOptions="FillAndExpand" Placeholder="Escanear ticket" />
-                    <Label
+                    <Image
                         Margin="0,0,10,0"
-                        Text="C"
+                        Source="camera.png"
                         VerticalOptions="Center" />
                 </StackLayout>
             </Border>
             <Button
-                BackgroundColor="#FF5524"
-                CornerRadius="25"
-                FontFamily="OpenSansRegular"
-                FontSize="16"
-                HeightRequest="50"
+                Style="{StaticResource ButtonStyle}"
                 Text="Tickets pagos"
                 VerticalOptions="EndAndExpand" />
         </StackLayout>

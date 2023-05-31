@@ -3,6 +3,7 @@
     x:Class="AppShoppingCenter.Views.Tickets.ScanPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maui="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
     Title="ScanPage">
@@ -23,8 +24,18 @@
                 </Label.FormattedText>
             </Label>
             <Border Margin="0,50,0,0" Style="{StaticResource BorderStyle}">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ScanCommand}" />
+                </Border.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
-                    <Entry HorizontalOptions="FillAndExpand" Placeholder="Escanear ticket" />
+                    <Entry
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Escanear ticket"
+                        Text="{Binding TicketNumber}">
+                        <Entry.Behaviors>
+                            <maui:EventToCommandBehavior Command="{Binding CheckTicketNumberCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
                     <Image
                         Margin="0,0,10,0"
                         Source="camera.png"
@@ -32,6 +43,7 @@
                 </StackLayout>
             </Border>
             <Button
+                Command="{Binding ListCommand}"
                 Style="{StaticResource ButtonStyle}"
                 Text="Tickets pagos"
                 VerticalOptions="EndAndExpand" />

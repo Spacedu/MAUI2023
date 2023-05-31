@@ -11,7 +11,7 @@
     <VerticalStackLayout>
         <Label
             HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
+            Text="List"
             VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

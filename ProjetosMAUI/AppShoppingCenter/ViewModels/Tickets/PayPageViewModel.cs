@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AppShoppingCenter.ViewModels.Tickets
 {
+    [QueryProperty(nameof(Ticket), "ticket")]
     public partial class PayPageViewModel : ObservableObject
     {
         [ObservableProperty]

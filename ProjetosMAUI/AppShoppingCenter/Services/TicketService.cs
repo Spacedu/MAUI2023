@@ -38,7 +38,7 @@ namespace AppShoppingCenter.Services
         };
         public static Ticket GetTicket(string ticketNumber)
         {
-            return tickets.FirstOrDefault(a => a.TicketNumber == ticketNumber);
+            return tickets.FirstOrDefault(a => a.TicketNumber == ticketNumber.Replace(" ", string.Empty));
         }
         public static List<Ticket> GetTickets()
         {

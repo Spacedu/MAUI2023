@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AppShoppingCenter.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
@@ -26,14 +27,22 @@ namespace AppShoppingCenter.ViewModels.Tickets
             if (TicketNumber?.Length < 15)
                 return;
 
-            Shell.Current.GoToAsync("pay");
+            var service = App.Current.Handler.MauiContext.Services.GetService<TicketService>();
+            var ticket = service.GetTicket(TicketNumber);
+
+            if (ticket == null)
+            {
+                App.Current.MainPage.DisplayAlert("Ticket não encontrado!", $"Não localizamos um ticket com o número {TicketNumber}.", "OK");
+                return;
+            }
+
+            var param = new Dictionary<string, object>()
+            {
+                { "ticket", ticket }
+            };
+            Shell.Current.GoToAsync("pay", param);
+
             TicketNumber = string.Empty;
-
-            //TODO - Verificar se código existe no banco/API.
-
-            //TODO - Navegar para página Pay.
-
-            //TODO - Mensagem de alerta.
         }
 
         [RelayCommand]

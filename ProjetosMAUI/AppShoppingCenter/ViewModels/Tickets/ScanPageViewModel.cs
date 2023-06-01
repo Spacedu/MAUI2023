@@ -23,10 +23,11 @@ namespace AppShoppingCenter.ViewModels.Tickets
         [RelayCommand]
         private void CheckTicketNumber()
         {
-            if (TicketNumber?.Length < 12)
+            if (TicketNumber?.Length < 15)
                 return;
 
             Shell.Current.GoToAsync("pay");
+            TicketNumber = string.Empty;
 
             //TODO - Verificar se código existe no banco/API.
 

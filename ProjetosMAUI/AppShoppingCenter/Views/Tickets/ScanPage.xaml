@@ -34,6 +34,7 @@
                         Text="{Binding TicketNumber}">
                         <Entry.Behaviors>
                             <maui:EventToCommandBehavior Command="{Binding CheckTicketNumberCommand}" EventName="TextChanged" />
+                            <maui:MaskedBehavior Mask="XXX XXX XXX XXX" />
                         </Entry.Behaviors>
                     </Entry>
                     <Image

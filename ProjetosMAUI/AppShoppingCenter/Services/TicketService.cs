@@ -27,13 +27,13 @@ namespace AppShoppingCenter.Services
             {
                 Id = 1,
                 TicketNumber = "209883557324",
-                DataIn = new DateTimeOffset(2023, 06, 01, 12, 00, 00, TimeSpan.FromHours(-3)),
+                DateIn = new DateTimeOffset(2023, 06, 01, 12, 00, 00, TimeSpan.FromHours(-3)),
             },
             new Ticket()
             {
                 Id = 2,
                 TicketNumber = "320683687451",
-                DataIn = new DateTimeOffset(2023, 06, 01, 15, 00, 00, TimeSpan.FromHours(-3)),
+                DateIn = new DateTimeOffset(2023, 06, 01, 15, 00, 00, TimeSpan.FromHours(-3)),
             }
         };
         public static Ticket GetTicket(string ticketNumber)

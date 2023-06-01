@@ -10,9 +10,9 @@ namespace AppShoppingCenter.Models
     {
         public int Id { get; set; }
         public string TicketNumber { get; set; } = null!;
-        public DateTimeOffset DataIn { get; set; }
-        public DateTimeOffset DataOut { get; set; } //Date - Pay
-        public DateTimeOffset DataTolerance { get; set; }
+        public DateTimeOffset DateIn { get; set; }
+        public DateTimeOffset DateOut { get; set; } //Date - Pay
+        public DateTimeOffset DateTolerance { get; set; }
         public double Price { get; set; }
     }
 }

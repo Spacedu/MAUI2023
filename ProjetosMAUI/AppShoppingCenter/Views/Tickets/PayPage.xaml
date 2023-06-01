@@ -24,8 +24,8 @@
                 </Label.FormattedText>
             </Label>
 
-            <Border Padding="20">
-                <VerticalStackLayout>
+            <Border Padding="20" Style="{StaticResource BorderDotStyle}">
+                <VerticalStackLayout Spacing="4">
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
@@ -36,12 +36,12 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label>
+                    <Label Margin="0,15,0,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Permanência:" />
-                                    <Span Text="3h 10m" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="Permanência: " />
+                                    <Span Style="{StaticResource SecondaryText}" Text="3h 10m" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -50,8 +50,8 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Entrada:" />
-                                    <Span Text="{Binding Ticket.DateIn}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="Entrada: " />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -60,8 +60,8 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Saída:" />
-                                    <Span Text="{Binding Ticket.DateOut}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="Saída: " />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -70,8 +70,14 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span FontAttributes="Bold" Text="Valor:" />
-                                    <Span FontAttributes="Bold" Text="{Binding Ticket.Price}" />
+                                    <Span
+                                        FontFamily="OpenSansBold"
+                                        Style="{StaticResource DetailText}"
+                                        Text="Valor: " />
+                                    <Span
+                                        FontFamily="OpenSansBold"
+                                        Style="{StaticResource DetailText}"
+                                        Text="{Binding Ticket.Price}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -79,10 +85,10 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border Padding="20">
-                <VerticalStackLayout>
+            <Border Padding="20" Style="{StaticResource BorderDotStyle}">
+                <VerticalStackLayout Spacing="4">
                     <Label Text="PIX" />
-                    <Label Text="QR Code" />
+                    <Label Style="{StaticResource SecondaryText}" Text="QR Code" />
                     <zxing:BarcodeGeneratorView
                         Margin="3"
                         ForegroundColor="Black"
@@ -90,11 +96,14 @@
                         HeightRequest="100"
                         WidthRequest="100"
                         Value="00020126360014BR.GOV.BCB.PIX0114+5561999...00020126360014BR.GOV.BCB.PIX0114+5561999...00020126360014BR.GOV.BCB.PIX0114+5561999...00020126360014BR.GOV.BCB.PIX0114+5561999..." />
-                    <Label Text="Copie e Cole" />
+                    <Label Style="{StaticResource SecondaryText}" Text="Copie e Cole" />
                     <Border Style="{StaticResource BorderStyle}">
                         <Entry IsReadOnly="True" Text="00020126360014BR.GOV.BCB.PIX0114+5561999..." />
                     </Border>
-                    <Button Style="{StaticResource ButtonStyle}" Text="Copiar e Colar" />
+                    <Button
+                        Margin="0,15,0,0"
+                        Style="{StaticResource ButtonStyle}"
+                        Text="Copiar e Colar" />
                 </VerticalStackLayout>
             </Border>
         </VerticalStackLayout>

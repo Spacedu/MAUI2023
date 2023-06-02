@@ -12,6 +12,7 @@ namespace AppShoppingCenter.ViewModels.Tickets
     public partial class PayPageViewModel : ObservableObject
     {
         private Ticket ticket;
+        private double HourValue = 0.07;
 
         public Ticket Ticket
         {
@@ -34,7 +35,7 @@ namespace AppShoppingCenter.ViewModels.Tickets
             ticket.DateTolerance = ticket.DateOut.AddMinutes(30);
         }
 
-        private double HourValue = 0.10;
+        
 
         private void GeneratePrice(Ticket ticket)
         {

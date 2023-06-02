@@ -3,6 +3,7 @@
     x:Class="AppShoppingCenter.Views.Tickets.PayPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppShoppingCenter.Libraries.Converters"
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
     xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
@@ -10,6 +11,9 @@
     <ContentPage.BindingContext>
         <vm:PayPageViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:TimeSpanToTimeStringConverter x:Key="TimeSpanToTimeStringConverter" />
+    </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout Padding="20">
             <Label>
@@ -41,7 +45,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Style="{StaticResource SecondaryText}" Text="Permanência: " />
-                                    <Span Style="{StaticResource SecondaryText}" Text="3h 10m" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket, Converter={StaticResource TimeSpanToTimeStringConverter}}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

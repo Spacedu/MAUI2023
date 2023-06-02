@@ -77,7 +77,7 @@
                                     <Span
                                         FontFamily="OpenSansBold"
                                         Style="{StaticResource DetailText}"
-                                        Text="{Binding Ticket.Price}" />
+                                        Text="{Binding Ticket.Price, StringFormat='{0:C}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

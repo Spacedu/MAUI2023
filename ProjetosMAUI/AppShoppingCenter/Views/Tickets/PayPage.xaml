@@ -55,7 +55,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Style="{StaticResource SecondaryText}" Text="Entrada: " />
-                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -65,7 +65,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Style="{StaticResource SecondaryText}" Text="Saída: " />
-                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -93,19 +93,22 @@
                 <VerticalStackLayout Spacing="4">
                     <Label Text="PIX" />
                     <Label Style="{StaticResource SecondaryText}" Text="QR Code" />
-                    <zxing:BarcodeGeneratorView
-                        Margin="3"
-                        ForegroundColor="Black"
-                        Format="QrCode"
-                        HeightRequest="100"
-                        WidthRequest="100"
-                        Value="00020126360014BR.GOV.BCB.PIX0114+5561999...00020126360014BR.GOV.BCB.PIX0114+5561999...00020126360014BR.GOV.BCB.PIX0114+5561999...00020126360014BR.GOV.BCB.PIX0114+5561999..." />
+                    <Border StrokeThickness="0">
+                        <zxing:BarcodeGeneratorView
+                            Margin="3"
+                            ForegroundColor="Black"
+                            Format="QrCode"
+                            HeightRequest="100"
+                            WidthRequest="100"
+                            Value="{Binding PixCode}" />
+                    </Border>
                     <Label Style="{StaticResource SecondaryText}" Text="Copie e Cole" />
                     <Border Style="{StaticResource BorderStyle}">
-                        <Entry IsReadOnly="True" Text="00020126360014BR.GOV.BCB.PIX0114+5561999..." />
+                        <Entry IsReadOnly="True" Text="{Binding PixCode}" />
                     </Border>
                     <Button
                         Margin="0,15,0,0"
+                        Command="{Binding CopyAndPasteCommand}"
                         Style="{StaticResource ButtonStyle}"
                         Text="Copiar e Colar" />
                 </VerticalStackLayout>

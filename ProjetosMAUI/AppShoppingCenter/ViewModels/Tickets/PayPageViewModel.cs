@@ -1,8 +1,10 @@
 ﻿using AppShoppingCenter.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +26,23 @@ namespace AppShoppingCenter.ViewModels.Tickets
                 SetProperty(ref ticket, value);
             }
         }
+
+        [ObservableProperty]
+        private string pixCode = "00020126360014BR.GOV.BCB.PIX0114+5561999...";
+
+        [RelayCommand]
+        private async void CopyAndPaste()
+        {
+            await Clipboard.Default.SetTextAsync(PixCode);
+
+            await Task.Delay(30000);
+
+            var param = new Dictionary<string, object> {
+                { "ticket", Ticket }
+            };
+            await Shell.Current.GoToAsync("../result", param);
+        }
+
 
         private void GenerateDateOutAndTolerance(Ticket ticket)
         {

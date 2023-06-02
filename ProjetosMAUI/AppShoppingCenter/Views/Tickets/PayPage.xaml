@@ -93,7 +93,7 @@
                 <VerticalStackLayout Spacing="4">
                     <Label Text="PIX" />
                     <Label Style="{StaticResource SecondaryText}" Text="QR Code" />
-                    <Border StrokeThickness="0">
+                    <Border MaximumHeightRequest="300" StrokeThickness="0">
                         <zxing:BarcodeGeneratorView
                             Margin="3"
                             ForegroundColor="Black"

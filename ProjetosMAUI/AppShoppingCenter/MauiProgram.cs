@@ -2,7 +2,6 @@
 using AppShoppingCenter.Services;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
-using Windows.Networking.NetworkOperators;
 using ZXing.Net.Maui.Controls;
 
 namespace AppShoppingCenter

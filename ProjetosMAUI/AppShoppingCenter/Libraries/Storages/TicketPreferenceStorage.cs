@@ -27,7 +27,7 @@ namespace AppShoppingCenter.Libraries.Storages
             tickets.Add(ticket);
 
             Preferences.Default.Clear();
-            Preferences.Default.Set(key, tickets);
+            Preferences.Default.Set(key, JsonSerializer.Serialize(tickets));
         }
         public List<Ticket> Load()
         {

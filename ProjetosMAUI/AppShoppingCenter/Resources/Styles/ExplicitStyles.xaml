@@ -69,4 +69,22 @@
         <Setter Property="StrokeThickness" Value="1" />
         <Setter Property="StrokeDashArray" Value="3, 3" />
     </Style>
+
+    <Style x:Key="SuccessText" TargetType="Label">
+        <Setter Property="TextColor" Value="#1BAB42" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+
+    <Style x:Key="ToleranceText" TargetType="Label">
+        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+
+    <Style x:Key="ToleranceMinutesText" TargetType="Label">
+        <Setter Property="TextColor" Value="#F86237" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="48" />
+    </Style>
 </ResourceDictionary>

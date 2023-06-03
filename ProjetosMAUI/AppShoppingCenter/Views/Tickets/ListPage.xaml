@@ -6,7 +6,7 @@
     xmlns:converters="clr-namespace:AppShoppingCenter.Libraries.Converters"
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
-    Title="ListPage">
+    Title="">
     <ContentPage.BindingContext>
         <vm:ListPageViewModel />
     </ContentPage.BindingContext>
@@ -26,7 +26,10 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <CollectionView Grid.Row="1" ItemsSource="{Binding Tickets}">
+        <CollectionView
+            Grid.Row="1"
+            EmptyView="Nenhum registro!"
+            ItemsSource="{Binding Tickets}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border

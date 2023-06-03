@@ -40,7 +40,11 @@
                     <Image
                         Margin="0,0,10,0"
                         Source="camera.png"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ScanCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
             </Border>
             <Button

@@ -3,9 +3,23 @@
     x:Class="AppShoppingCenter.Views.Tickets.CameraPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppShoppingCenter.Libraries.Converters"
+    xmlns:maui="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
     xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
     Title="CameraPage">
-    <VerticalStackLayout>
-        <zxing:CameraBarcodeReaderView x:Name="cameraBarcodeReaderView" BarcodesDetected="BarcodesDetected" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <vm:CameraPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:BarcodeArgsConverter x:Key="BarcodeArgsConverter" />
+    </ContentPage.Resources>
+    <zxing:CameraBarcodeReaderView>
+        <zxing:CameraBarcodeReaderView.Behaviors>
+            <maui:EventToCommandBehavior
+                Command="{Binding BarcodeDetectedCommand}"
+                EventArgsConverter="{StaticResource BarcodeArgsConverter}"
+                EventName="BarcodesDetected" />
+        </zxing:CameraBarcodeReaderView.Behaviors>
+    </zxing:CameraBarcodeReaderView>
 </ContentPage>

@@ -45,7 +45,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Style="{StaticResource SecondaryText}" Text="Entrada: " />
-                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -55,7 +55,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Style="{StaticResource SecondaryText}" Text="Saída: " />
-                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -88,16 +88,23 @@
                 HorizontalOptions="Center"
                 Style="{StaticResource ToleranceText}"
                 Text="Tolerância" />
-            <Label
-                Margin="0,20,0,0"
-                HorizontalOptions="Center"
-                Style="{StaticResource ToleranceMinutesText}"
-                Text="{Binding Tolerance}" />
-            <Label
-                Margin="0,-10,0,0"
-                HorizontalOptions="Center"
-                Style="{StaticResource SecondaryText}"
-                Text="até 15:30 min" />
+            <Label Margin="0,20,0,0" HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource ToleranceMinutesText}" Text="{Binding Tolerance}" />
+                        <Span Style="{StaticResource ToleranceMinutesText}" Text=" min" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Margin="0,-10,0,0" HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Style="{StaticResource SecondaryText}" Text="até " />
+                        <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateTolerance, StringFormat='{0:HH:mm}'}" />
+                        <Span Style="{StaticResource SecondaryText}" Text=" min" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
         </VerticalStackLayout>
 
 

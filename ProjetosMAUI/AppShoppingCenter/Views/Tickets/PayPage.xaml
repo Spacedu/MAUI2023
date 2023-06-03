@@ -55,7 +55,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Style="{StaticResource SecondaryText}" Text="Entrada: " />
-                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -65,7 +65,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Style="{StaticResource SecondaryText}" Text="Saída: " />
-                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy hh:mm}'}" />
+                                    <Span Style="{StaticResource SecondaryText}" Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

@@ -19,8 +19,11 @@
             </Border.Stroke>
             <Entry
                 x:Name="txt"
+                Margin="{OnPlatform Default=0,
+                                    Android='10, 0'}"
                 Placeholder="Pesquisa por loja"
-                Text="{Binding TextSearch}">
+                Text="{Binding TextSearch}"
+                VerticalOptions="Center">
                 <Entry.Behaviors>
                     <behaviors:EventToCommandBehavior Command="{Binding TextSearchChangedFilterListCommand}" EventName="TextChanged" />
                 </Entry.Behaviors>

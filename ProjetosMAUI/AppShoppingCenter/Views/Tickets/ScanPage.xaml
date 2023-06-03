@@ -30,6 +30,8 @@
                 <StackLayout Orientation="Horizontal">
                     <Entry
                         x:Name="ticketEntry"
+                        Margin="{OnPlatform Default=0,
+                                            Android='10, 0'}"
                         HorizontalOptions="FillAndExpand"
                         Placeholder="Escanear ticket"
                         Text="{Binding TicketNumber}"

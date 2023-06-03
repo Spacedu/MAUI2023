@@ -29,11 +29,16 @@
                 </Border.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
                     <Entry
+                        x:Name="ticketEntry"
                         HorizontalOptions="FillAndExpand"
                         Placeholder="Escanear ticket"
-                        Text="{Binding TicketNumber}">
+                        Text="{Binding TicketNumber}"
+                        TextChanged="CursorFix">
                         <Entry.Behaviors>
-                            <maui:EventToCommandBehavior Command="{Binding CheckTicketNumberCommand}" EventName="TextChanged" />
+                            <maui:EventToCommandBehavior
+                                Command="{Binding CheckTicketNumberCommand}"
+                                CommandParameter="{x:Reference ticketEntry}"
+                                EventName="TextChanged" />
                             <maui:MaskedBehavior Mask="XXX XXX XXX XXX" />
                         </Entry.Behaviors>
                     </Entry>

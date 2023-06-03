@@ -6,4 +6,11 @@ public partial class ScanPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void CursorFix(object sender, TextChangedEventArgs e)
+    {
+		Entry input = (Entry)sender;
+
+		input.CursorPosition = input.Text.Length;
+    }
 }

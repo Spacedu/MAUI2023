@@ -1,4 +1,5 @@
 ﻿using AppShoppingCenter.Services;
+using CommunityToolkit.Maui.Core.Platform;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -21,7 +22,7 @@ namespace AppShoppingCenter.ViewModels.Tickets
         }
 
         [RelayCommand]
-        private void CheckTicketNumber()
+        private async void CheckTicketNumber(Entry entryTicketNumber)
         {
             if (TicketNumber?.Length < 15)
                 return;
@@ -31,7 +32,7 @@ namespace AppShoppingCenter.ViewModels.Tickets
 
             if (ticket == null)
             {
-                App.Current.MainPage.DisplayAlert("Ticket não encontrado!", $"Não localizamos um ticket com o número {TicketNumber}.", "OK");
+                await App.Current.MainPage.DisplayAlert("Ticket não encontrado!", $"Não localizamos um ticket com o número {TicketNumber}.", "OK");
                 return;
             }
 
@@ -39,8 +40,8 @@ namespace AppShoppingCenter.ViewModels.Tickets
             {
                 { "ticket", ticket }
             };
-            Shell.Current.GoToAsync("pay", param);
-
+            await Shell.Current.GoToAsync("pay", param);
+            await entryTicketNumber.HideKeyboardAsync(CancellationToken.None);
             TicketNumber = string.Empty;
         }
 

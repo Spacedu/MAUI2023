@@ -6,7 +6,7 @@
     xmlns:converters="clr-namespace:AppShoppingCenter.Libraries.Converters"
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
-    Title="">
+    Title="Voltar">
     <ContentPage.BindingContext>
         <vm:ListPageViewModel />
     </ContentPage.BindingContext>

@@ -3,15 +3,97 @@
     x:Class="AppShoppingCenter.Views.Tickets.ListPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppShoppingCenter.Libraries.Converters"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
     Title="ListPage">
     <ContentPage.BindingContext>
         <vm:ListPageViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="List"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <converters:TimeSpanToTimeStringConverter x:Key="TimeSpanToTimeStringConverter" />
+    </ContentPage.Resources>
+    <Grid RowDefinitions="70, *">
+
+        <Label Margin="20,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Style="{StaticResource HeadingText01}" Text="Tickets" />
+                        <Span Text="{x:Static system:Environment.NewLine}" />
+                        <Span Style="{StaticResource HeadingText02}" Text="Pagos" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Tickets}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Margin="20"
+                        Padding="20"
+                        Style="{StaticResource BorderDotStyle}">
+                        <VerticalStackLayout Spacing="4">
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="Ticket #" />
+                                            <Span Text="{Binding TicketNumber}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Margin="0,15,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Style="{StaticResource SecondaryText}" Text="Permanência: " />
+                                            <Span Style="{StaticResource SecondaryText}" Text="{Binding ., Converter={StaticResource TimeSpanToTimeStringConverter}}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Style="{StaticResource SecondaryText}" Text="Entrada: " />
+                                            <Span Style="{StaticResource SecondaryText}" Text="{Binding DateIn, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Style="{StaticResource SecondaryText}" Text="Saída: " />
+                                            <Span Style="{StaticResource SecondaryText}" Text="{Binding DateOut, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+                                                FontFamily="OpenSansBold"
+                                                Style="{StaticResource DetailText}"
+                                                Text="Valor: " />
+                                            <Span
+                                                FontFamily="OpenSansBold"
+                                                Style="{StaticResource DetailText}"
+                                                Text="{Binding Price, StringFormat='{0:C}'}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

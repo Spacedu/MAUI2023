@@ -1,4 +1,5 @@
-﻿using AppShoppingCenter.Models;
+﻿using AppShoppingCenter.Libraries.Storages;
+using AppShoppingCenter.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -36,6 +37,9 @@ namespace AppShoppingCenter.ViewModels.Tickets
             await Clipboard.Default.SetTextAsync(PixCode);
 
             await Task.Delay(30000);
+
+            var storage = App.Current.Handler.MauiContext.Services.GetService<TicketPreferenceStorage>();
+            storage.Save(Ticket);
 
             var param = new Dictionary<string, object> {
                 { "ticket", Ticket }

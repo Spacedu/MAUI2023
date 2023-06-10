@@ -16,7 +16,7 @@
     </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout Padding="20">
-            <Label>
+            <Label SemanticProperties.HeadingLevel="Level1">
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
@@ -30,7 +30,7 @@
 
             <Border Padding="20" Style="{StaticResource BorderDotStyle}">
                 <VerticalStackLayout Spacing="4">
-                    <Label>
+                    <Label SemanticProperties.HeadingLevel="Level2">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
@@ -91,7 +91,7 @@
 
             <Border Padding="20" Style="{StaticResource BorderDotStyle}">
                 <VerticalStackLayout Spacing="4">
-                    <Label Text="PIX" />
+                    <Label SemanticProperties.HeadingLevel="Level2" Text="PIX" />
                     <Label Style="{StaticResource SecondaryText}" Text="QR Code" />
                     <Border MaximumHeightRequest="300" StrokeThickness="0">
                         <zxing:BarcodeGeneratorView
@@ -99,16 +99,21 @@
                             ForegroundColor="Black"
                             Format="QrCode"
                             HeightRequest="100"
+                            SemanticProperties.Hint="QRCode de Pagamento por Pix"
                             WidthRequest="100"
                             Value="{Binding PixCode}" />
                     </Border>
                     <Label Style="{StaticResource SecondaryText}" Text="Copie e Cole" />
                     <Border Style="{StaticResource BorderStyle}">
-                        <Entry IsReadOnly="True" Text="{Binding PixCode}" />
+                        <Entry
+                            IsReadOnly="True"
+                            SemanticProperties.Hint="Campo contendo código Copie e Cole do Pix"
+                            Text="{Binding PixCode}" />
                     </Border>
                     <Button
                         Margin="0,15,0,0"
                         Command="{Binding CopyAndPasteCommand}"
+                        SemanticProperties.Hint="Botão de Copiar o código Pix"
                         Style="{StaticResource ButtonStyle}"
                         Text="Copiar e Colar" />
                 </VerticalStackLayout>

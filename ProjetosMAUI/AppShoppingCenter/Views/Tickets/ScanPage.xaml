@@ -12,7 +12,7 @@
     </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout Padding="25">
-            <Label>
+            <Label SemanticProperties.HeadingLevel="Level1">
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
@@ -33,7 +33,11 @@
                         Margin="{OnPlatform Default=0,
                                             Android='10, 0'}"
                         HorizontalOptions="FillAndExpand"
-                        Placeholder="Escanear ticket"
+                        Placeholder="{OnPlatform Default='Digite/Escaneie o ticket',
+                                                 WinUI='Digite o Ticket'}"
+                        SemanticProperties.Description="O número do Ticket é formado por 12 dígitos"
+                        SemanticProperties.Hint="{OnPlatform Default='Digite/Escaneie o ticket',
+                                                             WinUI='Digite o Ticket'}"
                         Text="{Binding TicketNumber}"
                         TextChanged="CursorFix">
                         <Entry.Behaviors>
@@ -48,6 +52,8 @@
                         Margin="0,0,10,0"
                         IsVisible="{OnPlatform WinUI=false,
                                                Default=true}"
+                        SemanticProperties.Description="Leva a tela de escaneamento do Ticket utilizando a câmera/webcam."
+                        SemanticProperties.Hint="Botão de Escanear"
                         Source="{AppThemeBinding Light='camera.png',
                                                  Dark='camera_light.png'}"
                         VerticalOptions="Center">
@@ -59,6 +65,7 @@
             </Border>
             <Button
                 Command="{Binding ListCommand}"
+                SemanticProperties.Hint="Navega para a tela com todos os tickets já pagos"
                 Style="{StaticResource ButtonStyle}"
                 Text="Tickets pagos"
                 VerticalOptions="EndAndExpand" />

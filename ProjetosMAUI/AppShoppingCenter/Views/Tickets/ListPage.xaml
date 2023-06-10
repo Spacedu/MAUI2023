@@ -15,7 +15,7 @@
     </ContentPage.Resources>
     <Grid RowDefinitions="70, *">
 
-        <Label Margin="20,0">
+        <Label Margin="20,0" SemanticProperties.HeadingLevel="Level1">
             <Label.FormattedText>
                 <FormattedString>
                     <FormattedString.Spans>
@@ -37,7 +37,7 @@
                         Padding="20"
                         Style="{StaticResource BorderDotStyle}">
                         <VerticalStackLayout Spacing="4">
-                            <Label>
+                            <Label SemanticProperties.HeadingLevel="Level2">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>

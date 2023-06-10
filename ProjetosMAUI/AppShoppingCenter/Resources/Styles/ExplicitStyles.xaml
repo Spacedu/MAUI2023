@@ -51,11 +51,12 @@
         <Setter Property="TextColor" Value="#FF5524" />
     </Style>
     <Style x:Key="BorderStyle" TargetType="Border">
-        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="Stroke" Value="{AppThemeBinding Light=Black, Dark=White}" />
         <Setter Property="StrokeShape" Value="RoundRectangle 5" />
         <Setter Property="StrokeThickness" Value="1" />
     </Style>
     <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=Black}" />
         <Setter Property="BackgroundColor" Value="#FF5524" />
         <Setter Property="CornerRadius" Value="25" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
@@ -65,7 +66,7 @@
 
     <Style x:Key="BorderDotStyle" TargetType="Border">
         <Setter Property="Margin" Value="0, 10, 0, 0" />
-        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="Stroke" Value="{AppThemeBinding Light=Black, Dark=White}" />
         <Setter Property="StrokeThickness" Value="1" />
         <Setter Property="StrokeDashArray" Value="3, 3" />
     </Style>
@@ -77,7 +78,7 @@
     </Style>
 
     <Style x:Key="ToleranceText" TargetType="Label">
-        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light='#000000', Dark=White}" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="24" />
     </Style>

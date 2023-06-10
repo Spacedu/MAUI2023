@@ -46,7 +46,10 @@
                     </Entry>
                     <Image
                         Margin="0,0,10,0"
-                        Source="camera.png"
+                        IsVisible="{OnPlatform WinUI=false,
+                                               Default=true}"
+                        Source="{AppThemeBinding Light='camera.png',
+                                                 Dark='camera_light.png'}"
                         VerticalOptions="Center">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ScanCommand}" />

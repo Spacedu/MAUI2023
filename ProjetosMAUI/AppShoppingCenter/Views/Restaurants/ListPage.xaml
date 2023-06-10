@@ -22,6 +22,7 @@
                 Margin="{OnPlatform Default=0,
                                     Android='10, 0'}"
                 Placeholder="Pesquisa por restaurantes"
+                SemanticProperties.Hint="Digite para pesquisar pelo nome do restaurante"
                 Text="{Binding TextSearch}"
                 VerticalOptions="Center">
                 <Entry.Behaviors>
@@ -45,9 +46,11 @@
                         <Image
                             Grid.RowSpan="2"
                             Margin="0,0,15,0"
+                            SemanticProperties.Hint="{Binding Name, StringFormat='Logomarca do restaurante {0}'}"
                             Source="{Binding Logo}" />
                         <Label
                             Grid.Column="1"
+                            SemanticProperties.HeadingLevel="Level1"
                             Style="{StaticResource PrimaryText}"
                             Text="{Binding Name}" />
                         <Label

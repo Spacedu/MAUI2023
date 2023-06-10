@@ -23,7 +23,8 @@
             </Image>
             <Border
                 Margin="0,210,0,0"
-                Background="White"
+                Background="{AppThemeBinding Light=White,
+                                             Dark=Black}"
                 StrokeShape="RoundRectangle 30,30,0,0"
                 StrokeThickness="0">
                 <Grid
@@ -52,7 +53,8 @@
                     <Image
                         Grid.Row="2"
                         Grid.RowSpan="2"
-                        Source="pin.png"
+                        Source="{AppThemeBinding Light='pin.png',
+                                                 Dark='pin_light.png'}"
                         WidthRequest="21" />
                     <Label
                         Grid.Row="2"
@@ -72,7 +74,8 @@
                     <Image
                         Grid.Row="4"
                         Grid.RowSpan="2"
-                        Source="phone.png"
+                        Source="{AppThemeBinding Light='phone.png',
+                                                 Dark='phone_light.png'}"
                         VerticalOptions="End"
                         WidthRequest="31" />
                     <Label

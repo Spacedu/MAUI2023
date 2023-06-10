@@ -7,12 +7,12 @@
         <Setter Property="FontFamily" Value="OpenSansBold" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="TextTransform" Value="Uppercase" />
-        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light='#000000', Dark='#FFFFFF'}" />
     </Style>
     <Style x:Key="SecondaryText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansLight" />
         <Setter Property="FontSize" Value="12" />
-        <Setter Property="TextColor" Value="#A0A0A0" />
+        <Setter Property="TextColor" Value="{StaticResource Gray300}" />
     </Style>
     <Style x:Key="TercearyText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansRegular" />
@@ -23,12 +23,12 @@
     <Style x:Key="HeadingText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansBold" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}" />
     </Style>
     <Style x:Key="DetailText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="12" />
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark={StaticResource Gray300}}" />
     </Style>
     <Style x:Key="DurationText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansLight" />

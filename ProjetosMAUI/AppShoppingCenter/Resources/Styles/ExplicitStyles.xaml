@@ -17,7 +17,7 @@
     <Style x:Key="TercearyText" TargetType="Label">
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="TextColor" Value="#404040" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light='#404040', Dark={StaticResource Gray300}}" />
     </Style>
 
     <Style x:Key="HeadingText" TargetType="Label">

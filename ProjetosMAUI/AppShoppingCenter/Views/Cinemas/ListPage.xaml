@@ -51,8 +51,11 @@
                                                           WinUI=320}" />
                         </Border>
                         <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center">
-                            <Image Source="clock.png" />
-                            <Label HorizontalOptions="Center" Text="{Binding Duration}" />
+                            <Image Source="{AppThemeBinding Light='clock.png', Dark='clock_light.png'}" />
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{Binding Duration}"
+                                VerticalOptions="Center" />
                         </HorizontalStackLayout>
 
 

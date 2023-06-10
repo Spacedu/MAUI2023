@@ -60,7 +60,8 @@
             x:Name="MovieText"
             Margin="0,170,0,0"
             Padding="50"
-            BackgroundColor="White"
+            BackgroundColor="{AppThemeBinding Light=White,
+                                              Dark={StaticResource Gray900}}"
             StrokeShape="RoundRectangle 30, 30, 0, 0"
             StrokeThickness="0">
             <ScrollView>

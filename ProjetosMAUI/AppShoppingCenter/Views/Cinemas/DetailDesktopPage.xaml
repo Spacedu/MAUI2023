@@ -22,7 +22,8 @@
             x:Name="MovieText"
             Grid.Column="1"
             Padding="50,0"
-            BackgroundColor="White"
+            BackgroundColor="{AppThemeBinding Light=White,
+                                              Dark=Black}"
             StrokeThickness="0">
             <ScrollView>
                 <VerticalStackLayout>

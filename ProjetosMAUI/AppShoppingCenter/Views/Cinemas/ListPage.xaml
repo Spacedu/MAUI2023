@@ -46,6 +46,7 @@
                                 Aspect="Fill"
                                 HeightRequest="{OnPlatform Default=300,
                                                            WinUI=500}"
+                                SemanticProperties.Hint="{Binding Name, StringFormat='Capa do filme: {0}'}"
                                 Source="{Binding Cover}"
                                 WidthRequest="{OnPlatform Default=220,
                                                           WinUI=320}" />
@@ -54,6 +55,7 @@
                             <Image Source="{AppThemeBinding Light='clock.png', Dark='clock_light.png'}" />
                             <Label
                                 HorizontalOptions="Center"
+                                SemanticProperties.Hint="{Binding Duration, StringFormat='Duração do Filme: {0:hh} horas e {0:mm} minutos.'}"
                                 Text="{Binding Duration}"
                                 VerticalOptions="Center" />
                         </HorizontalStackLayout>
@@ -64,6 +66,7 @@
                             Margin="0,20,0,0"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
+                            SemanticProperties.HeadingLevel="Level1"
                             Style="{StaticResource PrimaryText}"
                             Text="{Binding Name}" />
                     </Grid>

@@ -12,6 +12,8 @@
     <Grid ColumnDefinitions="*,*">
         <media:MediaElement
             x:Name="player"
+            SemanticProperties.Description="Player onde se ver trechos selecionados do filme."
+            SemanticProperties.Hint="Trailer"
             ShouldLoopPlayback="True"
             ShouldShowPlaybackControls="True"
             Source="{Binding Movie.Trailer}"
@@ -31,6 +33,7 @@
                         Grid.Column="1"
                         Margin="15"
                         HorizontalOptions="End"
+                        SemanticProperties.Hint="Botão de Fechar"
                         Source="close.png"
                         VerticalOptions="Start"
                         WidthRequest="29">
@@ -51,6 +54,7 @@
                         <HorizontalStackLayout Spacing="4">
                             <Image Source="clock.png" WidthRequest="19" />
                             <Label
+                                SemanticProperties.Hint="{Binding Movie.Duration, StringFormat='Duração do Filme: {0:hh} horas e {0:mm} minutos.'}"
                                 Style="{StaticResource DurationText}"
                                 Text="{Binding Movie.Duration}"
                                 TextColor="Black"
@@ -60,6 +64,7 @@
                     <Label
                         HorizontalOptions="Center"
                         HorizontalTextAlignment="Center"
+                        SemanticProperties.HeadingLevel="Level1"
                         Style="{StaticResource PrimaryText}"
                         Text="{Binding Movie.Name}"
                         VerticalOptions="Center" />

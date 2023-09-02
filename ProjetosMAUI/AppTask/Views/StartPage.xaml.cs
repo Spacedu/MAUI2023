@@ -47,8 +47,13 @@ public partial class StartPage : ContentPage
 
     private void OnCheckBoxClickedToComplete(object sender, TappedEventArgs e)
     {
+        var checkbox = ((CheckBox)sender);
         var task = (TaskModel)e.Parameter;
-        task.IsCompleted = ((CheckBox)sender).IsChecked;
+
+        if (DeviceInfo.Platform != DevicePlatform.WinUI)
+            checkbox.IsChecked = !checkbox.IsChecked;
+        
+        task.IsCompleted = checkbox.IsChecked;
         _repository.Update(task);
     }
 

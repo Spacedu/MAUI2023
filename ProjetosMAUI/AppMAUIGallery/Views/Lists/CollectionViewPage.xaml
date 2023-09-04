@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CollectionViewPage">
     <RefreshView RefreshColor="Purple" Refreshing="RefreshView_Refreshing">
-        <CollectionView x:Name="CollectionViewControl" RemainingItemsThreshold="3" RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached">
+        <CollectionView x:Name="CollectionViewControl" RemainingItemsThreshold="3" Scrolled="CollectionViewControl_Scrolled" RemainingItemsThresholdReached="CollectionViewControl_RemainingItemsThresholdReached">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <VerticalStackLayout Padding="10">

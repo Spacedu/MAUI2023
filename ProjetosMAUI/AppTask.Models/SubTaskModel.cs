@@ -9,7 +9,7 @@ namespace AppTask.Models
 {
     public class SubTaskModel : INotifyPropertyChanged
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; } = String.Empty;
 
         private bool _isCompleted;

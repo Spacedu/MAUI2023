@@ -5,10 +5,10 @@ namespace AppTask.Models
 {
     public class TaskModel : INotifyPropertyChanged
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; } = String.Empty;
         public string Description { get; set; } = String.Empty;
-        public DateTime PrevisionDate { get; set;}
+        public DateTimeOffset PrevisionDate { get; set;}
 
 
         private bool _isCompleted;
@@ -20,8 +20,8 @@ namespace AppTask.Models
             }
         }
 
-        public DateTime Created { get; set; }
-        public DateTime Updated { get; set; }
+        public DateTimeOffset Created { get; set; }
+        public DateTimeOffset Updated { get; set; }
         public ObservableCollection<SubTaskModel> SubTasks { get; set; } = new ObservableCollection<SubTaskModel>();
 
         public event PropertyChangedEventHandler? PropertyChanged;

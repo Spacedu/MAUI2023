@@ -9,6 +9,7 @@ namespace AppTask.Database
 {
     public class AppTaskContext : DbContext
     {
+        public DbSet<UserModel> Users { get; set; }
         public DbSet<TaskModel> Tasks { get; set; }
         public DbSet<SubTaskModel> SubTasks { get; set; }
 

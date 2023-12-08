@@ -1,4 +1,6 @@
-﻿using AppTask.Database.Repositories;
+﻿using AppTask.API.Libraries.Constants;
+using AppTask.Database.Repositories;
+using AppTask.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,5 +33,26 @@ namespace AppTask.API.Controllers
 
             return Ok(user);
         }
+
+        public IActionResult ValidateAccessToken(UserModel userModel)
+        {
+            var user = _repository.GetByEmail(userModel.Email);
+            
+            if(user == null)
+                return NotFound();
+
+            if(user.AccessToken == userModel.AccessToken)
+            {
+                var tokenLimitHours = user.AccessTokenCreated.Add(Config.LimitAccessTokenCreated);
+                var serverHours = DateTimeOffset.Now;
+
+                if (tokenLimitHours <= serverHours) {
+                    return Ok(user);
+                }                
+            }
+
+            return BadRequest("AcessToken inválido ou vencido!");
+        }
+        
     }
 }

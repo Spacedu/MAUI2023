@@ -1,3 +1,4 @@
+using AppTask.Libraries.Authentations;
 using AppTask.Libraries.Validations;
 
 namespace AppTask.Views;
@@ -30,11 +31,13 @@ public partial class LoginPage : ContentPage
         LblAccessTokenValidateMessage.IsVisible = false;
 
         var code = EntryAccessToken.Text.Trim();
-
+		 
 		//TODO - Validar o AccessToken com a API
 		if(code == "2640")
 		{
-			//TODO - Gravar os dados do usuário no dispositivo e redirecionar para a Tela inicial (StartPage)
+			//TODO - Gravar os dados do usuário no dispositivo, gravar no Banco tb(Usuário), e redirecionar para a Tela inicial (StartPage)
+
+			//UserAuth.SetUserLogged(userAPI);
 			App.Current.MainPage = new NavigationPage(new StartPage());
 		}
 

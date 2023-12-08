@@ -3,7 +3,7 @@ using AppTask.Database.Repositories;
 using AppTask.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using AppTask.API.Libraries.Text;
 namespace AppTask.API.Controllers
 {
     [Route("api/[controller]")]
@@ -22,11 +22,22 @@ namespace AppTask.API.Controllers
             var user = _repository.GetByEmail(email);
             if (user == null)
             {
-                //TODO - Usuário não existe, faça o cadastro, Gerar o AccessToken
+                user = new UserModel()
+                {
+                    Email = email,
+                    AccessToken = String.Empty.GenerateHash(4),
+                    AccessTokenCreated = DateTimeOffset.Now,
+                    Created = DateTimeOffset.Now,
+                };
+
+                _repository.Add(user);
             }
             else
             {
-                //TODO - Usuário existe, gerar um novo AccessToken
+                user.AccessToken = String.Empty.GenerateHash(4);
+                user.AccessTokenCreated = DateTimeOffset.Now;
+
+                _repository.Update(user);
             }
 
             //TODO - Enviar o e-mail

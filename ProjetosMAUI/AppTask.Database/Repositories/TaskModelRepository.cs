@@ -39,10 +39,13 @@ namespace AppTask.Database.Repositories
             task = GetById(task.Id);
             foreach(var subtask in task.SubTasks)
             {
-                _db.SubTasks.Remove(subtask);
+                subtask.Deleted = DateTimeOffset.Now;
+                _db.SubTasks.Update(subtask);
             }
+            
+            task.Deleted = DateTimeOffset.Now;
 
-            _db.Tasks.Remove(task);
+            _db.Tasks.Update(task);
             _db.SaveChanges();
         }
     }

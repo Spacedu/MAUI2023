@@ -16,7 +16,7 @@ namespace AppTask.API.Controllers
             _repository = repository;
         }
 
-        //TODO - Implementar CRUD
+        //TODO - Obter todas as tarefas... (Celular Atualiza)
         [HttpGet]
         public IActionResult GetAll(Guid userId)
         {
@@ -57,5 +57,10 @@ namespace AppTask.API.Controllers
             return Ok();
         }
 
+
+        
+
+        //Tablet e Celular
+        //TODO - Enviar todas as tarefas localmente para o servidor... (Servidor Atualiza - Add, Update, Delete)
     }
 }

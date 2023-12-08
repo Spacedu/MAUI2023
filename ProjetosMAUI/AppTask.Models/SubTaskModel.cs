@@ -23,6 +23,8 @@ namespace AppTask.Models
             }
         }
 
+        public DateTimeOffset Deleted { get; set; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged(string propName)

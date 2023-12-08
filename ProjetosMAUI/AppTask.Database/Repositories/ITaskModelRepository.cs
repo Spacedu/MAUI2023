@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppTask.Repositories
+namespace AppTask.Database.Repositories
 {
     public interface ITaskModelRepository
     {
         IList<TaskModel> GetAll();
-        TaskModel GetById(int id);
+        TaskModel GetById(Guid id);
         void Add(TaskModel task);
         void Update(TaskModel task);
         void Delete(TaskModel task);

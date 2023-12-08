@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppTask.Repositories
+namespace AppTask.Database.Repositories
 {
     public class TaskModelRepository : ITaskModelRepository
     {
@@ -20,7 +20,7 @@ namespace AppTask.Repositories
         {
             return _db.Tasks.OrderByDescending(a=>a.PrevisionDate).ToList();
         }
-        public TaskModel GetById(int id)
+        public TaskModel GetById(Guid id)
         {
             return _db.Tasks.Include(a => a.SubTasks).FirstOrDefault(a=>a.Id == id);
         }

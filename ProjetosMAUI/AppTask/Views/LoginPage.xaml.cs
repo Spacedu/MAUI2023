@@ -24,4 +24,20 @@ public partial class LoginPage : ContentPage
 		BtnNext.IsVisible = false;
 		Step2.IsVisible = true;
     }
+
+    private void AccessAction(object sender, EventArgs e)
+    {
+        LblAccessTokenValidateMessage.IsVisible = false;
+
+        var code = EntryAccessToken.Text.Trim();
+
+		//TODO - Validar o AccessToken com a API
+		if(code == "2640")
+		{
+			//TODO - Gravar os dados do usuário no dispositivo e redirecionar para a Tela inicial (StartPage)
+			App.Current.MainPage = new NavigationPage(new StartPage());
+		}
+
+		LblAccessTokenValidateMessage.IsVisible = true;
+    }
 }

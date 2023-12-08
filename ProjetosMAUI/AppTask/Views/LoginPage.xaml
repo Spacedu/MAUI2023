@@ -19,10 +19,9 @@
             <Label Text="Enviamos um e-mail para você, acesse sua caixa de entrada e digite o código no campo abaixo:" />
             <Label Text="Código inválido!" IsVisible="False" TextColor="Red" x:Name="LblAccessTokenValidateMessage" />
             <Border StrokeShape="RoundRectangle 10">
-                <Entry Placeholder="Código" x:Name="EntryAccessToken" />
-            </Border>
-        
-            <Button Text="Acessar" />
+                <Entry Placeholder="Código" x:Name="EntryAccessToken" MaxLength="4" />
+            </Border>        
+            <Button Text="Acessar" Clicked="AccessAction"/>
         </VerticalStackLayout>
     </StackLayout>
 </ContentPage>

@@ -12,6 +12,7 @@ public partial class AddEditTaskPage : ContentPage
 	public AddEditTaskPage()
 	{
 		InitializeComponent();
+        //TODO - Implementar DI
         _repository = new TaskModelRepository();
         _task = new TaskModel();
 

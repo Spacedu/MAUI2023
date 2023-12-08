@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AppTask.Database;
+using AppTask.Database.Repositories;
+using Microsoft.Extensions.Logging;
 
 namespace AppTask
 {
@@ -14,9 +16,11 @@ namespace AppTask
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
+            builder.Services.AddDbContext<AppTaskContext>();
+            builder.Services.AddScoped<IUserModelRepository, UserModelRepository>();
+            builder.Services.AddScoped<ITaskModelRepository, TaskModelRepository>();
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

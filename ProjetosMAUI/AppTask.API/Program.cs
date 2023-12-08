@@ -1,4 +1,5 @@
 using AppTask.Database;
+using AppTask.Database.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppTaskContext>();
+builder.Services.AddScoped<IUserModelRepository, UserModelRepository>();
+builder.Services.AddScoped<ITaskModelRepository, TaskModelRepository>();
 
 var app = builder.Build();
 

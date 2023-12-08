@@ -19,7 +19,8 @@ namespace AppTask.API.Controllers
             _repository = repository;
             _email = email;
         }
-
+        
+        [HttpGet]
         public IActionResult GetUser(string email)
         {
             var user = _repository.GetByEmail(email);
@@ -48,6 +49,7 @@ namespace AppTask.API.Controllers
             return Ok(user);
         }
 
+        [HttpPost]
         public IActionResult ValidateAccessToken(UserModel userModel)
         {
             var user = _repository.GetByEmail(userModel.Email);

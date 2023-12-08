@@ -16,9 +16,9 @@ namespace AppTask.Database.Repositories
         {
             _db = new AppTaskContext();            
         }
-        public IList<TaskModel> GetAll()
+        public IList<TaskModel> GetAll(Guid userId)
         {
-            return _db.Tasks.OrderByDescending(a=>a.PrevisionDate).ToList();
+            return _db.Tasks.Where(a=>a.UserId == userId).OrderByDescending(a=>a.PrevisionDate).ToList();
         }
         public TaskModel GetById(Guid id)
         {

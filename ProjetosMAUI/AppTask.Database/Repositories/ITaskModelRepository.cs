@@ -9,7 +9,7 @@ namespace AppTask.Database.Repositories
 {
     public interface ITaskModelRepository
     {
-        IList<TaskModel> GetAll();
+        IList<TaskModel> GetAll(Guid userId);
         TaskModel GetById(Guid id);
         void Add(TaskModel task);
         void Update(TaskModel task);

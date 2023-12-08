@@ -13,5 +13,6 @@ namespace AppTask.Models
         public string AccessToken { get; set; } = String.Empty;
         public DateTimeOffset AccessTokenCreated { get; set; }
         public DateTimeOffset Created { get; set; }
+        public ICollection<TaskModel> Tasks { get; set; } = new List<TaskModel>();
     }
 }

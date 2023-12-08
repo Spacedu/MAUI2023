@@ -20,6 +20,9 @@ namespace AppTask.Models
             }
         }
 
+        public Guid UserId { get; set; }
+        public UserModel? User { get; set; }
+
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset Updated { get; set; }
         public ObservableCollection<SubTaskModel> SubTasks { get; set; } = new ObservableCollection<SubTaskModel>();

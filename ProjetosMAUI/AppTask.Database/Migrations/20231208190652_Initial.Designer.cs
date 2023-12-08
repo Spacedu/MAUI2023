@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppTask.Database.Migrations
 {
     [DbContext(typeof(AppTaskContext))]
-    [Migration("20231208180220_Initial")]
+    [Migration("20231208190652_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,6 +24,9 @@ namespace AppTask.Database.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTimeOffset>("Deleted")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("IsCompleted")
@@ -50,6 +53,9 @@ namespace AppTask.Database.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTimeOffset>("Deleted")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")

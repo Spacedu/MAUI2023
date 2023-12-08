@@ -57,10 +57,28 @@ namespace AppTask.API.Controllers
             return Ok();
         }
 
-
-        
-
-        //Tablet e Celular
         //TODO - Enviar todas as tarefas localmente para o servidor... (Servidor Atualiza - Add, Update, Delete)
+        [HttpPost("batchPush")]
+        public IActionResult BatchPush(List<TaskModel> tasks)
+        {
+            foreach(var taskFromClient in tasks)
+            {
+                var taskFromServer = _repository.GetById(taskFromClient.Id);
+
+                if(taskFromServer == null)
+                {
+                    _repository.Add(taskFromClient);
+                }
+                else
+                {
+                    if(taskFromClient.Updated > taskFromServer.Updated)
+                    {
+                        _repository.Update(taskFromClient);
+                    }
+                }
+            }
+
+            return Ok();
+        }
     }
 }

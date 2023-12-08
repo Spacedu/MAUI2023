@@ -37,7 +37,8 @@ namespace AppTask.Database.Migrations
                     IsCompleted = table.Column<bool>(type: "INTEGER", nullable: false),
                     UserId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Created = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
-                    Updated = table.Column<DateTimeOffset>(type: "TEXT", nullable: false)
+                    Updated = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
+                    Deleted = table.Column<DateTimeOffset>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,6 +58,7 @@ namespace AppTask.Database.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     IsCompleted = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Deleted = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
                     TaskModelId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>

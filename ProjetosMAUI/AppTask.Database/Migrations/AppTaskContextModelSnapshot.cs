@@ -23,6 +23,9 @@ namespace AppTask.Database.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTimeOffset>("Deleted")
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("INTEGER");
 
@@ -47,6 +50,9 @@ namespace AppTask.Database.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTimeOffset>("Deleted")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")

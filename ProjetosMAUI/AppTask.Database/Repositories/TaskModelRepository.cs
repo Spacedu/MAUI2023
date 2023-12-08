@@ -18,7 +18,9 @@ namespace AppTask.Database.Repositories
         }
         public IList<TaskModel> GetAll(Guid userId)
         {
-            return _db.Tasks.Where(a=>a.UserId == userId).OrderByDescending(a=>a.PrevisionDate).ToList();
+            //TODO - SQL Server...SGDB.
+            return _db.Tasks.Where(a=>a.UserId == userId).OrderByDescending(a => a.PrevisionDate.ToString()).ToList();
+            //.DateTime)
         }
         public TaskModel GetById(Guid id)
         {

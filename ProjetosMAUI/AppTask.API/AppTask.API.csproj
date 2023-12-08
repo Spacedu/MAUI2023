@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AppTask.Database\AppTask.Database.csproj" />
+    <ProjectReference Include="..\AppTask.Models\AppTask.Models.csproj" />
+  </ItemGroup>
+
 </Project>

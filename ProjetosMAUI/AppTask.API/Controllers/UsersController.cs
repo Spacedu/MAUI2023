@@ -4,17 +4,20 @@ using AppTask.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using AppTask.API.Libraries.Text;
+using AppTask.API.Libraries.Emails;
 namespace AppTask.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
-        public IUserModelRepository _repository;
+        private IUserModelRepository _repository;
+        private EmailAccessToken _email;
 
-        public UsersController(IUserModelRepository repository)
+        public UsersController(IUserModelRepository repository, EmailAccessToken email)
         {
             _repository = repository;
+            _email = email;
         }
 
         public IActionResult GetUser(string email)
@@ -40,7 +43,7 @@ namespace AppTask.API.Controllers
                 _repository.Update(user);
             }
 
-            //TODO - Enviar o e-mail
+            _email.Send(user);
 
             return Ok(user);
         }

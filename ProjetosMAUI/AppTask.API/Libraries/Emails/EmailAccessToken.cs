@@ -14,7 +14,17 @@ namespace AppTask.API.Libraries.Emails
 
         public void Send(UserModel userModel)
         {
+            //TODO - Obter E-mail do AppSettings
+            var mailMessage = new MailMessage()
+            {
+                From = new MailAddress("elias.ribeiro.s@gmail.com"),
+                Subject = "AppTask - Token de Acesso",
+                Body = $"Esse é o seu token de acesso: {userModel.AccessToken}.",
+                IsBodyHtml = true,
+            };
+            mailMessage.To.Add(userModel.Email);
 
+            _smtp.Send(mailMessage);
         }
     }
 }

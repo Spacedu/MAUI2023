@@ -8,16 +8,16 @@
 
         
         <Label Text="Faça seu login informando o e-mail" HorizontalOptions="Center" />
-        <Label Text="" IsVisible="False" x:Name="LblEmailValidateMessage" TextColor="Red" />
+        <Label Text="E-mail inválido" IsVisible="False" x:Name="LblEmailValidateMessage" TextColor="Red" />
         <Border StrokeShape="RoundRectangle 10">
             <Entry Placeholder="E-mail" x:Name="EntryEmail" />            
         </Border>
         
-        <Button Text="Próximo" x:Name="BtnNext"/>
+        <Button Text="Próximo" x:Name="BtnNext" Clicked="NextAction"/>
 
         <VerticalStackLayout Spacing="20" x:Name="Step2" IsVisible="False">
             <Label Text="Enviamos um e-mail para você, acesse sua caixa de entrada e digite o código no campo abaixo:" />
-            <Label Text="Código inválido!" TextColor="Red" x:Name="LblAccessTokenValidateMessage" />
+            <Label Text="Código inválido!" IsVisible="False" TextColor="Red" x:Name="LblAccessTokenValidateMessage" />
             <Border StrokeShape="RoundRectangle 10">
                 <Entry Placeholder="Código" x:Name="EntryAccessToken" />
             </Border>

@@ -62,7 +62,7 @@ namespace AppTask.API.Controllers
                 var tokenLimitHours = user.AccessTokenCreated.Add(Config.LimitAccessTokenCreated);
                 var serverHours = DateTimeOffset.Now;
 
-                if (tokenLimitHours <= serverHours) {
+                if (serverHours <= tokenLimitHours) {
                     return Ok(user);
                 }                
             }

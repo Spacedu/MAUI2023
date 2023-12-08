@@ -19,9 +19,12 @@ public partial class StartPage : ContentPage
 
     public void LoadData()
     {
-        _tasks = _repository.GetAll();
+        //TODO - Implementar...
+        /*
+         * _tasks = _repository.GetAll();
         CollectionViewTasks.ItemsSource = _tasks;
         LblEmptyText.IsVisible = _tasks.Count <= 0;
+        */
     }
 
     private void OnButtonClickedToAdd(object sender, EventArgs e)

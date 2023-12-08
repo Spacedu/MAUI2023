@@ -12,7 +12,7 @@ namespace AppTask
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new StartPage());
+            MainPage = new LoginPage();//new NavigationPage(new StartPage());
         }
         private void CustomHandler()
         {

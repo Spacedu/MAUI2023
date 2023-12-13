@@ -19,6 +19,11 @@ namespace AppTask
             builder.Services.AddDbContext<AppTaskContext>();
             builder.Services.AddScoped<IUserModelRepository, UserModelRepository>();
             builder.Services.AddScoped<ITaskModelRepository, TaskModelRepository>();
+            builder.Services.AddScoped<HttpClient>(options => {
+                HttpClient http = new HttpClient();
+                http.BaseAddress = new Uri(AppSettings.EndpointAPI);
+                return http;
+            });
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

@@ -21,7 +21,7 @@ namespace AppTask.API.Controllers
         }
         
         [HttpGet]
-        public IActionResult GetUser(string email)
+        public IActionResult GetAccessToken(string email)
         {
             var user = _repository.GetByEmail(email);
             if (user == null)

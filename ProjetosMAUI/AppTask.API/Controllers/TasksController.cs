@@ -50,9 +50,10 @@ namespace AppTask.API.Controllers
             return Ok(task);
         }
 
-        [HttpDelete]
-        public IActionResult Delete(TaskModel task)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
         {
+            var task = _repository.GetById(id);
             _repository.Delete(task);
             return Ok();
         }

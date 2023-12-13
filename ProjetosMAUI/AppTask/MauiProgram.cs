@@ -1,5 +1,6 @@
 ﻿using AppTask.Database;
 using AppTask.Database.Repositories;
+using AppTask.Services;
 using Microsoft.Extensions.Logging;
 
 namespace AppTask
@@ -24,6 +25,7 @@ namespace AppTask
                 http.BaseAddress = new Uri(AppSettings.EndpointAPI);
                 return http;
             });
+            builder.Services.AddScoped<UserService>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

@@ -26,6 +26,7 @@ namespace AppTask
                 return http;
             });
             builder.Services.AddScoped<UserService>();
+            builder.Services.AddScoped<TaskService>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

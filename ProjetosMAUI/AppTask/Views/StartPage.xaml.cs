@@ -7,32 +7,31 @@ namespace AppTask.Views;
 public partial class StartPage : ContentPage
 {
     private ITaskModelRepository _repository;
-    private IList<TaskModel> _tasks;
-	public StartPage()
-	{
-		InitializeComponent();
+    private AddEditTaskPage _addEditTaskPage;
+    public StartPage(ITaskModelRepository repository, AddEditTaskPage addEditTaskPage)
+    {
+        InitializeComponent();
 
-        //TODO - Ponto de melhoria -> Implementar usando D.I.
-        _repository = new TaskModelRepository();
-
+        _repository = repository;
+        _addEditTaskPage = addEditTaskPage;
         LoadData();
 
         LblEmail.Text = UserAuth.GetUserLogged().Email;
-	}
+    }
+
+    private IList<TaskModel> _tasks;
 
     public void LoadData()
     {
-        //TODO - Implementar...
-        /*
-         * _tasks = _repository.GetAll();
+        _tasks = _repository.GetAll(UserAuth.GetUserLogged().Id);
         CollectionViewTasks.ItemsSource = _tasks;
-        LblEmptyText.IsVisible = _tasks.Count <= 0;
-        */
+        LblEmptyText.IsVisible = _tasks.Count <= 0;        
     }
 
     private void OnButtonClickedToAdd(object sender, EventArgs e)
     {
-        Navigation.PushModalAsync(new AddEditTaskPage());
+        _addEditTaskPage = Handler.MauiContext.Services.GetService<AddEditTaskPage>();
+        Navigation.PushModalAsync(_addEditTaskPage);
     }
 
     private void OnBorderClickedToFocusEntry(object sender, TappedEventArgs e)
@@ -66,8 +65,11 @@ public partial class StartPage : ContentPage
     private void OnTapToEdit(object sender, TappedEventArgs e)
     {
         var task = (TaskModel)e.Parameter;
-        
-        Navigation.PushModalAsync(new AddEditTaskPage(_repository.GetById(task.Id)));
+
+
+        _addEditTaskPage = Handler.MauiContext.Services.GetService<AddEditTaskPage>();
+        _addEditTaskPage.SetFormToUpdate(_repository.GetById(task.Id));
+        Navigation.PushModalAsync(_addEditTaskPage);
     }
 
     private void OnTextChanged_FilterList(object sender, TextChangedEventArgs e)

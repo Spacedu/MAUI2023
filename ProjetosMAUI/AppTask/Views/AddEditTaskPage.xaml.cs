@@ -1,4 +1,5 @@
 using AppTask.Database.Repositories;
+using AppTask.Libraries.Authentations;
 using AppTask.Models;
 using System.Text;
 
@@ -9,20 +10,17 @@ public partial class AddEditTaskPage : ContentPage
     private ITaskModelRepository _repository;
     private TaskModel _task;
     
-	public AddEditTaskPage()
+	public AddEditTaskPage(ITaskModelRepository repository)
 	{
 		InitializeComponent();
-        //TODO - Implementar DI
-        _repository = new TaskModelRepository();
+
+        _repository = repository;
         _task = new TaskModel();
 
         BindableLayout.SetItemsSource(BindableLayout_Steps, _task.SubTasks);
     }
-    public AddEditTaskPage(TaskModel task)
+    public void SetFormToUpdate(TaskModel task)
     {
-        _repository = new TaskModelRepository();
-
-        InitializeComponent();
         _task = task;
         FillFields();
 
@@ -90,9 +88,10 @@ public partial class AddEditTaskPage : ContentPage
     }
     private void SaveInDatabase()
     {
-        if(_task.Id == default(Guid))
+        if (_task.Id == default(Guid)) { 
+            _task.UserId = UserAuth.GetUserLogged().Id;
             _repository.Add(_task);
-        else
+        } else
             _repository.Update(_task);
         
     }

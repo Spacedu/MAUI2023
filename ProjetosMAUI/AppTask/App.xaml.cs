@@ -23,7 +23,7 @@ namespace AppTask
             else
             {
                 var page = serviceProvider.GetRequiredService<StartPage>();
-                MainPage = page;
+                MainPage = new NavigationPage(page);
             }
             
         }

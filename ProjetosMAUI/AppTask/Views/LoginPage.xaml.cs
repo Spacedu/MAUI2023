@@ -22,12 +22,15 @@ public partial class LoginPage : ContentPage
 
     private async void NextAction(object sender, EventArgs e)
     {
-        var email = EntryEmail.Text.Trim().ToLower();
+        AILoading.IsVisible = true;
+        EntryEmail.IsEnabled = false;
+        var email = EntryEmail.Text?.Trim().ToLower();
 
         LblEmailValidateMessage.IsVisible = false;
-        if (!EmailValidate.IsValidEmail(email))
+        if (email == null || !EmailValidate.IsValidEmail(email))
 		{
-			
+            EntryEmail.IsEnabled = true;
+            AILoading.IsVisible = false;
             LblEmailValidateMessage.IsVisible = true;
 			return;
         }
@@ -36,15 +39,24 @@ public partial class LoginPage : ContentPage
         EntryEmail.IsEnabled = false;
 		BtnNext.IsVisible = false;
 		Step2.IsVisible = true;
+        AILoading.IsVisible = false;
     }
 
     private async void AccessAction(object sender, EventArgs e)
     {
-        var email = EntryEmail.Text.Trim().ToLower();
-        var accessToken = EntryAccessToken.Text.Trim();
-
+        AILoading.IsVisible = true;
         LblAccessTokenValidateMessage.IsVisible = false;
 
+        var email = EntryEmail.Text.Trim().ToLower();
+        var accessToken = EntryAccessToken.Text?.Trim();
+
+        if (accessToken == null)
+        {
+            AILoading.IsVisible = false;
+            LblAccessTokenValidateMessage.IsVisible = true;
+            return;
+        }
+            
 
         UserModel userAPI = await _service.ValidateAccessToken(new UserModel { Email = email, AccessToken = accessToken });
 		if(userAPI != null)
@@ -62,5 +74,6 @@ public partial class LoginPage : ContentPage
 		}
 
 		LblAccessTokenValidateMessage.IsVisible = true;
+        AILoading.IsVisible = false;
     }
 }

@@ -4,6 +4,8 @@
              x:Class="AppTask.Views.LoginPage"
              Title="LoginPage">
     <StackLayout VerticalOptions="Center" Padding="15" Spacing="20">
+
+        <ActivityIndicator x:Name="AILoading" IsVisible="False" IsRunning="True" WidthRequest="100" HeightRequest="100" />
         <Label Text="Bem-vindo ao App de Tarefas!" Style="{StaticResource Header}" Margin="0, 0, 0, 40" HorizontalTextAlignment="Center" />
 
         

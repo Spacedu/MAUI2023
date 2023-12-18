@@ -10,7 +10,7 @@ namespace AppTask.Libraries.Validations
     {
         public static bool IsValidEmail(string email)
         {
-            var trimmedEmail = email.Trim();
+            var trimmedEmail = email?.Trim();
 
             if (trimmedEmail.EndsWith("."))
             {

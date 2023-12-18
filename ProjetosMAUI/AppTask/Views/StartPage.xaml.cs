@@ -1,4 +1,5 @@
 using AppTask.Database.Repositories;
+using AppTask.Libraries.Authentations;
 using AppTask.Models;
 
 namespace AppTask.Views;
@@ -71,5 +72,13 @@ public partial class StartPage : ContentPage
     {
         var word = e.NewTextValue;
         CollectionViewTasks.ItemsSource = _tasks.Where(a => a.Name.ToLower().Contains(word.ToLower())).ToList();
+    }
+
+    private void OnButtonClickedToLogout(object sender, EventArgs e)
+    {
+        UserAuth.Logout();
+
+        var page = Handler.MauiContext.Services.GetService<LoginPage>();
+        App.Current.MainPage = page;
     }
 }

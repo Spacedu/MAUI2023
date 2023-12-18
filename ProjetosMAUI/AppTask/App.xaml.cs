@@ -1,4 +1,5 @@
 ﻿using AppTask.Database.Repositories;
+using AppTask.Libraries.Authentations;
 using AppTask.Services;
 using AppTask.Views;
 using Microsoft.Maui.Controls.PlatformConfiguration;
@@ -14,8 +15,17 @@ namespace AppTask
 
             InitializeComponent();
 
-            var loginPage = serviceProvider.GetRequiredService<LoginPage>();
-            MainPage = loginPage;
+            if(UserAuth.GetUserLogged() == null)
+            {
+                var page = serviceProvider.GetRequiredService<LoginPage>();
+                MainPage = page;
+            }
+            else
+            {
+                var page = serviceProvider.GetRequiredService<StartPage>();
+                MainPage = page;
+            }
+            
         }
         private void CustomHandler()
         {

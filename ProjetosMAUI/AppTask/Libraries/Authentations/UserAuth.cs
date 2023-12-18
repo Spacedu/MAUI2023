@@ -11,19 +11,28 @@ namespace AppTask.Libraries.Authentations
 {
     public class UserAuth
     {
+        private static string _key = "user.logged";
         public static void SetUserLogged(UserModel user)
         {
             var userJson = JsonSerializer.Serialize(user);
-            Preferences.Default.Set("user.logged", userJson);
+            Preferences.Default.Set(_key, userJson);
         }
 
         public static UserModel GetUserLogged()
         {
-            var userJson = Preferences.Default.Get<string>("user.logged", String.Empty);
+            var userJson = Preferences.Default.Get<string>(_key, String.Empty);
             if (string.IsNullOrEmpty(userJson))
                 return null;
 
             return JsonSerializer.Deserialize<UserModel>(userJson);
+        }
+
+        public static void Logout()
+        {
+            if (Preferences.Default.ContainsKey(_key))
+            {
+                Preferences.Default.Remove(_key);
+            }
         }
     }
 }

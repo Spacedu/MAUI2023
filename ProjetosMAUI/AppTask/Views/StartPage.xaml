@@ -8,7 +8,7 @@
     <ContentPage.Resources>
         <converter:BoolToTextDecorationStrikeThroughConverter x:Key="BoolToTextDecorationStrikeThroughConverter" />
     </ContentPage.Resources>
-    <Grid RowDefinitions="70, *">
+    <Grid RowDefinitions="70, *, 40">
         <Border
             Margin="20,20,20,0"
             BackgroundColor="#F7F7F7"
@@ -88,5 +88,12 @@
             Text="+    Adicionar Tarefa"
             VerticalOptions="End" />
         <!--  Final - Segunda Linha  -->
+        
+        <!-- Início - Terceira Linha -->
+        <HorizontalStackLayout Grid.Row="2">
+            <Label Text="Elias Ribeiro" VerticalOptions="Center" />
+            <ImageButton Source="logout.png" Clicked="OnButtonClickedToLogout"/>
+        </HorizontalStackLayout>
+        <!-- Final - Terceira Linha -->
     </Grid>
 </ContentPage>

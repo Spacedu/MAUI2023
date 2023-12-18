@@ -7,8 +7,7 @@ using Microsoft.Maui.Platform;
 namespace AppTask
 {
     public partial class App : Application
-    {
-        
+    {        
         public App(IServiceProvider serviceProvider)
         {
             CustomHandler();
@@ -49,7 +48,7 @@ namespace AppTask
                 handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToPlatform());
 #elif IOS || MACCATALYST
                 //iOS || MACCATALYST
-                handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+                //handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
 #elif WINDOWS
                 //WINDOWS - Não funciona 100%
                 handler.PlatformView.BorderThickness = new Thickness(0).ToPlatform();

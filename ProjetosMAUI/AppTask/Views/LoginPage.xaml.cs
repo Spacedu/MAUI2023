@@ -27,12 +27,13 @@ public partial class LoginPage : ContentPage
         LblEmailValidateMessage.IsVisible = false;
         if (!EmailValidate.IsValidEmail(email))
 		{
-			await _service.GetAccessToken(email);
+			
             LblEmailValidateMessage.IsVisible = true;
 			return;
         }
 
-		EntryEmail.IsEnabled = false;
+        await _service.GetAccessToken(email);
+        EntryEmail.IsEnabled = false;
 		BtnNext.IsVisible = false;
 		Step2.IsVisible = true;
     }

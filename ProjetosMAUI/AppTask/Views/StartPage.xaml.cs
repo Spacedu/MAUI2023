@@ -1,6 +1,7 @@
 using AppTask.Database.Repositories;
 using AppTask.Libraries.Authentations;
 using AppTask.Models;
+using AppTask.Services;
 
 namespace AppTask.Views;
 
@@ -8,12 +9,15 @@ public partial class StartPage : ContentPage
 {
     private ITaskModelRepository _repository;
     private AddEditTaskPage _addEditTaskPage;
-    public StartPage(ITaskModelRepository repository, AddEditTaskPage addEditTaskPage)
+    private ITaskService _service;
+    public StartPage(ITaskModelRepository repository, AddEditTaskPage addEditTaskPage, ITaskService service)
     {
         InitializeComponent();
 
         _repository = repository;
         _addEditTaskPage = addEditTaskPage;
+        _service = service;
+
         LoadData();
 
         LblEmail.Text = UserAuth.GetUserLogged().Email;
@@ -47,6 +51,14 @@ public partial class StartPage : ContentPage
         if (confirm) { 
             _repository.Delete(task);
             LoadData();
+
+            NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
+            if (networkAccess == NetworkAccess.Internet)
+            {
+                await _service.Delete(task.Id);
+
+                //TODO - Tratar Exception, Fazer uma possível Sincronização dos dados....
+            }
         }
     }
 
@@ -60,6 +72,15 @@ public partial class StartPage : ContentPage
         
         task.IsCompleted = checkbox.IsChecked;
         _repository.Update(task);
+
+        //Enviar para o Servidor....
+        NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
+        if(networkAccess == NetworkAccess.Internet)
+        {
+            _service.Update(task);
+
+            //TODO - Tratar Exception, Fazer uma possível Sincronização dos dados....
+        }
     }
 
     private void OnTapToEdit(object sender, TappedEventArgs e)
@@ -85,4 +106,5 @@ public partial class StartPage : ContentPage
         var page = Handler.MauiContext.Services.GetService<LoginPage>();
         App.Current.MainPage = page;
     }
+
 }

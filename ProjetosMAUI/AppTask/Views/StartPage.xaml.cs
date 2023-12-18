@@ -16,6 +16,8 @@ public partial class StartPage : ContentPage
         _repository = new TaskModelRepository();
 
         LoadData();
+
+        LblEmail.Text = UserAuth.GetUserLogged().Email;
 	}
 
     public void LoadData()

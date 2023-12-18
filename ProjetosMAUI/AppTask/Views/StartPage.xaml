@@ -8,9 +8,18 @@
     <ContentPage.Resources>
         <converter:BoolToTextDecorationStrikeThroughConverter x:Key="BoolToTextDecorationStrikeThroughConverter" />
     </ContentPage.Resources>
-    <Grid RowDefinitions="70, *, 40">
+    <Grid RowDefinitions="40, 60, *">
+
+        <!-- Início - Terceira Linha -->
+        <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="0,0,20,0" HorizontalOptions="End" Spacing="20">
+            <Label x:Name="LblEmail" VerticalOptions="Center" />
+            <Button Text="Sair" ImageSource="logout.png" Clicked="OnButtonClickedToLogout" MinimumHeightRequest="30" HeightRequest="30" BackgroundColor="White" TextColor="Black" Padding="7, 5" CornerRadius="5" BorderWidth="1" />
+        </StackLayout>
+
+        <!-- Final - Terceira Linha -->
         <Border
-            Margin="20,20,20,0"
+            Grid.Row="1"
+            Margin="20,0,20,0"
             BackgroundColor="#F7F7F7"
             HeightRequest="50"
             StrokeShape="RoundRectangle 25"
@@ -34,7 +43,7 @@
         </Border>
 
         <!--  Inicio - Segunda Linha  -->
-        <CollectionView x:Name="CollectionViewTasks" Grid.Row="1">
+        <CollectionView x:Name="CollectionViewTasks" Grid.Row="2">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10,5" ColumnDefinitions="70, *, 70">
@@ -75,13 +84,13 @@
         </CollectionView>
         <Label
             x:Name="LblEmptyText"
-            Grid.Row="1"
+            Grid.Row="2"
             HorizontalOptions="Center"
             Text="O que você deseja fazer?"
             TextColor="{StaticResource Gray400}"
             VerticalOptions="Center" />
         <Button
-            Grid.Row="1"
+            Grid.Row="2"
             Margin="15"
             Clicked="OnButtonClickedToAdd"
             HorizontalOptions="Center"
@@ -89,11 +98,5 @@
             VerticalOptions="End" />
         <!--  Final - Segunda Linha  -->
         
-        <!-- Início - Terceira Linha -->
-        <HorizontalStackLayout Grid.Row="2">
-            <Label Text="Elias Ribeiro" VerticalOptions="Center" />
-            <ImageButton Source="logout.png" Clicked="OnButtonClickedToLogout"/>
-        </HorizontalStackLayout>
-        <!-- Final - Terceira Linha -->
     </Grid>
 </ContentPage>

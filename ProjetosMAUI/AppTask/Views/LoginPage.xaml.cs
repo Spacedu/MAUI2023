@@ -25,35 +25,30 @@ public partial class LoginPage : ContentPage
     {
         AILoading.IsVisible = true;
         EntryEmail.IsEnabled = false;
+        LblEmailValidateMessage.IsVisible = false;
+
         try
         {
-            var email = EntryEmail.Text?.Trim().ToLower();
+            var email = GetEmailFromEntry();
 
-            LblEmailValidateMessage.IsVisible = false;
             if (email == null || !EmailValidate.IsValidEmail(email))
             {
-                EntryEmail.IsEnabled = true;
-                AILoading.IsVisible = false;
-                LblEmailValidateMessage.IsVisible = true;
+                ShowInvalidEmailMessage();
                 return;
             }
 
             await _service.GetAccessToken(email);
-
-            EntryEmail.IsEnabled = false;
-            BtnNext.IsVisible = false;
-            Step2.IsVisible = true;
-            AILoading.IsVisible = false;
+            GoToStep2();
         }
         catch (HttpRequestException)
         {
-            await DisplayAlert("Opps! Erro na rede!", "Não conseguimos se comunicar com o servidor! Tente novamente mais tarde!", "Ok");
+            await ShowNetworkErrorAlert();
             EntryEmail.IsEnabled = true;
             //TODO - Logs...
         }
         catch (Exception)
         {
-            await DisplayAlert("Opps! Ocorreu um erro inesperado", "Houve um erro no aplicativo, tente realizar o procedimento novamente!", "Ok");
+            await ShowUnexpectedErrorAlert();
             EntryEmail.IsEnabled = true;
             //TODO - Logs...
         }
@@ -61,8 +56,6 @@ public partial class LoginPage : ContentPage
         {
             AILoading.IsVisible = false;
         }
-        
-        
     }
 
     private async void AccessAction(object sender, EventArgs e)
@@ -72,8 +65,7 @@ public partial class LoginPage : ContentPage
         EntryAccessToken.IsEnabled = false;
         try
         {
-
-            var email = EntryEmail.Text.Trim().ToLower();
+            var email = GetEmailFromEntry();
             var accessToken = EntryAccessToken.Text?.Trim();
 
             if (accessToken == null)
@@ -84,37 +76,71 @@ public partial class LoginPage : ContentPage
             }
 
             UserModel userAPI = await _service.ValidateAccessToken(new UserModel { Email = email, AccessToken = accessToken });
-            if (userAPI != null)
+
+            if(userAPI == null)
             {
-                var userDB = _repository.GetByEmail(userAPI.Email);
-
-                if (userDB == null)
-                    _repository.Add(userAPI);
-                else
-                    _repository.Update(userAPI);
-
-
-                UserAuth.SetUserLogged(userAPI);
-                App.Current.MainPage = new NavigationPage(_startPage);
+                LblAccessTokenValidateMessage.IsVisible = true;
+                return;
             }
-            EntryAccessToken.IsEnabled = true;
-            LblAccessTokenValidateMessage.IsVisible = true;
+            
+            AddOrUpdateUserInDatabase(userAPI);
+
+            UserAuth.SetUserLogged(userAPI);
+            App.Current.MainPage = new NavigationPage(_startPage);
         }
         catch (HttpRequestException)
         {
-            await DisplayAlert("Opps! Erro na rede!", "Não conseguimos se comunicar com o servidor! Tente novamente mais tarde!", "Ok");
-            EntryAccessToken.IsEnabled = true;
+            await ShowNetworkErrorAlert();            
             //TODO - Logs...
         }
         catch (Exception)
         {
-            await DisplayAlert("Opps! Ocorreu um erro inesperado", "Houve um erro no aplicativo, tente realizar o procedimento novamente!", "Ok");
-            EntryAccessToken.IsEnabled = true;
+            await ShowUnexpectedErrorAlert();            
             //TODO - Logs...
         }
         finally
         {
+            EntryAccessToken.IsEnabled = true;
             AILoading.IsVisible = false;
         }
+    }
+
+    private void AddOrUpdateUserInDatabase(UserModel userAPI)
+    {
+        var userDB = _repository.GetByEmail(userAPI.Email);
+
+        if (userDB == null)
+            _repository.Add(userAPI);
+        else
+            _repository.Update(userAPI);
+    }
+
+    private string GetEmailFromEntry()
+    {
+        return EntryEmail.Text?.Trim().ToLower();
+    }
+
+    private void ShowInvalidEmailMessage()
+    {
+        EntryEmail.IsEnabled = true;
+        AILoading.IsVisible = false;
+        LblEmailValidateMessage.IsVisible = true;
+    }
+    private void GoToStep2()
+    {
+        EntryEmail.IsEnabled = false;
+        BtnNext.IsVisible = false;
+        Step2.IsVisible = true;
+        AILoading.IsVisible = false;
+    }
+
+    private async Task ShowUnexpectedErrorAlert()
+    {
+        await DisplayAlert("Opps! Ocorreu um erro inesperado", "Houve um erro no aplicativo, tente realizar o procedimento novamente!", "Ok");
+    }
+
+    private async Task ShowNetworkErrorAlert()
+    {
+        await DisplayAlert("Opps! Erro na rede!", "Não conseguimos se comunicar com o servidor! Tente novamente mais tarde!", "Ok");
     }
 }

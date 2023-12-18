@@ -1,4 +1,6 @@
-﻿using AppTask.Views;
+﻿using AppTask.Database.Repositories;
+using AppTask.Services;
+using AppTask.Views;
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Platform;
 
@@ -6,13 +8,14 @@ namespace AppTask
 {
     public partial class App : Application
     {
-        public App()
+        
+        public App(LoginPage loginPage)
         {
             CustomHandler();
 
             InitializeComponent();
-
-            MainPage = new LoginPage();//new NavigationPage(new StartPage());
+            
+            MainPage = loginPage;
         }
         private void CustomHandler()
         {

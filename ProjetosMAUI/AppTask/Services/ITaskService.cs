@@ -2,7 +2,7 @@
 
 namespace AppTask.Services
 {
-    internal interface ITaskService
+    public interface ITaskService
     {
         Task Add(TaskModel task);
         Task BatchPush(List<TaskModel> tasks);

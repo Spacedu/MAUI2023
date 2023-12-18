@@ -1,22 +1,33 @@
+using AppTask.Database.Repositories;
 using AppTask.Libraries.Authentations;
 using AppTask.Libraries.Validations;
+using AppTask.Models;
+using AppTask.Services;
 
 namespace AppTask.Views;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
-	{
-		InitializeComponent();
-	}
-
-    private void NextAction(object sender, EventArgs e)
+	private IUserService _service;
+	private IUserModelRepository _repository;
+    private StartPage _startPage;
+    public LoginPage(IUserService service, IUserModelRepository repository, StartPage startPage)
     {
-		LblEmailValidateMessage.IsVisible = false;
+        InitializeComponent();
 
-        if (!EmailValidate.IsValidEmail(EntryEmail.Text))
+        _service = service;
+        _repository = repository;
+        _startPage = startPage;
+    }
+
+    private async void NextAction(object sender, EventArgs e)
+    {
+        var email = EntryEmail.Text.Trim().ToLower();
+
+        LblEmailValidateMessage.IsVisible = false;
+        if (!EmailValidate.IsValidEmail(email))
 		{
-			//TODO - Acionar API para Enviar AccessToken por e-mail.
+			await _service.GetAccessToken(email);
             LblEmailValidateMessage.IsVisible = true;
 			return;
         }
@@ -26,19 +37,27 @@ public partial class LoginPage : ContentPage
 		Step2.IsVisible = true;
     }
 
-    private void AccessAction(object sender, EventArgs e)
+    private async void AccessAction(object sender, EventArgs e)
     {
+        var email = EntryEmail.Text.Trim().ToLower();
+        var accessToken = EntryAccessToken.Text.Trim();
+
         LblAccessTokenValidateMessage.IsVisible = false;
 
-        var code = EntryAccessToken.Text.Trim();
-		 
-		//TODO - Validar o AccessToken com a API
-		if(code == "2640")
-		{
-			//TODO - Gravar os dados do usuário no dispositivo, gravar no Banco tb(Usuário), e redirecionar para a Tela inicial (StartPage)
 
-			//UserAuth.SetUserLogged(userAPI);
-			App.Current.MainPage = new NavigationPage(new StartPage());
+        UserModel userAPI = await _service.ValidateAccessToken(new UserModel { Email = email, AccessToken = accessToken });
+		if(userAPI != null)
+		{
+            var userDB = _repository.GetByEmail(userAPI.Email);
+            
+            if (userDB == null) 
+                _repository.Add(userAPI);
+            else
+                _repository.Update(userAPI);
+            
+
+			UserAuth.SetUserLogged(userAPI);
+			App.Current.MainPage = new NavigationPage(_startPage);
 		}
 
 		LblAccessTokenValidateMessage.IsVisible = true;

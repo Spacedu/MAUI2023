@@ -2,7 +2,7 @@
 
 namespace AppTask.Services
 {
-    internal interface IUserService
+    public interface IUserService
     {
         Task<UserModel> GetAccessToken(string email);
         Task<UserModel> ValidateAccessToken(UserModel userModel);

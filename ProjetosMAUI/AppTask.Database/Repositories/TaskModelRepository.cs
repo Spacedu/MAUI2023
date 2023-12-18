@@ -18,9 +18,7 @@ namespace AppTask.Database.Repositories
         }
         public IList<TaskModel> GetAll(Guid userId)
         {
-            //TODO - SQL Server...SGDB.
             return _db.Tasks.Where(a=>a.UserId == userId).OrderByDescending(a => a.PrevisionDate.ToString()).ToList();
-            //.DateTime)
         }
         public TaskModel GetById(Guid id)
         {
@@ -33,6 +31,7 @@ namespace AppTask.Database.Repositories
         }
         public void Update(TaskModel task)
         {
+            _db.ChangeTracker.Clear();
             _db.Tasks.Update(task);
             _db.SaveChanges();
         }
@@ -41,6 +40,7 @@ namespace AppTask.Database.Repositories
             task = GetById(task.Id);
             foreach(var subtask in task.SubTasks)
             {
+                _db.ChangeTracker.Clear();
                 subtask.Deleted = DateTimeOffset.Now;
                 _db.SubTasks.Update(subtask);
             }

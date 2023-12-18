@@ -23,7 +23,7 @@ public partial class StartPage : ContentPage
 
     public void LoadData()
     {
-        _tasks = _repository.GetAll(UserAuth.GetUserLogged().Id);
+        _tasks = _repository.GetAll(UserAuth.GetUserLogged().Id).Where(a=>a.Deleted == null).ToList();
         CollectionViewTasks.ItemsSource = _tasks;
         LblEmptyText.IsVisible = _tasks.Count <= 0;        
     }

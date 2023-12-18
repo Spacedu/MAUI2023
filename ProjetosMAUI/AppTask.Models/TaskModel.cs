@@ -25,7 +25,7 @@ namespace AppTask.Models
 
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset Updated { get; set; }
-        public DateTimeOffset Deleted { get; set; }
+        public DateTimeOffset? Deleted { get; set; }
         public ObservableCollection<SubTaskModel> SubTasks { get; set; } = new ObservableCollection<SubTaskModel>();
 
         public event PropertyChangedEventHandler? PropertyChanged;

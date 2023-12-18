@@ -9,12 +9,13 @@ namespace AppTask
     public partial class App : Application
     {
         
-        public App(LoginPage loginPage)
+        public App(IServiceProvider serviceProvider)
         {
             CustomHandler();
 
             InitializeComponent();
-            
+
+            var loginPage = serviceProvider.GetRequiredService<LoginPage>();
             MainPage = loginPage;
         }
         private void CustomHandler()

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AppTask.Services
 {
-    internal class UserService
+    internal class UserService : IUserService
     {
         private HttpClient _http;
 

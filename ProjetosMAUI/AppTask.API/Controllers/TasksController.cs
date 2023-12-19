@@ -16,7 +16,6 @@ namespace AppTask.API.Controllers
             _repository = repository;
         }
 
-        //TODO - Obter todas as tarefas... (Celular Atualiza)
         [HttpGet]
         public IActionResult GetAll(Guid userId)
         {
@@ -58,9 +57,8 @@ namespace AppTask.API.Controllers
             return Ok();
         }
 
-        //TODO - Enviar todas as tarefas localmente para o servidor... (Servidor Atualiza - Add, Update, Delete)
-        [HttpPost("batchPush")]
-        public IActionResult BatchPush(List<TaskModel> tasks)
+        [HttpPost("batchPush/{userId}")]
+        public IActionResult BatchPush(Guid userId, List<TaskModel> tasks)
         {
             foreach(var taskFromClient in tasks)
             {
@@ -79,7 +77,7 @@ namespace AppTask.API.Controllers
                 }
             }
 
-            return Ok();
+            return Ok(GetAll(userId));
         }
     }
 }

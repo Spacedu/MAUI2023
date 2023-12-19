@@ -108,16 +108,15 @@ public partial class StartPage : ContentPage
         App.Current.MainPage = page;
     }
 
-    private void OnButtonClickedToSync(object sender, EventArgs e)
+    private async void OnButtonClickedToSync(object sender, EventArgs e)
     {
-        //TODO - App - Certificar-se de que toda operação CUD - Created*, Updated*, Deleted*.
-
+        var userId = UserAuth.GetUserLogged().Id;
         var date = SyncData.GetLastSyncDate();
-        List<TaskModel> localTasks = (date is null) ? _repository.GetAll(UserAuth.GetUserLogged().Id).ToList() : _repository.GetAll(UserAuth.GetUserLogged().Id).Where(a => a.Updated >= date.Value).ToList();
-        
-        //TODO - API - BatchPush (Enviar várias tarefas - Local) > Server(API) - Analisadas e Atualizadas na base central do nosso App.
+        List<TaskModel> localTasks = (date is null) ? _repository.GetAll(userId).ToList() : _repository.GetAll(userId).Where(a => a.Updated >= date.Value).ToList();
 
-        //TODO - API - GetAll:
+        var serverTasks = await _service.BatchPush(userId, localTasks);
+        
+        //TODO - Algoritmo de atualização local.
         // - Algoritmo 1: Deletar a base Local > Incluir novamente os registro (-Performance).
         // - Algoritmo 2: Analise dados e ver os registros que precisam ser adicionados - alterados(deleted) (+/-Performance).
 

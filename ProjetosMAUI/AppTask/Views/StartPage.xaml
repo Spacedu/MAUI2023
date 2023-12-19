@@ -13,7 +13,8 @@
         <!-- Início - Terceira Linha -->
         <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="0,0,20,0" HorizontalOptions="End" Spacing="20">
             <Label x:Name="LblEmail" VerticalOptions="Center" />
-            <Button Text="Sair" ImageSource="logout.png" Clicked="OnButtonClickedToLogout" MinimumHeightRequest="30" HeightRequest="30" BackgroundColor="White" TextColor="Black" Padding="7, 5" CornerRadius="5" BorderWidth="1" />
+            <Button Text="{OnPlatform Default='Sincronizar', Android='Sync', iOS='Sync'}" ImageSource="sync.png" Clicked="OnButtonClickedToSync" Style="{StaticResource BtnWhite}" />
+            <Button Text="Sair" ImageSource="logout.png" Clicked="OnButtonClickedToLogout" Style="{StaticResource BtnWhite}" />
         </StackLayout>
 
         <!-- Final - Terceira Linha -->

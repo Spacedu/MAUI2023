@@ -107,4 +107,8 @@ public partial class StartPage : ContentPage
         App.Current.MainPage = page;
     }
 
+    private void OnButtonClickedToSync(object sender, EventArgs e)
+    {
+
+    }
 }

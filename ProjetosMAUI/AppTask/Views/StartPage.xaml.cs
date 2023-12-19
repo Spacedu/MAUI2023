@@ -113,7 +113,8 @@ public partial class StartPage : ContentPage
         //TODO - App - Certificar-se de que toda operação CUD - Created*, Updated*, Deleted*.
 
         var date = SyncData.GetLastSyncDate();
-        //BatchPush > Enviar as tarefas que foram Criadas, Atualizadas ou Deletadas a partir da Data da Última Sincronização
+        List<TaskModel> localTasks = (date is null) ? _repository.GetAll(UserAuth.GetUserLogged().Id).ToList() : _repository.GetAll(UserAuth.GetUserLogged().Id).Where(a => a.Updated >= date.Value).ToList();
+        
         //TODO - API - BatchPush (Enviar várias tarefas - Local) > Server(API) - Analisadas e Atualizadas na base central do nosso App.
 
         //TODO - API - GetAll:

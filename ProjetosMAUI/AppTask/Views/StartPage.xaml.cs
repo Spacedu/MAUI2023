@@ -1,5 +1,6 @@
 using AppTask.Database.Repositories;
 using AppTask.Libraries.Authentations;
+using AppTask.Libraries.Synchronizations;
 using AppTask.Models;
 using AppTask.Services;
 
@@ -111,13 +112,16 @@ public partial class StartPage : ContentPage
     {
         //TODO - App - Certificar-se de que toda operação CUD - Created*, Updated*, Deleted*.
 
-        //TODO - App - Guarda a data da última Sincronização...
-
+        var date = SyncData.GetLastSyncDate();
+        //BatchPush > Enviar as tarefas que foram Criadas, Atualizadas ou Deletadas a partir da Data da Última Sincronização
         //TODO - API - BatchPush (Enviar várias tarefas - Local) > Server(API) - Analisadas e Atualizadas na base central do nosso App.
 
         //TODO - API - GetAll:
         // - Algoritmo 1: Deletar a base Local > Incluir novamente os registro (-Performance).
         // - Algoritmo 2: Analise dados e ver os registros que precisam ser adicionados - alterados(deleted) (+/-Performance).
+
+        //TODO - App - Guarda a data da última Sincronização...
+        SyncData.SetLastSyncDate(DateTimeOffset.Now);
 
         //TODO - App - Chamar LoadData.
     }

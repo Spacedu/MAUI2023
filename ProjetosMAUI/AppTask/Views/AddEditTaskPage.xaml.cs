@@ -69,7 +69,6 @@ public partial class AddEditTaskPage : ContentPage
         _task.PrevisionDate = _task.PrevisionDate.AddMinutes(59);
         _task.PrevisionDate = _task.PrevisionDate.AddSeconds(59);
 
-        _task.Created = DateTime.Now;
         _task.IsCompleted = false;
     }
     private bool ValidateData()
@@ -95,6 +94,9 @@ public partial class AddEditTaskPage : ContentPage
     {
         if (_task.Id == default(Guid)) { 
             _task.UserId = UserAuth.GetUserLogged().Id;
+            _task.Created = DateTimeOffset.Now;
+            _task.Updated = DateTimeOffset.Now;
+
             _repository.Add(_task);
 
             NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
@@ -105,7 +107,8 @@ public partial class AddEditTaskPage : ContentPage
                 //TODO - Tratar Exception, Fazer uma possível Sincronização dos dados....
             }
         }
-        else { 
+        else {
+            _task.Updated = DateTimeOffset.Now;
             _repository.Update(_task);
 
             NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;

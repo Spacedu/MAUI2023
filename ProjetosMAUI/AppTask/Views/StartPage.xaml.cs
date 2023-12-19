@@ -109,6 +109,16 @@ public partial class StartPage : ContentPage
 
     private void OnButtonClickedToSync(object sender, EventArgs e)
     {
+        //TODO - App - Certificar-se de que toda operação CUD - Created*, Updated*, Deleted*.
 
+        //TODO - App - Guarda a data da última Sincronização...
+
+        //TODO - API - BatchPush (Enviar várias tarefas - Local) > Server(API) - Analisadas e Atualizadas na base central do nosso App.
+
+        //TODO - API - GetAll:
+        // - Algoritmo 1: Deletar a base Local > Incluir novamente os registro (-Performance).
+        // - Algoritmo 2: Analise dados e ver os registros que precisam ser adicionados - alterados(deleted) (+/-Performance).
+
+        //TODO - App - Chamar LoadData.
     }
 }

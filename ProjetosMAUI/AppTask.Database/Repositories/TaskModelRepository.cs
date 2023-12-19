@@ -44,7 +44,7 @@ namespace AppTask.Database.Repositories
                 subtask.Deleted = DateTimeOffset.Now;
                 _db.SubTasks.Update(subtask);
             }
-            
+            task.Updated = DateTimeOffset.Now;
             task.Deleted = DateTimeOffset.Now;
 
             _db.Tasks.Update(task);

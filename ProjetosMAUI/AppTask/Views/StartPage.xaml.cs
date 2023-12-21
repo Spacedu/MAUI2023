@@ -116,14 +116,11 @@ public partial class StartPage : ContentPage
 
         var serverTasks = await _service.BatchPush(userId, localTasks);
 
-        //TODO - Algoritmo de atualização local.
-        // - Algoritmo 2: Analise dados e ver os registros que precisam ser adicionados - alterados(deleted) (+/-Performance). //+ Performatico
         SynchronizationLocalDatabase(serverTasks);
 
-        //TODO - App - Guarda a data da última Sincronização...
         SyncData.SetLastSyncDate(DateTimeOffset.Now);
 
-        //TODO - App - Chamar LoadData.
+        LoadData();
     }
 
     private void SynchronizationLocalDatabase(List<TaskModel> serverTasks) {

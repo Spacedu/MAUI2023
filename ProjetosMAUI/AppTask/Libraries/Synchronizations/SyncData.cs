@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace AppTask.Libraries.Synchronizations
@@ -12,11 +13,14 @@ namespace AppTask.Libraries.Synchronizations
 
         public static DateTimeOffset? GetLastSyncDate()
         {
-            return Preferences.Default.Get<DateTimeOffset?>(_key, null);
+            var dateJson = Preferences.Default.Get<string>(_key, null);
+
+            return (dateJson is null) ? null : JsonSerializer.Deserialize<DateTimeOffset?>(dateJson);
         }
         public static void SetLastSyncDate(DateTimeOffset date)
         {
-            Preferences.Default.Set(_key, date);
+            var dateJson = JsonSerializer.Serialize(date);
+            Preferences.Default.Set(_key, dateJson);
         }
     }
 }

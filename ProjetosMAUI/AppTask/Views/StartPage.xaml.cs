@@ -115,14 +115,40 @@ public partial class StartPage : ContentPage
         List<TaskModel> localTasks = (date is null) ? _repository.GetAll(userId).ToList() : _repository.GetAll(userId).Where(a => a.Updated >= date.Value).ToList();
 
         var serverTasks = await _service.BatchPush(userId, localTasks);
-        
+
         //TODO - Algoritmo de atualização local.
-        // - Algoritmo 1: Deletar a base Local > Incluir novamente os registro (-Performance).
-        // - Algoritmo 2: Analise dados e ver os registros que precisam ser adicionados - alterados(deleted) (+/-Performance).
+        // - Algoritmo 2: Analise dados e ver os registros que precisam ser adicionados - alterados(deleted) (+/-Performance). //+ Performatico
+        SynchronizationLocalDatabase(serverTasks);
 
         //TODO - App - Guarda a data da última Sincronização...
         SyncData.SetLastSyncDate(DateTimeOffset.Now);
 
         //TODO - App - Chamar LoadData.
+    }
+
+    private void SynchronizationLocalDatabase(List<TaskModel> serverTasks) {
+        var userId = UserAuth.GetUserLogged().Id;
+
+        var localTasks = _repository.GetAll(userId).ToList();
+
+        var taskToLocalAdd = new List<TaskModel>();
+        var taskToLocalUpdate = new List<TaskModel>();
+
+        foreach (var serverTask in serverTasks) {
+            var task = localTasks.FirstOrDefault(a => a.Id == serverTask.Id);
+            if(task == null)
+            {
+                taskToLocalAdd.Add(serverTask);
+            }
+            else
+            {
+                if(task.Updated < serverTask.Updated)
+                {
+                    taskToLocalUpdate.Add(serverTask);
+                }
+            }
+        }
+        _repository.Add(taskToLocalAdd);
+        _repository.Update(taskToLocalUpdate);
     }
 }

@@ -13,6 +13,8 @@ namespace AppTask.Database.Repositories
         TaskModel GetById(Guid id);
         void Add(TaskModel task);
         void Update(TaskModel task);
+        void Add(List<TaskModel> tasks);
+        void Update(List<TaskModel> tasks);
         void Delete(TaskModel task);
     }
 }

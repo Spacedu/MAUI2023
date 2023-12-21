@@ -18,7 +18,7 @@ namespace AppTask.Database.Repositories
         }
         public IList<TaskModel> GetAll(Guid userId)
         {
-            return _db.Tasks.Where(a=>a.UserId == userId).OrderByDescending(a => a.PrevisionDate.ToString()).ToList();
+            return _db.Tasks.Include(a => a.SubTasks).Where(a=>a.UserId == userId).OrderByDescending(a => a.PrevisionDate.ToString()).ToList();
         }
         public TaskModel GetById(Guid id)
         {
@@ -48,6 +48,18 @@ namespace AppTask.Database.Repositories
             task.Deleted = DateTimeOffset.Now;
 
             _db.Tasks.Update(task);
+            _db.SaveChanges();
+        }
+
+        public void Add(List<TaskModel> tasks)
+        {
+            _db.AddRange(tasks);
+            _db.SaveChanges();
+        }
+
+        public void Update(List<TaskModel> tasks)
+        {
+            _db.UpdateRange(tasks);
             _db.SaveChanges();
         }
     }

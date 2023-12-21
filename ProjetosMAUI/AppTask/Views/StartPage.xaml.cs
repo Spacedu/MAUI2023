@@ -56,9 +56,11 @@ public partial class StartPage : ContentPage
             NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
             if (networkAccess == NetworkAccess.Internet)
             {
-                await _service.Delete(task.Id);
-
-                //TODO - Tratar Exception, Fazer uma possível Sincronização dos dados....
+                try { 
+                    await _service.Delete(task.Id);
+                } catch (Exception ex) {
+                    await DisplayAlert("Opps! Ocorreu um erro inesperado!", $"Mensagem de erro: {ex.Message}", "OK");
+                }
             }
         }
     }
@@ -72,15 +74,21 @@ public partial class StartPage : ContentPage
             checkbox.IsChecked = !checkbox.IsChecked;
         
         task.IsCompleted = checkbox.IsChecked;
+        task.Updated = DateTimeOffset.Now;
+
         _repository.Update(task);
 
-        //Enviar para o Servidor....
         NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
         if(networkAccess == NetworkAccess.Internet)
         {
-            _service.Update(task);
-
-            //TODO - Tratar Exception, Fazer uma possível Sincronização dos dados....
+            try
+            {
+                _service.Update(task);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Opps! Ocorreu um erro inesperado!", $"Mensagem de erro: {ex.Message}", "OK");
+            }
         }
     }
 
@@ -110,17 +118,24 @@ public partial class StartPage : ContentPage
 
     private async void OnButtonClickedToSync(object sender, EventArgs e)
     {
-        var userId = UserAuth.GetUserLogged().Id;
-        var date = SyncData.GetLastSyncDate();
-        List<TaskModel> localTasks = (date is null) ? _repository.GetAll(userId).ToList() : _repository.GetAll(userId).Where(a => a.Updated >= date.Value).ToList();
+        try
+        {
+            var userId = UserAuth.GetUserLogged().Id;
+            var date = SyncData.GetLastSyncDate();
+            List<TaskModel> localTasks = (date is null) ? _repository.GetAll(userId).ToList() : _repository.GetAll(userId).Where(a => a.Updated >= date.Value).ToList();
 
-        var serverTasks = await _service.BatchPush(userId, localTasks);
+            var serverTasks = await _service.BatchPush(userId, localTasks);
 
-        SynchronizationLocalDatabase(serverTasks);
+            SynchronizationLocalDatabase(serverTasks);
 
-        SyncData.SetLastSyncDate(DateTimeOffset.Now);
+            SyncData.SetLastSyncDate(DateTimeOffset.Now);
 
-        LoadData();
+            LoadData();
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Opps! Ocorreu um erro inesperado!", $"Mensagem de erro: {ex.Message}", "OK");
+        }
     }
 
     private void SynchronizationLocalDatabase(List<TaskModel> serverTasks) {

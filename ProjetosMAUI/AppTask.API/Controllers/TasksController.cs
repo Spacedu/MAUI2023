@@ -76,8 +76,8 @@ namespace AppTask.API.Controllers
                     }
                 }
             }
-
-            return Ok(GetAll(userId));
+            
+            return Ok(_repository.GetAll(userId));
         }
     }
 }

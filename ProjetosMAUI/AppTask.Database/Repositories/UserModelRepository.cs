@@ -21,7 +21,6 @@ namespace AppTask.Database.Repositories
 
         public void Add(UserModel user)
         {
-            user.Id = Guid.NewGuid();
             _db.Users.Add(user);
 
             _db.SaveChanges();

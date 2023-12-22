@@ -92,11 +92,16 @@ public partial class AddEditTaskPage : ContentPage
     }
     private void SaveInDatabase()
     {
-        if (_task.Id == default(Guid)) { 
+        if (_task.Id == default(Guid)) {
+            _task.Id = Guid.NewGuid();
             _task.UserId = UserAuth.GetUserLogged().Id;
             _task.Created = DateTimeOffset.Now;
             _task.Updated = DateTimeOffset.Now;
 
+            foreach(var sub in _task.SubTasks)
+            {
+                sub.Id = Guid.NewGuid();
+            }
             _repository.Add(_task);
 
             NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;

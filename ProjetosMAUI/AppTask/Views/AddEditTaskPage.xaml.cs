@@ -107,9 +107,14 @@ public partial class AddEditTaskPage : ContentPage
             NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
             if (networkAccess == NetworkAccess.Internet)
             {
-                _service.Add(_task);
-
-                //TODO - Tratar Exception, Fazer uma possível Sincronização dos dados....
+                try
+                {
+                    _service.Add(_task);
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("Opps! Ocorreu um erro inesperado!", $"Mensagem de erro: {ex.Message}", "OK");
+                }
             }
         }
         else {
@@ -119,9 +124,14 @@ public partial class AddEditTaskPage : ContentPage
             NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
             if (networkAccess == NetworkAccess.Internet)
             {
-                _service.Update(_task);
-
-                //TODO - Tratar Exception, Fazer uma possível Sincronização dos dados....
+                try
+                {
+                    _service.Update(_task);
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("Opps! Ocorreu um erro inesperado!", $"Mensagem de erro: {ex.Message}", "OK");
+                }
             }
         }
 

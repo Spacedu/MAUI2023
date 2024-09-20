@@ -60,8 +60,9 @@ public partial class StartPage : ContentPage
     private void OnTapToEdit(object sender, TappedEventArgs e)
     {
         var task = (TaskModel)e.Parameter;
-        
-        Navigation.PushModalAsync(new AddEditTaskPage(_repository.GetById(task.Id)));
+
+        var taskDb = _repository.GetById(task.Id);
+        Navigation.PushModalAsync(new AddEditTaskPage(taskDb));
     }
 
     private void OnTextChanged_FilterList(object sender, TextChangedEventArgs e)

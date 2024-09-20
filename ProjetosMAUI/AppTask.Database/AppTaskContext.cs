@@ -15,6 +15,7 @@ namespace AppTask.Database
         public AppTaskContext()
         {
             Database.Migrate();
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
 

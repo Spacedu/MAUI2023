@@ -1,4 +1,5 @@
 using AppMAUIGallery.Views.Lists.Models;
+using Microsoft.Maui.Controls;
 using System.Collections.ObjectModel;
 using System.Text;
 
@@ -14,7 +15,14 @@ public partial class CollectionViewPage : ContentPage
 
 		AddTenMovies();
 		CollectionViewControl.ItemsSource = MovieList.GetGroupList();
-	}
+
+        scrollTimer = new System.Timers.Timer(ScrollTimeout);
+        scrollTimer.Elapsed += OnScrollTimerElapsed;
+        scrollTimer.AutoReset = false;
+
+        // Assumindo que seu CollectionView está nomeado como "collectionView"
+        CollectionViewControl.Scrolled += CollectionView_Scrolled;
+    }
 
     private async void RefreshView_Refreshing(object sender, EventArgs e)
 	{
@@ -67,8 +75,44 @@ public partial class CollectionViewPage : ContentPage
         //CollectionViewControl.ScrollTo(4, position: ScrollToPosition.Start);
     }
 
+    private System.Timers.Timer scrollTimer;
+    private bool isScrolling = false;
+    private const int ScrollTimeout = 500;
     private void CollectionViewControl_Scrolled(object sender, ItemsViewScrolledEventArgs e)
     {
-		LblScrollStatus.Text = $"Posicionamento: {e.VerticalOffset} - Espaçamento: {e.VerticalDelta}";
+		//LblScrollStatus.Text = $"Posicionamento: {e.VerticalOffset} - Espaçamento: {e.VerticalDelta}";
+    }
+    private void CollectionView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
+    {
+        if (!isScrolling)
+        {
+            isScrolling = true;
+            OnScrollStarted();
+        }
+
+        // Reinicia o temporizador toda vez que o evento `Scrolled` é acionado
+        scrollTimer.Stop();
+        scrollTimer.Start();
+    }
+    private void OnScrollTimerElapsed(object sender, System.Timers.ElapsedEventArgs e)
+    {
+        Device.BeginInvokeOnMainThread(() =>
+        {
+            isScrolling = false;
+            OnScrollEnded();
+        });
+    }
+    private void OnScrollStarted()
+    {
+        // Código a ser executado no início da rolagem
+        Console.WriteLine("Scroll iniciado");
+        LblScrollStatus.Text = "Scroll iniciado";
+    }
+
+    private void OnScrollEnded()
+    {
+        // Código a ser executado no fim da rolagem
+        Console.WriteLine("Scroll terminado");
+        LblScrollStatus.Text = "Scroll terminado";
     }
 }

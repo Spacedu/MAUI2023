@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppNumeroDaSorte.MainPage"
-             >
-    <ScrollView>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AppNumeroDaSorte.MainPage">
+    <!--<ScrollView>
         <VerticalStackLayout VerticalOptions="CenterAndExpand">
             <Image Source="logo_green.png" WidthRequest="74" HeightRequest="115" />
             <Label
@@ -41,5 +38,94 @@
 
             <Button Clicked="OnGenerateLuckNumbers" Text="Gerar número da sorte" HorizontalOptions="Center" />
         </VerticalStackLayout>
+    </ScrollView>-->
+    <ScrollView>
+
+        <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+            <Image HeightRequest="115" Source="logo_green.png" WidthRequest="74" />
+
+            <Label x:Name="NameApp" Margin="0,20,0,120" HorizontalOptions="Center" Text="Número da sorte" TextColor="#00AB37" VerticalOptions="Center" />
+
+            <VerticalStackLayout x:Name="ContainerLuckNumbers" IsVisible="false">
+
+                <Label Margin="0,0,20,50" HorizontalOptions="Center" Text="O número da sorte é: " />
+
+                <HorizontalStackLayout Margin="0,70" HorizontalOptions="Center" Spacing="20">
+
+
+
+                    <Border Padding="5" Stroke="Green" StrokeShape="RoundRectangle 8">
+
+                        <Label x:Name="LuckNumber01" FontSize="24" Text="" TextColor="#00AB37" />
+
+
+
+                    </Border>
+
+
+
+                    <Border Padding="5" Stroke="Green" StrokeShape="RoundRectangle 8">
+
+                        <Label x:Name="LuckNumber02" FontSize="24" Text="" TextColor="#00AB37" />
+
+                    </Border>
+
+                    <Border Padding="5" Stroke="Green" StrokeShape="RoundRectangle 8">
+
+                        <Label x:Name="LuckNumber03" FontSize="24" Text="" TextColor="#00AB37" />
+
+                    </Border>
+
+
+
+                    <Border Padding="5" Stroke="Green" StrokeShape="RoundRectangle 8">
+
+                        <Label x:Name="LuckNumber04" FontSize="24" Text="" TextColor="#00AB37" />
+
+                    </Border>
+
+
+
+                    <Border Padding="5" Stroke="Green" StrokeShape="RoundRectangle 8">
+
+                        <Label x:Name="LuckNumber05" FontSize="24" Text="" TextColor="#00AB37" />
+
+                    </Border>
+
+
+
+                    <Border Padding="5" Stroke="Green" StrokeShape="RoundRectangle 8">
+
+                        <Label x:Name="LuckNumber06" FontSize="24" Text="" TextColor="#00AB37" />
+
+                    </Border>
+
+
+
+                </HorizontalStackLayout>
+
+
+
+                <Label Margin="0,0,0,50" HorizontalOptions="Center" Text="Boa sorte!" />
+
+
+
+            </VerticalStackLayout>
+
+
+
+
+
+
+
+            <Button x:Name="Botao" Clicked="OnGenerateLuckNumbers" HorizontalOptions="Center" Text="Gerar números da sorte" />
+
+
+
+
+
+        </VerticalStackLayout>
+
     </ScrollView>
 </ContentPage>

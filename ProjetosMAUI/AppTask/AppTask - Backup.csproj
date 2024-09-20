@@ -51,8 +51,6 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\find.svg" />
-	  <None Remove="Resources\Images\logout.svg" />
-	  <None Remove="Resources\Images\sync.svg" />
 	  <None Remove="Resources\Images\trash.svg" />
 	</ItemGroup>
 

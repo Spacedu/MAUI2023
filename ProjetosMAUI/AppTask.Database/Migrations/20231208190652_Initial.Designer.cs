@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppTask.Database.Migrations
 {
     [DbContext(typeof(AppTaskContext))]
-    [Migration("20230311141844_TaskModelAddColumnCreatedAndUpdated")]
-    partial class TaskModelAddColumnCreatedAndUpdated
+    [Migration("20231208190652_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,9 +22,12 @@ namespace AppTask.Database.Migrations
 
             modelBuilder.Entity("AppTask.Models.SubTaskModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTimeOffset>("Deleted")
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("INTEGER");
@@ -33,8 +36,8 @@ namespace AppTask.Database.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("TaskModelId")
-                        .HasColumnType("INTEGER");
+                    b.Property<Guid?>("TaskModelId")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -45,11 +48,14 @@ namespace AppTask.Database.Migrations
 
             modelBuilder.Entity("AppTask.Models.TaskModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTimeOffset>("Deleted")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
@@ -63,15 +69,45 @@ namespace AppTask.Database.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("PrevisionDate")
+                    b.Property<DateTimeOffset>("PrevisionDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Updated")
+                    b.Property<DateTimeOffset>("Updated")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("UserId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Tasks");
+                });
+
+            modelBuilder.Entity("AppTask.Models.UserModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AccessToken")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTimeOffset>("AccessTokenCreated")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("AppTask.Models.SubTaskModel", b =>
@@ -83,7 +119,23 @@ namespace AppTask.Database.Migrations
 
             modelBuilder.Entity("AppTask.Models.TaskModel", b =>
                 {
+                    b.HasOne("AppTask.Models.UserModel", "User")
+                        .WithMany("Tasks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("AppTask.Models.TaskModel", b =>
+                {
                     b.Navigation("SubTasks");
+                });
+
+            modelBuilder.Entity("AppTask.Models.UserModel", b =>
+                {
+                    b.Navigation("Tasks");
                 });
 #pragma warning restore 612, 618
         }

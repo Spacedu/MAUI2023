@@ -3,6 +3,7 @@ using System;
 using AppTask.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppTask.Database.Migrations
 {
     [DbContext(typeof(AppTaskContext))]
-    partial class AppTaskContextModelSnapshot : ModelSnapshot
+    [Migration("20231218225905_DeletedCanBeNull")]
+    partial class DeletedCanBeNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.3");
@@ -20,6 +23,7 @@ namespace AppTask.Database.Migrations
             modelBuilder.Entity("AppTask.Models.SubTaskModel", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset>("Deleted")
@@ -45,6 +49,7 @@ namespace AppTask.Database.Migrations
             modelBuilder.Entity("AppTask.Models.TaskModel", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset>("Created")
@@ -83,6 +88,7 @@ namespace AppTask.Database.Migrations
             modelBuilder.Entity("AppTask.Models.UserModel", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccessToken")

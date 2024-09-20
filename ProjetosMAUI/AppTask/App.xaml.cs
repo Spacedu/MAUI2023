@@ -1,18 +1,31 @@
-﻿using AppTask.Views;
+﻿using AppTask.Database.Repositories;
+using AppTask.Libraries.Authentations;
+using AppTask.Services;
+using AppTask.Views;
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Platform;
 
 namespace AppTask
 {
     public partial class App : Application
-    {
-        public App()
+    {        
+        public App(IServiceProvider serviceProvider)
         {
             CustomHandler();
 
             InitializeComponent();
 
-            MainPage = new NavigationPage(new StartPage());
+            if(UserAuth.GetUserLogged() == null)
+            {
+                var page = serviceProvider.GetRequiredService<LoginPage>();
+                MainPage = page;
+            }
+            else
+            {
+                var page = serviceProvider.GetRequiredService<StartPage>();
+                MainPage = new NavigationPage(page);
+            }
+            
         }
         private void CustomHandler()
         {
@@ -45,7 +58,7 @@ namespace AppTask
                 handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToPlatform());
 #elif IOS || MACCATALYST
                 //iOS || MACCATALYST
-                handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+                //handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
 #elif WINDOWS
                 //WINDOWS - Não funciona 100%
                 handler.PlatformView.BorderThickness = new Thickness(0).ToPlatform();

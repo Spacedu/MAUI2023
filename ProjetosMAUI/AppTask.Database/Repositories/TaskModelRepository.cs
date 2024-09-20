@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppTask.Repositories
+namespace AppTask.Database.Repositories
 {
     public class TaskModelRepository : ITaskModelRepository
     {
@@ -16,11 +16,11 @@ namespace AppTask.Repositories
         {
             _db = new AppTaskContext();            
         }
-        public IList<TaskModel> GetAll()
+        public IList<TaskModel> GetAll(Guid userId)
         {
-            return _db.Tasks.OrderByDescending(a=>a.PrevisionDate).ToList();
+            return _db.Tasks.Include(a => a.SubTasks).Where(a=>a.UserId == userId).OrderByDescending(a => a.PrevisionDate.ToString()).ToList();
         }
-        public TaskModel GetById(int id)
+        public TaskModel GetById(Guid id)
         {
             return _db.Tasks.Include(a => a.SubTasks).FirstOrDefault(a=>a.Id == id);
         }
@@ -31,6 +31,7 @@ namespace AppTask.Repositories
         }
         public void Update(TaskModel task)
         {
+            _db.ChangeTracker.Clear();
             _db.Tasks.Update(task);
             _db.SaveChanges();
         }
@@ -39,10 +40,26 @@ namespace AppTask.Repositories
             task = GetById(task.Id);
             foreach(var subtask in task.SubTasks)
             {
-                _db.SubTasks.Remove(subtask);
+                _db.ChangeTracker.Clear();
+                subtask.Deleted = DateTimeOffset.Now;
+                _db.SubTasks.Update(subtask);
             }
+            task.Updated = DateTimeOffset.Now;
+            task.Deleted = DateTimeOffset.Now;
 
-            _db.Tasks.Remove(task);
+            _db.Tasks.Update(task);
+            _db.SaveChanges();
+        }
+
+        public void Add(List<TaskModel> tasks)
+        {
+            _db.AddRange(tasks);
+            _db.SaveChanges();
+        }
+
+        public void Update(List<TaskModel> tasks)
+        {
+            _db.UpdateRange(tasks);
             _db.SaveChanges();
         }
     }

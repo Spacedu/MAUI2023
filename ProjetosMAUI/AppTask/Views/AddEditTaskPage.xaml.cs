@@ -1,27 +1,31 @@
+using AppTask.Database.Repositories;
+using AppTask.Libraries.Authentations;
 using AppTask.Models;
-using AppTask.Repositories;
+using AppTask.Services;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AppTask.Views;
 
 public partial class AddEditTaskPage : ContentPage
 {
     private ITaskModelRepository _repository;
+    private ITaskService _service;
     private TaskModel _task;
     
-	public AddEditTaskPage()
+	public AddEditTaskPage(ITaskModelRepository repository, ITaskService service)
 	{
 		InitializeComponent();
-        _repository = new TaskModelRepository();
+
+        _repository = repository;
+        _service = service;
+
         _task = new TaskModel();
 
         BindableLayout.SetItemsSource(BindableLayout_Steps, _task.SubTasks);
     }
-    public AddEditTaskPage(TaskModel task)
+    public void SetFormToUpdate(TaskModel task)
     {
-        _repository = new TaskModelRepository();
-
-        InitializeComponent();
         _task = task;
         FillFields();
 
@@ -31,7 +35,7 @@ public partial class AddEditTaskPage : ContentPage
     {
         Entry_TaskName.Text = _task.Name;
         Editor_TaskDescription.Text = _task.Description;
-        DatePicker_TaskDate.Date = _task.PrevisionDate;
+        DatePicker_TaskDate.Date = _task.PrevisionDate.Date;
     }
 
     private void CloseModal(object sender, EventArgs e)
@@ -65,7 +69,6 @@ public partial class AddEditTaskPage : ContentPage
         _task.PrevisionDate = _task.PrevisionDate.AddMinutes(59);
         _task.PrevisionDate = _task.PrevisionDate.AddSeconds(59);
 
-        _task.Created = DateTime.Now;
         _task.IsCompleted = false;
     }
     private bool ValidateData()
@@ -89,11 +92,49 @@ public partial class AddEditTaskPage : ContentPage
     }
     private void SaveInDatabase()
     {
-        if(_task.Id == 0)
+        if (_task.Id == default(Guid)) {
+            _task.Id = Guid.NewGuid();
+            _task.UserId = UserAuth.GetUserLogged().Id;
+            _task.Created = DateTimeOffset.Now;
+            _task.Updated = DateTimeOffset.Now;
+
+            foreach(var sub in _task.SubTasks)
+            {
+                sub.Id = Guid.NewGuid();
+            }
             _repository.Add(_task);
-        else
+
+            NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
+            if (networkAccess == NetworkAccess.Internet)
+            {
+                try
+                {
+                    _service.Add(_task);
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("Opps! Ocorreu um erro inesperado!", $"Mensagem de erro: {ex.Message}", "OK");
+                }
+            }
+        }
+        else {
+            _task.Updated = DateTimeOffset.Now;
             _repository.Update(_task);
-        
+
+            NetworkAccess networkAccess = Connectivity.Current.NetworkAccess;
+            if (networkAccess == NetworkAccess.Internet)
+            {
+                try
+                {
+                    _service.Update(_task);
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("Opps! Ocorreu um erro inesperado!", $"Mensagem de erro: {ex.Message}", "OK");
+                }
+            }
+        }
+
     }
     private void UpdateListInStartPage()
     {

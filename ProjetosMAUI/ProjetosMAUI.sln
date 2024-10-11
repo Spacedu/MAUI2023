@@ -49,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppShoppingCenter", "AppSho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppShoppingCenter.Models", "AppShoppingCenter.Models\AppShoppingCenter.Models.csproj", "{16142CAB-5EB4-4199-B779-8A0ED09CFA51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTask.API", "AppTask.API\AppTask.API.csproj", "{711E4BCA-805B-4350-8023-3F9F320FB5F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask.API", "AppTask.API\AppTask.API.csproj", "{711E4BCA-805B-4350-8023-3F9F320FB5F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
